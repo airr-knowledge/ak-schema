@@ -1,0 +1,4374 @@
+{
+  "Info": {
+    "title": "AIRR Schema",
+    "description": "Schema definitions for AIRR standards objects",
+    "version": 1.6,
+    "contact": {
+      "name": "AIRR Community",
+      "url": "https://github.com/airr-community"
+    },
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "Repertoire": [
+    {
+      "repertoire_id": "471418c3-23a7-45a3-8509-9d923947ebf6",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null
+      },
+      "subject": {
+        "subject_id": "6423",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov5",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov5_S1_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov5_S1_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "e06b0202-e8d8-4ab0-8ee2-e4c32b480236",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null
+      },
+      "subject": {
+        "subject_id": "6472",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov6",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov6_S2_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov6_S2_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "fadf230f-5e6d-4d10-843c-f9133bfec233",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null
+      },
+      "subject": {
+        "subject_id": "6479",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov7",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov7_S3_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov7_S3_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "ac3d07ad-5e71-4540-9bf2-b134e6d6e8af",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6500",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "fb293c51-384f-4abe-9fc5-4fcb12fc9103",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov8",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov8_S4_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov8_S4_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "02d57107-0b33-41c0-90dc-20cc8e834a62",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "5db1ee7c-188a-474a-920a-511adf60bdec",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6508",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "2f52c984-ae6b-4b4b-8eab-32e32ec0af10",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov9",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov9_S5_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov9_S5_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "db36832b-4224-48d0-92fa-d6ea8017e294",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "a831290a-ede7-44b2-b313-a93c51bef4b2",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6525",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "bf647e9a-5cdb-47a5-9fbf-9adc7f534519",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov10",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov10_S6_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov10_S6_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "3dd4ba26-0bbd-4cf4-9b37-a05905e48e80",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "f65e6da9-8be1-4fef-970c-4482ab11a53c",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6688",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "dc30f156-08a0-45d3-bf05-8ae0efa93233",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov11",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov11_S7_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov11_S7_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "a57facf9-e54e-4673-8438-01652c116e97",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "57dbf0bd-f6df-478f-9553-830132a46c02",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6819",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "2aaa7712-a039-4ae4-bbe5-fa31137ad1a2",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov12",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov12_S8_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov12_S8_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "e4919e76-4e15-4d40-9b5e-bbfb0425f049",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "2925f0d3-c3f6-46fb-9607-3d3adc69dcab",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6842",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "91d17906-bfa7-4793-ab8d-502978594722",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov13",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov13_S9_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov13_S9_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "ca746b1f-0526-4b42-bd8c-598066f1b76b",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "6310af4a-eef9-4a7c-b04a-c384fb78b9b6",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6848",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "dbd36154-de3a-4dde-bb8b-779c14e00de7",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov14",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov14_S10_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov14_S10_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "3b31943d-7e3a-4e88-a749-bde28a41ec44",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "6865489c-e9df-44f8-bcf5-7380c2caec32",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6933",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "a8804ba8-e8ab-469f-9f37-8d38da1e7f31",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov15",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov15_S11_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov15_S11_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "24cb78f8-20ae-4aa2-ac69-b184c600a517",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "5c951bfa-2d38-49ba-af60-75e66ff7f0c3",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6941",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "4eb905f9-5e67-4bbb-90d1-498ad4e18563",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov16",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov16_S12_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov16_S12_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "c877707d-8bd1-46a6-af92-73eb7f95e9e3",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "cf466f6e-8026-4448-9587-abcf8a91eb8e",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6964",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "1fa8807b-d4a3-42af-b18a-8134578793f8",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov17",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov17_S13_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov17_S13_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "df94e758-0ad9-4acd-bd86-cb0d79e6bfbc",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "b2a3ee6c-b9db-4253-8664-6dd113bd7c97",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6971",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "31494442-cb45-4165-8aae-57b5085ddc2c",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov18",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov18_S14_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov18_S14_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "1aaec62c-8129-430a-a9ea-9e332d9fe764",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "e07a47c3-b17b-4e18-9ad7-bd5982da6d4d",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6975",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "b7b7db01-3b99-4181-a6fd-bf901d520143",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov19",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov19_S15_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov19_S15_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "3a02d2c8-4cfa-4288-93a1-f36ed9b1ebfd",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "71fb082f-e66f-4caa-9f0b-0f97e5b59a3e",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6992",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "4c16309b-283d-4c12-8529-058cb5252dca",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov20",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov20_S16_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov20_S16_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "2c34778e-3ebd-4bcb-869c-9dbc4c5e0c73",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "ee7bdb1f-6313-4def-96b7-4553ffab7be1",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6998",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "bc3e666a-63e9-4ede-8843-ae5f6b780876",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov21",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov21_S17_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov21_S17_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "a9015f6e-8b25-4285-8669-359258b3cb95",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "d4030028-5a2b-4f77-9297-1b8cd7af18bb",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "7028",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "2bcaec19-ac20-446b-a466-dc963089ec13",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov22",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov22_S18_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov22_S18_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "d3c7e06c-2ba5-40ab-82d0-5f1bced5e1a6",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "9a53ccef-39d4-41d4-b0f4-207f62234b93",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "7047",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "776b2603-83f4-495c-a941-027f9fa59791",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov23",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov23_S19_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov23_S19_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "e018df35-39aa-44ac-8789-49d2f790be64",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "6ce4e296-eecb-4484-982f-3a2d140220d4",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "7094",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "f64dfec0-6461-48f6-842a-16cba9d37b83",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov24",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov24_S20_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov24_S20_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "91c218fd-a8f4-4e6e-bf9b-654708b09d21",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "2b3172b4-0dd6-4614-ae1d-82ae746a9bed",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6126",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "e61d2412-aa22-457d-9d11-6ed822239ba8",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov25",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov25_S21_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov25_S21_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "6873c859-0ab8-4553-b5a5-0a2eed68c36a",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "b615c148-32bc-4713-95b0-1c6d3be31b36",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6167",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "ebfce315-33ca-4aa3-b2b1-70dee0e82fe1",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov26",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov26_S22_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov26_S22_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "cb068d6a-c98d-4a2a-8dad-4e9d5fbf0dbb",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "b17d9652-86e7-469b-b541-a184fe2c1181",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6481",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "c4aa59d6-8884-4ad3-b78d-587e629c505c",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov27",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov27_S23_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov27_S23_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "55e2e39d-1293-4e89-914e-1db73dfa47ae",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "ee28bcc4-17d8-414b-92c5-69d37fb02fb0",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "6705",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "cadf6ef5-58db-4844-a845-596aeaaa9ddf",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov28",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov28_S24_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov28_S24_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "d4e47a25-1ff6-4e64-b6a6-fa68d9c58bcb",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "0509e029-968b-4415-9086-a777e49e3907",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "7062",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "2e4b1a9d-7543-4fa0-9be6-f0554cc90908",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov29",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov29_S25_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov29_S25_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "666fd1ee-6b5e-46d8-ba96-a72ae462446f",
+            "version": "2.3"
+          }
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    },
+    {
+      "repertoire_id": "52f5be49-4603-4b3f-91b6-761a1deee019",
+      "repertoire_name": null,
+      "repertoire_description": null,
+      "study": {
+        "study_id": "",
+        "study_title": "Ovarian (Library 37)",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "study_description": "New ovarian samples.",
+        "inclusion_exclusion_criteria": "",
+        "grants": "",
+        "study_contact": null,
+        "collected_by": "",
+        "lab_name": "Cowell Lab/Lindsay G. Cowell",
+        "lab_address": "",
+        "submitted_by": "",
+        "pub_ids": "",
+        "keywords_study": [
+          "contains_tr"
+        ],
+        "adc_publish_date": null,
+        "adc_update_date": null,
+        "vdjserver": {
+          "vdjserver_uuid": "793cbc9c-cd58-491a-82f8-8bfc6572ea0d",
+          "version": null,
+          "owner": null,
+          "keywords": null
+        }
+      },
+      "subject": {
+        "subject_id": "7076",
+        "synthetic": false,
+        "species": {
+          "id": null,
+          "label": null
+        },
+        "sex": "female",
+        "age_min": null,
+        "age_max": null,
+        "age_unit": {
+          "id": null,
+          "label": null
+        },
+        "age_event": null,
+        "ancestry_population": null,
+        "ethnicity": null,
+        "race": null,
+        "strain_name": null,
+        "linked_subjects": null,
+        "link_type": null,
+        "diagnosis": [
+          {
+            "study_group_description": null,
+            "disease_diagnosis": {
+              "id": null,
+              "label": null
+            },
+            "disease_length": null,
+            "disease_stage": null,
+            "prior_therapies": null,
+            "immunogen": null,
+            "intervention": null,
+            "medical_history": null
+          }
+        ],
+        "genotype": null,
+        "vdjserver": {
+          "vdjserver_uuid": "752a1d2d-2b78-4575-8c6a-4930687f26ce",
+          "version": "2.3"
+        }
+      },
+      "sample": [
+        {
+          "sample_processing_id": null,
+          "sample_id": "ov30",
+          "sample_type": null,
+          "tissue": {
+            "id": "UBERON:0000178",
+            "label": "blood"
+          },
+          "anatomic_site": null,
+          "disease_state_sample": null,
+          "collection_time_point_relative": null,
+          "collection_time_point_relative_unit": {
+            "id": null,
+            "label": null
+          },
+          "collection_time_point_reference": null,
+          "biomaterial_provider": null,
+          "tissue_processing": null,
+          "cell_subset": {
+            "id": null,
+            "label": null
+          },
+          "cell_phenotype": null,
+          "cell_species": {
+            "id": null,
+            "label": null
+          },
+          "single_cell": false,
+          "cell_number": null,
+          "cells_per_reaction": null,
+          "cell_storage": null,
+          "cell_quality": null,
+          "cell_isolation": null,
+          "cell_processing_protocol": null,
+          "template_class": "DNA",
+          "template_quality": null,
+          "template_amount": null,
+          "template_amount_unit": {
+            "id": null,
+            "label": null
+          },
+          "library_generation_method": "PCR",
+          "library_generation_protocol": null,
+          "library_generation_kit_version": null,
+          "pcr_target": [
+            {
+              "pcr_target_locus": null,
+              "forward_pcr_primer_target_location": null,
+              "reverse_pcr_primer_target_location": null
+            }
+          ],
+          "complete_sequences": "partial",
+          "physical_linkage": "none",
+          "sequencing_run_id": "library_37",
+          "total_reads_passing_qc_filter": null,
+          "sequencing_platform": null,
+          "sequencing_facility": null,
+          "sequencing_run_date": null,
+          "sequencing_kit": null,
+          "sequencing_files": {
+            "sequencing_data_id": null,
+            "file_type": "fastq",
+            "filename": "ov30_S26_L001_R1_001.fastq.gz",
+            "read_direction": "forward",
+            "read_length": null,
+            "paired_filename": "ov30_S26_L001_R2_001.fastq.gz",
+            "paired_read_direction": "reverse",
+            "paired_read_length": null,
+            "index_filename": null,
+            "index_length": null
+          },
+          "vdjserver": {
+            "vdjserver_uuid": "0fc53d85-28d0-4274-b51b-ece462e447de",
+            "version": "2.3"
+          },
+          "tanzira_test": {
+            "vdjserver_uuid": "0fc53d85-28d0-4274-b51b-ece462e447de",
+            "version": "2.3"
+          }
+         
+        }
+      ],
+      "data_processing": [
+        {
+          "data_processing_id": null,
+          "primary_annotation": false,
+          "software_versions": null,
+          "paired_reads_assembly": null,
+          "quality_thresholds": null,
+          "primer_match_cutoffs": null,
+          "collapsing_method": null,
+          "data_processing_protocols": null,
+          "data_processing_files": null,
+          "germline_database": null,
+          "germline_set_ref": null,
+          "analysis_provenance_id": null
+        }
+      ]
+    }
+  ]
+}

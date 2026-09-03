@@ -82,6 +82,8 @@ help: status
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo "make deploy -- deploys site"
 	@echo ""
+	@echo "make repertoire-load-test -- Test loading/validating repertoire file"
+	@echo ""
 
 status: check-config
 	@echo "Project: $(SCHEMA_NAME)"
@@ -253,6 +255,13 @@ git-status:
 .cruft.json:
 	echo "creating a stub for .cruft.json. IMPORTANT: setup via cruft not cookiecutter recommended!" ; \
 	touch $@
+
+
+# Add test if you can load a repertoire
+# Currently very manual.
+repertoire-load-test:
+	python src/scripts/airr2akc/repertoire_validator.py 
+
 
 clean:
 	rm -rf $(DEST)

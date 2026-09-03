@@ -10,46 +10,67 @@ classes:
     class_uri: UBERON:0002405 # immune system
 
   Chain:
+    abstract: true
     is_a: AKObject
     slots:
       - species
-      - aa_hash
-      - junction_aa_vj_allele_hash
-      - junction_aa_vj_gene_hash
       - complete_vdj
       - sequence
+      - infer_vdj_sequence
+      - hash_infer_vdj_sequence
       - sequence_aa
+      - infer_vdj_sequence_aa
+      - hash_infer_vdj_sequence_aa
       - locus
       - v_call
+      - v_gene
+      - v_subgroup
       - d_call
       - j_call
+      - j_gene
+      - j_subgroup
       - c_call
       - junction_aa
       - cdr1_aa
       - cdr2_aa
       - cdr3_aa
-      - cdr1_start
-      - cdr1_end
-      - cdr2_start
-      - cdr2_end
-      - cdr3_start
-      - cdr3_end
     slot_usage:
       sequence_aa:
         pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
       junction_aa:
-        pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$"
+        pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+$"
+
+  AlphaChain:
+    is_a: Chain
+
+  BetaChain:
+    is_a: Chain
+
+  DeltaChain:
+    is_a: Chain
+
+  GammaChain:
+    is_a: Chain
+
+  HeavyChain:
+    is_a: Chain
+
+  KappaChain:
+    is_a: Chain
+
+  LambdaChain:
+    is_a: Chain
 
   ImmuneReceptor:
     abstract: true
     is_a: AKObject
+    slots:
+      - species
 
   TCellReceptor:
     abstract: true
     is_a: ImmuneReceptor
     class_uri: GO:0042101
-    slots:
-      - type
 
   AlphaBetaTCR:
     is_a: TCellReceptor
@@ -72,40 +93,82 @@ classes:
       - igk_chain
       - igl_chain
 
-  Antigen:
-    is_a: NamedThing
-    class_uri: OBI:1110034 # antigen
-    slots:
-      - source_protein
-      - source_organism
-
   Epitope:
-    is_a: NamedThing
+    is_a: AKObject
+    class_uri: OBI:1110001 # epitope
     slots:
-      - type
+      - epitope_ref # IEDB (or other source) CURIE
 
   PeptidicEpitope:
     is_a: Epitope
     slots:
       - sequence_aa
-      - source_protein
-      - source_organism
+      - modifications
     slot_usage:
       sequence_aa:
-        pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
+        pattern: '^[ACDEFGHIKLMNPQRSTVWY]+$'
+
+  DiscontinuousEpitope:
+    is_a: Epitope
+    slots:
+      - positional_residues
+    slot_usage:
+      positional_residues:
+        pattern: '^([ACDEFGHIKLMNPQRSTVWY]\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\d{1,}$'
+
+  NonPeptidicEpitope:
+    is_a: Epitope
+    slots:
+      - epitope_name
+
+  Antigen:
+    is_a: AKObject
+    class_uri: OBI:1110034 # antigen
+    slots:
+      - source_molecule
+      - source_species
+      - epitope
+
+  MajorHistocompatibilityComplex:
+    is_a: AKObject
+    class_uri: GO:0042611 # MHC protein complex
+    slots:
+      - mhc_ref # MRO CURIE
+      - mhc_class
+      - mhc_label
 
   AntibodyAntigenComplex:
-    is_a: NamedThing
+    abstract: true
+    is_a: AKObject
     class_uri: OBI:0003119
     slots:
+      - species
       - antibody
       - antigen
 
   TCRpMHCComplex:
+    abstract: true
     is_a: AKObject
     class_uri: OBI:0003119
     slots:
-      - tcr
+      - species
+      - ab_tcr
+      - gd_tcr
+      - antigen
+      - mhc
+
+  # class for database optimization
+  ReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - AlphaBetaTCR
+      - GammaDeltaTCR
+      - BCellReceptor
+    slots:
+      - species
+      - tcr_complex
+      - antibody_complex
+      - antigen
       - epitope
       - mhc
 
@@ -132,6 +195,46 @@ slots:
     description: Nucleotide sequence.
     range: string
 
+  infer_vdj_sequence:
+    name: infer_vdj_sequence
+    description: Inferred complete VDJ nucleotide sequence.
+    range: string
+
+  hash_infer_vdj_sequence:
+    name: hash_infer_vdj_sequence
+    description: Hash of the inferred complete VDJ nucleotide sequence.
+    range: uriorcurie
+
+  infer_vdj_sequence_aa:
+    name: infer_vdj_sequence_aa
+    description: Translation of inferred complete VDJ nucleotide sequence.
+    range: string
+
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+    range: uriorcurie
+
+  v_gene:
+    name: v_gene
+    description: V gene designation for the chain
+    range: string
+
+  v_subgroup:
+    name: v_subgroup
+    description: V gene subgroup/family designation for the chain
+    range: string
+
+  j_gene:
+    name: j_gene
+    description: J gene designation for the chain
+    range: string
+
+  j_subgroup:
+    name: j_subgroup
+    description: J gene subgroup/family designation for the chain
+    range: string
+
   isotype:
     name: isotype
     description: The isotype of the chain
@@ -139,37 +242,45 @@ slots:
 
   igh_chain:
     description: IG heavy chain
-    range: Chain
+    range: uriorcurie
 
   igl_chain:
     description: IG lambda light chain
-    range: Chain
+    range: uriorcurie
 
   igk_chain:
     description: IG kappa light chain
-    range: Chain
+    range: uriorcurie
 
   tra_chain:
     description: T cell receptor alpha chain
-    range: Chain
+    range: uriorcurie
 
   trb_chain:
     description: T cell receptor beta chain
-    range: Chain
+    range: uriorcurie
 
   trd_chain:
     description: T cell receptor delta chain
-    range: Chain
+    range: uriorcurie
 
   trg_chain:
     description: T cell receptor gamma chain
-    range: Chain
+    range: uriorcurie
 
-  source_protein:
-    description: The protein that this epitope comes from
+  ab_tcr:
+    description: alpha/beta T cell receptor
+    range: AlphaBetaTCR
 
-  source_organism:
-    description: The organism that the source protein comes from
+  gd_tcr:
+    description: gamma/delta T cell receptor
+    range: GammaDeltaTCR
+
+  source_molecule:
+    description: The protein or other molecule that this antigen represents
+
+  source_species:
+    description: The species that the source molecule comes from
     range: TaxonomicSpecies
 
   antibody:
@@ -180,10 +291,46 @@ slots:
     description: A material entity with antigen role
     range: Antigen
 
-  tcr:
-    description: T cell receptor
-    range: TCellReceptor
+  epitope:
+    description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+    range: Epitope
+
+  epitope_ref:
+    description: CURIE identifiers for external epitope records
+    range: uriorcurie
+
+  positional_residues:
+    description: Numbered amino acid residues of a conformational epitope
+    range: string
+
+  modifications:
+    description: Post-translational modifications to the epitope peptide sequence
+    range: string
 
   mhc:
     description: Major histocompatibility complex
-    range: MHCAllele
+    range: MajorHistocompatibilityComplex
+
+  mhc_ref:
+    description: MHC Restriction Ontology term id
+    range: MHCRestriction
+
+  epitope_name:
+    description: Name of the non-peptidic epitope
+    range: string
+
+  mhc_label:
+    description: Human-readable label of the major histocompatibility complex
+    range: string
+
+  mhc_class:
+    description: Class of the major histocompatibility complex
+    range: MhcClassEnum # from AIRR
+
+  tcr_complex:
+    description: TCR complex
+    range: TCRpMHCComplex
+
+  antibody_complex:
+    description: Antibody antigen complex
+    range: AntibodyAntigenComplex

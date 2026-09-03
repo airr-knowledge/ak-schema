@@ -71,6 +71,54 @@
                         "null"
                     ]
                 },
+                "alpha_chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/AlphaChain__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "antibody_complexes": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/AntibodyAntigenComplex__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "antigens": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Antigen__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "assays": {
                     "additionalProperties": {
                         "anyOf": [
@@ -135,11 +183,11 @@
                         "null"
                     ]
                 },
-                "chains": {
+                "beta_chains": {
                     "additionalProperties": {
                         "anyOf": [
                             {
-                                "$ref": "#/$defs/Chain__identifier_optional"
+                                "$ref": "#/$defs/BetaChain__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -183,18 +231,47 @@
                         "null"
                     ]
                 },
+                "delta_chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/DeltaChain__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "epitopes": {
                     "additionalProperties": {
                         "anyOf": [
                             {
-                                "anyOf": [
-                                    {
-                                        "$ref": "#/$defs/Epitope__identifier_optional"
-                                    },
-                                    {
-                                        "$ref": "#/$defs/PeptidicEpitope__identifier_optional"
-                                    }
-                                ]
+                                "$ref": "#/$defs/Epitope__identifier_optional"
+                            },
+                            {
+                                "description": "CURIE identifiers for external epitope records",
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "gamma_chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/GammaChain__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -211,6 +288,22 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "heavy_chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/HeavyChain__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -263,6 +356,38 @@
                         "null"
                     ]
                 },
+                "kappa_chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/KappaChain__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "lambda_chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/LambdaChain__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "life_events": {
                     "additionalProperties": {
                         "anyOf": [
@@ -294,6 +419,22 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/Participant__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/ReceptorComposite__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -505,6 +646,16 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complexes": {
+                    "description": "The antibody-antigen complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "assay_type": {
                     "$ref": "#/$defs/AssayTypeOntology",
                     "description": "The specific type of an assay"
@@ -527,6 +678,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -637,6 +798,16 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complexes": {
+                    "description": "The antibody-antigen complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "assay_type": {
                     "$ref": "#/$defs/AssayTypeOntology",
                     "description": "The specific type of an assay"
@@ -659,6 +830,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -1590,6 +1771,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
@@ -1599,15 +1784,6 @@
                 },
                 "trb_chain": {
                     "description": "T cell receptor beta chain",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "AlphaBetaTCR"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -1628,6 +1804,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
@@ -1641,11 +1821,308 @@
                         "string",
                         "null"
                     ]
+                }
+            },
+            "required": [],
+            "title": "AlphaBetaTCR",
+            "type": "object"
+        },
+        "AlphaChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
                 },
-                "type": {
-                    "enum": [
-                        "AlphaBetaTCR"
-                    ],
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AlphaChain",
+            "type": "object"
+        },
+        "AlphaChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -1653,7 +2130,7 @@
                 }
             },
             "required": [],
-            "title": "AlphaBetaTCR",
+            "title": "AlphaChain",
             "type": "object"
         },
         "AntibodyAntigenBindingAssay": {
@@ -1663,6 +2140,16 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "antibody_complexes": {
+                    "description": "The antibody-antigen complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "assay_type": {
                     "$ref": "#/$defs/AssayTypeOntology",
@@ -1686,6 +2173,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -1730,6 +2227,16 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complexes": {
+                    "description": "The antibody-antigen complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "assay_type": {
                     "$ref": "#/$defs/AssayTypeOntology",
                     "description": "The specific type of an assay"
@@ -1752,6 +2259,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -1786,49 +2303,6 @@
             "title": "AntibodyAntigenBindingAssay",
             "type": "object"
         },
-        "AntibodyAntigenComplex": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "antibody": {
-                    "description": "B cell receptor, immunoglobulin antibody",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "antigen": {
-                    "description": "A material entity with antigen role",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "AntibodyAntigenComplex",
-            "type": "object"
-        },
         "Antigen": {
             "additionalProperties": false,
             "description": "",
@@ -1837,29 +2311,22 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "source_molecule": {
+                    "description": "The protein or other molecule that this antigen represents",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "source_organism": {
-                    "description": "The organism that the source protein comes from",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "source_protein": {
-                    "description": "The protein that this epitope comes from",
+                "source_species": {
+                    "description": "The species that the source molecule comes from",
                     "type": [
                         "string",
                         "null"
@@ -1886,6 +2353,40 @@
             ],
             "title": "AntigenTypeEnum",
             "type": "string"
+        },
+        "Antigen__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_molecule": {
+                    "description": "The protein or other molecule that this antigen represents",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_species": {
+                    "description": "The species that the source molecule comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "Antigen",
+            "type": "object"
         },
         "Assay": {
             "additionalProperties": false,
@@ -2170,6 +2671,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 }
             },
             "required": [
@@ -2206,10 +2711,320 @@
                         "string",
                         "null"
                     ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 }
             },
             "required": [],
             "title": "BCellReceptor",
+            "type": "object"
+        },
+        "BetaChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "BetaChain",
+            "type": "object"
+        },
+        "BetaChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "BetaChain",
             "type": "object"
         },
         "BiologicalSexOntology": {
@@ -2619,159 +3434,6 @@
             "title": "Cells",
             "type": "object"
         },
-        "Chain": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "c_call": {
-                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr1_aa": {
-                    "description": "Amino acid translation of the cdr1 field.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr1_end": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr1_start": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr2_aa": {
-                    "description": "Amino acid translation of the cdr2 field.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr2_end": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr2_start": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr3_aa": {
-                    "description": "Amino acid translation of the cdr3 field.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr3_end": {
-                    "description": "CDR3 end position in the query sequence (1-based closed interval).",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr3_start": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "complete_vdj": {
-                    "description": "Complete VDJ flag.",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
-                },
-                "d_call": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "j_call": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa": {
-                    "description": "Amino acid translation of the junction.",
-                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "locus": {
-                    "$ref": "#/$defs/LocusEnum"
-                },
-                "sequence": {
-                    "description": "Nucleotide sequence.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "sequence_aa": {
-                    "description": "Amino acid translation of the query nucleotide sequence.",
-                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "species": {
-                    "$ref": "#/$defs/SpeciesOntology",
-                    "description": "Binomial designation of subject's species"
-                },
-                "v_call": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "Chain",
-            "type": "object"
-        },
         "ChainSimilarity": {
             "additionalProperties": false,
             "description": "",
@@ -2816,157 +3478,6 @@
             ],
             "title": "ChainSimilarityTypeEnum",
             "type": "string"
-        },
-        "Chain__identifier_optional": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "c_call": {
-                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr1_aa": {
-                    "description": "Amino acid translation of the cdr1 field.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr1_end": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr1_start": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr2_aa": {
-                    "description": "Amino acid translation of the cdr2 field.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr2_end": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr2_start": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr3_aa": {
-                    "description": "Amino acid translation of the cdr3 field.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "cdr3_end": {
-                    "description": "CDR3 end position in the query sequence (1-based closed interval).",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "cdr3_start": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "complete_vdj": {
-                    "description": "Complete VDJ flag.",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
-                },
-                "d_call": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "j_call": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa": {
-                    "description": "Amino acid translation of the junction.",
-                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "locus": {
-                    "$ref": "#/$defs/LocusEnum"
-                },
-                "sequence": {
-                    "description": "Nucleotide sequence.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "sequence_aa": {
-                    "description": "Amino acid translation of the query nucleotide sequence.",
-                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "species": {
-                    "$ref": "#/$defs/SpeciesOntology",
-                    "description": "Binomial designation of subject's species"
-                },
-                "v_call": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
-            "title": "Chain",
-            "type": "object"
         },
         "Clone": {
             "additionalProperties": false,
@@ -3586,6 +4097,312 @@
             "title": "DeletedGene",
             "type": "object"
         },
+        "DeltaChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "DeltaChain",
+            "type": "object"
+        },
+        "DeltaChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "DeltaChain",
+            "type": "object"
+        },
         "DerivationEnum": {
             "description": "",
             "enum": [
@@ -3654,6 +4471,36 @@
                 }
             },
             "title": "Diagnosis",
+            "type": "object"
+        },
+        "DiscontinuousEpitope": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "positional_residues": {
+                    "description": "Numbered amino acid residues of a conformational epitope",
+                    "pattern": "^([ACDEFGHIKLMNPQRSTVWY]\\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\\d{1,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "DiscontinuousEpitope",
             "type": "object"
         },
         "DiseaseDiagnosisOntology": {
@@ -3740,24 +4587,8 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "Epitope"
-                    ],
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
                     "type": [
                         "string",
                         "null"
@@ -3778,24 +4609,8 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "Epitope"
-                    ],
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
                     "type": [
                         "string",
                         "null"
@@ -3861,6 +4676,312 @@
             "title": "FileTypeEnum",
             "type": "string"
         },
+        "GammaChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "GammaChain",
+            "type": "object"
+        },
+        "GammaChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "GammaChain",
+            "type": "object"
+        },
         "GammaDeltaTCR": {
             "additionalProperties": false,
             "description": "",
@@ -3868,6 +4989,10 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 },
                 "trd_chain": {
                     "description": "T cell receptor delta chain",
@@ -3878,15 +5003,6 @@
                 },
                 "trg_chain": {
                     "description": "T cell receptor gamma chain",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "GammaDeltaTCR"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -3907,6 +5023,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
@@ -3916,15 +5036,6 @@
                 },
                 "trg_chain": {
                     "description": "T cell receptor gamma chain",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "GammaDeltaTCR"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -4165,6 +5276,312 @@
                 }
             },
             "title": "GermlineSet",
+            "type": "object"
+        },
+        "HeavyChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "HeavyChain",
+            "type": "object"
+        },
+        "HeavyChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "HeavyChain",
             "type": "object"
         },
         "ImmuneExposure": {
@@ -4679,6 +6096,312 @@
             "title": "JCodonFrameEnum",
             "type": "string"
         },
+        "KappaChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "KappaChain",
+            "type": "object"
+        },
+        "KappaChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "KappaChain",
+            "type": "object"
+        },
         "KeywordsStudyEnum": {
             "description": "",
             "enum": [
@@ -4692,6 +6415,312 @@
             ],
             "title": "KeywordsStudyEnum",
             "type": "string"
+        },
+        "LambdaChain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "LambdaChain",
+            "type": "object"
+        },
+        "LambdaChain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "LambdaChain",
+            "type": "object"
         },
         "LibraryGenerationMethodEnum": {
             "description": "",
@@ -5052,7 +7081,8 @@
                     ]
                 },
                 "mhc_class": {
-                    "$ref": "#/$defs/MhcClassEnum"
+                    "$ref": "#/$defs/MhcClassEnum",
+                    "description": "Class of the major histocompatibility complex"
                 },
                 "mhc_genotype_id": {
                     "description": "A unique identifier for this MHCGenotype, assumed to be unique in the context of the study",
@@ -5095,6 +7125,76 @@
                 }
             },
             "title": "MHCGenotypeSet",
+            "type": "object"
+        },
+        "MHCRestriction": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "MHCRestriction",
+            "type": "object"
+        },
+        "MHCRestrictionOntology": {
+            "description": "",
+            "title": "MHCRestrictionOntology",
+            "type": "string"
+        },
+        "MajorHistocompatibilityComplex": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "mhc_class": {
+                    "$ref": "#/$defs/MhcClassEnum",
+                    "description": "Class of the major histocompatibility complex"
+                },
+                "mhc_label": {
+                    "description": "Human-readable label of the major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc_ref": {
+                    "description": "MHC Restriction Ontology term id",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "MajorHistocompatibilityComplex",
             "type": "object"
         },
         "MeasurementUnitOntology": {
@@ -5211,6 +7311,35 @@
                 }
             },
             "title": "Node",
+            "type": "object"
+        },
+        "NonPeptidicEpitope": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "epitope_name": {
+                    "description": "Name of the non-peptidic epitope",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "NonPeptidicEpitope",
             "type": "object"
         },
         "NucleicAcidProcessing": {
@@ -5368,6 +7497,16 @@
                     "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
+                "life_events": {
+                    "description": "The life events for a participant",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -5458,6 +7597,16 @@
                     "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
+                "life_events": {
+                    "description": "The life events for a participant",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -5525,15 +7674,15 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "modifications": {
+                    "description": "Post-translational modifications to the epitope peptide sequence",
                     "type": [
                         "string",
                         "null"
@@ -5542,29 +7691,6 @@
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
                     "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "source_organism": {
-                    "description": "The organism that the source protein comes from",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "source_protein": {
-                    "description": "The protein that this epitope comes from",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "PeptidicEpitope"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -5574,64 +7700,6 @@
             "required": [
                 "akc_id"
             ],
-            "title": "PeptidicEpitope",
-            "type": "object"
-        },
-        "PeptidicEpitope__identifier_optional": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "sequence_aa": {
-                    "description": "Amino acid translation of the query nucleotide sequence.",
-                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "source_organism": {
-                    "description": "The organism that the source protein comes from",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "source_protein": {
-                    "description": "The protein that this epitope comes from",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "PeptidicEpitope"
-                    ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
             "title": "PeptidicEpitope",
             "type": "object"
         },
@@ -5686,6 +7754,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "tra_chain": {
                     "anyOf": [
                         {
@@ -5704,15 +7776,6 @@
                         {
                             "type": "null"
                         }
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "QueryAlphaBetaTCR"
-                    ],
-                    "type": [
-                        "string",
-                        "null"
                     ]
                 }
             },
@@ -5976,9 +8039,6 @@
                             "$ref": "#/$defs/Epitope"
                         },
                         {
-                            "$ref": "#/$defs/PeptidicEpitope"
-                        },
-                        {
                             "type": "null"
                         }
                     ]
@@ -5992,13 +8052,7 @@
                 "receptor": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/AlphaBetaTCR"
-                        },
-                        {
-                            "$ref": "#/$defs/GammaDeltaTCR"
-                        },
-                        {
-                            "$ref": "#/$defs/QueryAlphaBetaTCR"
+                            "$ref": "#/$defs/TCellReceptor"
                         },
                         {
                             "type": "null"
@@ -7320,6 +9374,210 @@
             "title": "Receptor",
             "type": "object"
         },
+        "ReceptorComposite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "ReceptorComposite",
+            "type": "object"
+        },
+        "ReceptorComposite__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "ReceptorComposite",
+            "type": "object"
+        },
         "ReceptorReactivity": {
             "additionalProperties": false,
             "description": "",
@@ -7358,7 +9616,8 @@
                     ]
                 },
                 "mhc_class": {
-                    "$ref": "#/$defs/MhcClassEnum"
+                    "$ref": "#/$defs/MhcClassEnum",
+                    "description": "Class of the major histocompatibility complex"
                 },
                 "mhc_gene_1": {
                     "$ref": "#/$defs/MhcGene1Ontology",
@@ -9261,76 +11520,6 @@
             "title": "SubjectGenotype",
             "type": "object"
         },
-        "TCRpMHCComplex": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "epitope": {
-                    "description": "The epitope being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "mhc": {
-                    "description": "Major histocompatibility complex",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "tcr": {
-                    "description": "T cell receptor",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "TCRpMHCComplex",
-            "type": "object"
-        },
-        "TCRpMHCComplex__identifier_optional": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "epitope": {
-                    "description": "The epitope being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "mhc": {
-                    "description": "Major histocompatibility complex",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "tcr": {
-                    "description": "T cell receptor",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
-            "title": "TCRpMHCComplex",
-            "type": "object"
-        },
         "TCellReceptorEpitopeBindingAssay": {
             "additionalProperties": false,
             "description": "",
@@ -9350,13 +11539,6 @@
                         "null"
                     ]
                 },
-                "epitope": {
-                    "description": "The epitope being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "has_specified_output": {
                     "description": "output data item",
                     "type": [
@@ -9368,10 +11550,27 @@
                     "$ref": "#/$defs/CategoricalSpecificityEnum",
                     "description": "The measurement result category"
                 },
+                "mhc_evidence": {
+                    "description": "Evidence code for MHC restriction",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -9437,13 +11636,6 @@
                         "null"
                     ]
                 },
-                "epitope": {
-                    "description": "The epitope being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "has_specified_output": {
                     "description": "output data item",
                     "type": [
@@ -9455,10 +11647,27 @@
                     "$ref": "#/$defs/CategoricalSpecificityEnum",
                     "description": "The measurement result category"
                 },
+                "mhc_evidence": {
+                    "description": "Evidence code for MHC restriction",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -9816,6 +12025,54 @@
                 "null"
             ]
         },
+        "alpha_chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/AlphaChain__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "antibody_complexes": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/AntibodyAntigenComplex__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "antigens": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Antigen__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
         "assays": {
             "additionalProperties": {
                 "anyOf": [
@@ -9880,11 +12137,11 @@
                 "null"
             ]
         },
-        "chains": {
+        "beta_chains": {
             "additionalProperties": {
                 "anyOf": [
                     {
-                        "$ref": "#/$defs/Chain__identifier_optional"
+                        "$ref": "#/$defs/BetaChain__identifier_optional"
                     },
                     {
                         "type": "null"
@@ -9928,18 +12185,47 @@
                 "null"
             ]
         },
+        "delta_chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/DeltaChain__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
         "epitopes": {
             "additionalProperties": {
                 "anyOf": [
                     {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Epitope__identifier_optional"
-                            },
-                            {
-                                "$ref": "#/$defs/PeptidicEpitope__identifier_optional"
-                            }
-                        ]
+                        "$ref": "#/$defs/Epitope__identifier_optional"
+                    },
+                    {
+                        "description": "CURIE identifiers for external epitope records",
+                        "type": "string"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "gamma_chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/GammaChain__identifier_optional"
                     },
                     {
                         "type": "null"
@@ -9956,6 +12242,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "heavy_chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/HeavyChain__identifier_optional"
                     },
                     {
                         "type": "null"
@@ -10008,6 +12310,38 @@
                 "null"
             ]
         },
+        "kappa_chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/KappaChain__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "lambda_chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/LambdaChain__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
         "life_events": {
             "additionalProperties": {
                 "anyOf": [
@@ -10039,6 +12373,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Participant__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "receptor_composites": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/ReceptorComposite__identifier_optional"
                     },
                     {
                         "type": "null"

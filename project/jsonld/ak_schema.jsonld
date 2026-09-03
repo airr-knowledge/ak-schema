@@ -113,20 +113,8 @@
       "prefix_reference": "http://www.uniprot.org/uniprot/"
     },
     {
-      "prefix_prefix": "iedb_reference",
-      "prefix_reference": "http://www.iedb.org/reference/"
-    },
-    {
-      "prefix_prefix": "iedb_epitope",
+      "prefix_prefix": "IEDB_EPITOPE",
       "prefix_reference": "http://www.iedb.org/epitope/"
-    },
-    {
-      "prefix_prefix": "iedb_assay",
-      "prefix_reference": "http://www.iedb.org/assay/"
-    },
-    {
-      "prefix_prefix": "iedb_receptor",
-      "prefix_reference": "http://www.iedb.org/receptor/"
     },
     {
       "prefix_prefix": "example",
@@ -495,6 +483,20 @@
       "reachable_from": {
         "source_nodes": [
           "NCBITAXON:7776"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
+    },
+    {
+      "name": "MHCRestrictionOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MHCRestrictionOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "PR:000000001"
         ],
         "relationship_types": [
           "rdfs:subClassOf"
@@ -1963,13 +1965,11 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/type",
       "designates_type": true,
-      "owner": "Epitope",
+      "owner": "AKDataItem",
       "domain_of": [
         "LifeEvent",
         "Assay",
-        "AKDataItem",
-        "TCellReceptor",
-        "Epitope"
+        "AKDataItem"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2364,6 +2364,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "life_events",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
+      "description": "The life events for a participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "LifeEvent",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "study_arms",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_arms",
       "description": "The study arms that are relevant for a study event",
@@ -2611,17 +2625,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "epitope",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
-      "description": "The epitope being measured",
+      "name": "mhc_evidence",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_evidence",
+      "description": "Evidence code for MHC restriction",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
-      "owner": "TCRpMHCComplex",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_evidence",
+      "owner": "TCellReceptorEpitopeBindingAssay",
       "domain_of": [
-        "TCellReceptorEpitopeBindingAssay",
-        "TCRpMHCComplex"
+        "TCellReceptorEpitopeBindingAssay"
       ],
-      "range": "Epitope",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -2646,6 +2659,37 @@
         "TCellReceptorEpitopeBindingAssay"
       ],
       "range": "TCRpMHCComplex",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibody_complexes",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complexes",
+      "description": "The antibody-antigen complex being measured",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complexes",
+      "owner": "AntibodyAntigenBindingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay",
+        "AntibodyAntigenBindingAssay"
+      ],
+      "range": "AntibodyAntigenComplex",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "receptor_composites",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composites",
+      "description": "Composite object for database optimization",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composites",
+      "owner": "AntibodyAntigenBindingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay",
+        "TCellReceptorEpitopeBindingAssay",
+        "AntibodyAntigenBindingAssay"
+      ],
+      "range": "ReceptorComposite",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -2881,10 +2925,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/aa_hash",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/aa_hash",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2893,10 +2933,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_allele_hash",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_allele_hash",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2905,10 +2941,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_gene_hash",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_gene_hash",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2945,6 +2977,110 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "infer_vdj_sequence",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence",
+      "description": "Inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hash_infer_vdj_sequence",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence",
+      "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "infer_vdj_sequence_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence_aa",
+      "description": "Translation of inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence_aa",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hash_infer_vdj_sequence_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence_aa",
+      "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence_aa",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "v_gene",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/v_gene",
+      "description": "V gene designation for the chain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/v_gene",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "v_subgroup",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/v_subgroup",
+      "description": "V gene subgroup/family designation for the chain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/v_subgroup",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "j_gene",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/j_gene",
+      "description": "J gene designation for the chain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/j_gene",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "j_subgroup",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/j_subgroup",
+      "description": "J gene subgroup/family designation for the chain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/j_subgroup",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "isotype",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/isotype",
       "description": "The isotype of the chain",
@@ -2963,7 +3099,7 @@
       "domain_of": [
         "BCellReceptor"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -2976,7 +3112,7 @@
       "domain_of": [
         "BCellReceptor"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -2989,7 +3125,7 @@
       "domain_of": [
         "BCellReceptor"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3002,7 +3138,7 @@
       "domain_of": [
         "AlphaBetaTCR"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3015,7 +3151,7 @@
       "domain_of": [
         "AlphaBetaTCR"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3028,7 +3164,7 @@
       "domain_of": [
         "GammaDeltaTCR"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3041,33 +3177,57 @@
       "domain_of": [
         "GammaDeltaTCR"
       ],
-      "range": "Chain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
-      "name": "source_protein",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_protein",
-      "description": "The protein that this epitope comes from",
+      "name": "ab_tcr",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ab_tcr",
+      "description": "alpha/beta T cell receptor",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_protein",
-      "owner": "PeptidicEpitope",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ab_tcr",
+      "owner": "TCRpMHCComplex",
       "domain_of": [
-        "Antigen",
-        "PeptidicEpitope"
+        "TCRpMHCComplex"
+      ],
+      "range": "AlphaBetaTCR",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gd_tcr",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/gd_tcr",
+      "description": "gamma/delta T cell receptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/gd_tcr",
+      "owner": "TCRpMHCComplex",
+      "domain_of": [
+        "TCRpMHCComplex"
+      ],
+      "range": "GammaDeltaTCR",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source_molecule",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_molecule",
+      "description": "The protein or other molecule that this antigen represents",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_molecule",
+      "owner": "Antigen",
+      "domain_of": [
+        "Antigen"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "source_organism",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
-      "description": "The organism that the source protein comes from",
+      "name": "source_species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_species",
+      "description": "The species that the source molecule comes from",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
-      "owner": "PeptidicEpitope",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_species",
+      "owner": "Antigen",
       "domain_of": [
-        "Antigen",
-        "PeptidicEpitope"
+        "Antigen"
       ],
       "range": "TaxonomicSpecies",
       "@type": "SlotDefinition"
@@ -3094,22 +3254,64 @@
       "owner": "ReceptorReactivity",
       "domain_of": [
         "AntibodyAntigenComplex",
+        "TCRpMHCComplex",
+        "ReceptorComposite",
         "ReceptorReactivity"
       ],
       "range": "Antigen",
       "@type": "SlotDefinition"
     },
     {
-      "name": "tcr",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcr",
-      "description": "T cell receptor",
+      "name": "epitope",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
+      "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr",
-      "owner": "TCRpMHCComplex",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
+      "owner": "ReceptorComposite",
       "domain_of": [
-        "TCRpMHCComplex"
+        "Antigen",
+        "ReceptorComposite"
       ],
-      "range": "TCellReceptor",
+      "range": "Epitope",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "epitope_ref",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/epitope_ref",
+      "description": "CURIE identifiers for external epitope records",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope_ref",
+      "owner": "Epitope",
+      "domain_of": [
+        "Epitope"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "positional_residues",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/positional_residues",
+      "description": "Numbered amino acid residues of a conformational epitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/positional_residues",
+      "owner": "DiscontinuousEpitope",
+      "domain_of": [
+        "DiscontinuousEpitope"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "modifications",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/modifications",
+      "description": "Post-translational modifications to the epitope peptide sequence",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/modifications",
+      "owner": "PeptidicEpitope",
+      "domain_of": [
+        "PeptidicEpitope"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -3118,11 +3320,92 @@
       "description": "Major histocompatibility complex",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
-      "owner": "TCRpMHCComplex",
+      "owner": "ReceptorComposite",
       "domain_of": [
-        "TCRpMHCComplex"
+        "TCRpMHCComplex",
+        "ReceptorComposite"
       ],
-      "range": "MHCAllele",
+      "range": "MajorHistocompatibilityComplex",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mhc_ref",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_ref",
+      "description": "MHC Restriction Ontology term id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_ref",
+      "owner": "MajorHistocompatibilityComplex",
+      "domain_of": [
+        "MajorHistocompatibilityComplex"
+      ],
+      "range": "MHCRestriction",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "epitope_name",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/epitope_name",
+      "description": "Name of the non-peptidic epitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope_name",
+      "owner": "NonPeptidicEpitope",
+      "domain_of": [
+        "NonPeptidicEpitope"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mhc_label",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_label",
+      "description": "Human-readable label of the major histocompatibility complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_label",
+      "owner": "MajorHistocompatibilityComplex",
+      "domain_of": [
+        "MajorHistocompatibilityComplex"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mhc_class",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_class",
+      "description": "Class of the major histocompatibility complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_class",
+      "owner": "ReceptorReactivity",
+      "domain_of": [
+        "MajorHistocompatibilityComplex",
+        "MHCGenotype",
+        "ReceptorReactivity"
+      ],
+      "range": "MhcClassEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tcr_complex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complex",
+      "description": "TCR complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complex",
+      "owner": "ReceptorComposite",
+      "domain_of": [
+        "ReceptorComposite"
+      ],
+      "range": "TCRpMHCComplex",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibody_complex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complex",
+      "description": "Antibody antigen complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complex",
+      "owner": "ReceptorComposite",
+      "domain_of": [
+        "ReceptorComposite"
+      ],
+      "range": "AntibodyAntigenComplex",
       "@type": "SlotDefinition"
     },
     {
@@ -3715,7 +3998,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/cdr1_start",
       "owner": "Rearrangement",
       "domain_of": [
-        "Chain",
         "SequenceDelineationV",
         "Rearrangement"
       ],
@@ -3736,7 +4018,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/cdr1_end",
       "owner": "Rearrangement",
       "domain_of": [
-        "Chain",
         "SequenceDelineationV",
         "Rearrangement"
       ],
@@ -3797,7 +4078,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/cdr2_start",
       "owner": "Rearrangement",
       "domain_of": [
-        "Chain",
         "SequenceDelineationV",
         "Rearrangement"
       ],
@@ -3818,7 +4098,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/cdr2_end",
       "owner": "Rearrangement",
       "domain_of": [
-        "Chain",
         "SequenceDelineationV",
         "Rearrangement"
       ],
@@ -3879,7 +4158,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/cdr3_start",
       "owner": "Rearrangement",
       "domain_of": [
-        "Chain",
         "SequenceDelineationV",
         "Rearrangement"
       ],
@@ -4245,6 +4523,10 @@
       "domain_of": [
         "Participant",
         "Chain",
+        "ImmuneReceptor",
+        "AntibodyAntigenComplex",
+        "TCRpMHCComplex",
+        "ReceptorComposite",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -5298,19 +5580,6 @@
         "MHCGenotype"
       ],
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "mhc_class",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_class",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_class",
-      "owner": "ReceptorReactivity",
-      "domain_of": [
-        "MHCGenotype",
-        "ReceptorReactivity"
-      ],
-      "range": "MhcClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -9640,7 +9909,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/cdr3_end",
       "owner": "Rearrangement",
       "domain_of": [
-        "Chain",
         "Rearrangement"
       ],
       "range": "integer",
@@ -11605,15 +11873,29 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "aIRRKnowledgeCommons__chains",
+      "name": "aIRRKnowledgeCommons__alpha_chains",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/chains",
-      "alias": "chains",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/alpha_chains",
+      "alias": "alpha_chains",
       "owner": "AIRRKnowledgeCommons",
       "domain_of": [
         "AIRRKnowledgeCommons"
       ],
-      "range": "Chain",
+      "range": "AlphaChain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__beta_chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/beta_chains",
+      "alias": "beta_chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "BetaChain",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -11633,6 +11915,34 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__gamma_chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/gamma_chains",
+      "alias": "gamma_chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "GammaChain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__delta_chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/delta_chains",
+      "alias": "delta_chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "DeltaChain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__gd_tcell_receptors",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/gd_tcell_receptors",
@@ -11647,6 +11957,48 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__heavy_chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/heavy_chains",
+      "alias": "heavy_chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "HeavyChain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__kappa_chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/kappa_chains",
+      "alias": "kappa_chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "KappaChain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__lambda_chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/lambda_chains",
+      "alias": "lambda_chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "LambdaChain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__bcell_receptors",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/bcell_receptors",
@@ -11656,6 +12008,20 @@
         "AIRRKnowledgeCommons"
       ],
       "range": "BCellReceptor",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__antigens",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigens",
+      "alias": "antigens",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Antigen",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -11684,6 +12050,34 @@
         "AIRRKnowledgeCommons"
       ],
       "range": "TCRpMHCComplex",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__antibody_complexes",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complexes",
+      "alias": "antibody_complexes",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "AntibodyAntigenComplex",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composites",
+      "alias": "receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "ReceptorComposite",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -11944,6 +12338,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "MHCRestriction_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "MHCRestriction",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "MHCRestriction",
+      "domain_of": [
+        "MHCRestriction"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "MHCRestriction",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "TaxonomicSpecies_parent",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
       "description": "parent term ID for ontology term",
@@ -12147,7 +12560,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "junction_aa",
       "range": "string",
-      "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
+      "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
       "@type": "SlotDefinition"
     },
     {
@@ -12175,6 +12588,25 @@
       "usage_slot_name": "sequence_aa",
       "range": "string",
       "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DiscontinuousEpitope_positional_residues",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/positional_residues",
+      "description": "Numbered amino acid residues of a conformational epitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "positional_residues",
+      "domain": "DiscontinuousEpitope",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/positional_residues",
+      "alias": "positional_residues",
+      "owner": "DiscontinuousEpitope",
+      "domain_of": [
+        "DiscontinuousEpitope"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "positional_residues",
+      "range": "string",
+      "pattern": "^([ACDEFGHIKLMNPQRSTVWY]\\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\\d{1,}$",
       "@type": "SlotDefinition"
     },
     {
@@ -12431,6 +12863,20 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "MHCRestriction",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MHCRestriction",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_id",
+        "term_label",
+        "MHCRestriction_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/MHCRestriction",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "TaxonomicSpecies",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/TaxonomicSpecies",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12495,12 +12941,21 @@
         "aIRRKnowledgeCommons__transformations",
         "aIRRKnowledgeCommons__input_output_map",
         "aIRRKnowledgeCommons__conclusions",
-        "aIRRKnowledgeCommons__chains",
+        "aIRRKnowledgeCommons__alpha_chains",
+        "aIRRKnowledgeCommons__beta_chains",
         "aIRRKnowledgeCommons__ab_tcell_receptors",
+        "aIRRKnowledgeCommons__gamma_chains",
+        "aIRRKnowledgeCommons__delta_chains",
         "aIRRKnowledgeCommons__gd_tcell_receptors",
+        "aIRRKnowledgeCommons__heavy_chains",
+        "aIRRKnowledgeCommons__kappa_chains",
+        "aIRRKnowledgeCommons__lambda_chains",
         "aIRRKnowledgeCommons__bcell_receptors",
+        "aIRRKnowledgeCommons__antigens",
         "aIRRKnowledgeCommons__epitopes",
-        "aIRRKnowledgeCommons__tcr_complexes"
+        "aIRRKnowledgeCommons__tcr_complexes",
+        "aIRRKnowledgeCommons__antibody_complexes",
+        "aIRRKnowledgeCommons__receptor_composites"
       ],
       "slot_usage": {},
       "attributes": [
@@ -12641,9 +13096,17 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "chains",
+          "name": "alpha_chains",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
-          "range": "Chain",
+          "range": "AlphaChain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "beta_chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "BetaChain",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -12657,6 +13120,22 @@
           "@type": "SlotDefinition"
         },
         {
+          "name": "gamma_chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "GammaChain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "delta_chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "DeltaChain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
           "name": "gd_tcell_receptors",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "GammaDeltaTCR",
@@ -12665,9 +13144,41 @@
           "@type": "SlotDefinition"
         },
         {
+          "name": "heavy_chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "HeavyChain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "kappa_chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "KappaChain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "lambda_chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "LambdaChain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
           "name": "bcell_receptors",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "BCellReceptor",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "antigens",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Antigen",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -12684,6 +13195,22 @@
           "name": "tcr_complexes",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "TCRpMHCComplex",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "antibody_complexes",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "AntibodyAntigenComplex",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "ReceptorComposite",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -12787,7 +13314,8 @@
         "race",
         "ethnicity",
         "geolocation",
-        "strain"
+        "strain",
+        "life_events"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0100026",
@@ -13057,6 +13585,8 @@
         "has_specified_output",
         "repertoire_id",
         "tcr_complexes",
+        "antibody_complexes",
+        "receptor_composites",
         "AIRRSequencingAssay_sequencing_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
@@ -13089,8 +13619,9 @@
         "type",
         "assay_type",
         "has_specified_output",
-        "epitope",
         "tcr_complexes",
+        "mhc_evidence",
+        "receptor_composites",
         "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
       ],
       "slot_usage": {},
@@ -13113,7 +13644,9 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "has_specified_output"
+        "has_specified_output",
+        "antibody_complexes",
+        "receptor_composites"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0003127",
@@ -13412,33 +13945,264 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AKObject",
+      "abstract": true,
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
+        "v_gene",
+        "v_subgroup",
         "d_call",
         "j_call",
+        "j_gene",
+        "j_subgroup",
         "c_call",
         "Chain_junction_aa",
         "cdr1_aa",
         "cdr2_aa",
-        "cdr3_aa",
-        "cdr1_start",
-        "cdr1_end",
-        "cdr2_start",
-        "cdr2_end",
-        "cdr3_start",
-        "cdr3_end"
+        "cdr3_aa"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/Chain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlphaChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AlphaChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AlphaChain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BetaChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BetaChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/BetaChain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DeltaChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DeltaChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/DeltaChain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GammaChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/GammaChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/GammaChain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "HeavyChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/HeavyChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/HeavyChain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "KappaChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/KappaChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/KappaChain",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "LambdaChain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LambdaChain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Chain",
+      "slots": [
+        "akc_id",
+        "species",
+        "complete_vdj",
+        "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
+        "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
+        "locus",
+        "v_call",
+        "v_gene",
+        "v_subgroup",
+        "d_call",
+        "j_call",
+        "j_gene",
+        "j_subgroup",
+        "c_call",
+        "Chain_junction_aa",
+        "cdr1_aa",
+        "cdr2_aa",
+        "cdr3_aa"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/LambdaChain",
       "@type": "ClassDefinition"
     },
     {
@@ -13448,7 +14212,8 @@
       "is_a": "AKObject",
       "abstract": true,
       "slots": [
-        "akc_id"
+        "akc_id",
+        "species"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
@@ -13465,7 +14230,7 @@
       "abstract": true,
       "slots": [
         "akc_id",
-        "type"
+        "species"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042101",
@@ -13481,7 +14246,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "type",
+        "species",
         "tra_chain",
         "trb_chain"
       ],
@@ -13499,7 +14264,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "type",
+        "species",
         "trg_chain",
         "trd_chain"
       ],
@@ -13514,6 +14279,7 @@
       "is_a": "ImmuneReceptor",
       "slots": [
         "akc_id",
+        "species",
         "igh_chain",
         "igk_chain",
         "igl_chain"
@@ -13523,37 +14289,19 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "Antigen",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Antigen",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:1110034"
-      ],
-      "is_a": "NamedThing",
-      "slots": [
-        "akc_id",
-        "name",
-        "description",
-        "source_protein",
-        "source_organism"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_1110034",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "Epitope",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Epitope",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "NamedThing",
+      "mappings": [
+        "OBI:1110001"
+      ],
+      "is_a": "AKObject",
       "slots": [
         "akc_id",
-        "name",
-        "description",
-        "type"
+        "epitope_ref"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/Epitope",
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_1110001",
       "@type": "ClassDefinition"
     },
     {
@@ -13563,15 +14311,76 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
-        "name",
-        "description",
-        "type",
+        "epitope_ref",
         "PeptidicEpitope_sequence_aa",
-        "source_protein",
-        "source_organism"
+        "modifications"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/PeptidicEpitope",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DiscontinuousEpitope",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiscontinuousEpitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Epitope",
+      "slots": [
+        "akc_id",
+        "epitope_ref",
+        "DiscontinuousEpitope_positional_residues"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/DiscontinuousEpitope",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NonPeptidicEpitope",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/NonPeptidicEpitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Epitope",
+      "slots": [
+        "akc_id",
+        "epitope_ref",
+        "epitope_name"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/NonPeptidicEpitope",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Antigen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Antigen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:1110034"
+      ],
+      "is_a": "AKObject",
+      "slots": [
+        "akc_id",
+        "source_molecule",
+        "source_species",
+        "epitope"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_1110034",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MajorHistocompatibilityComplex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MajorHistocompatibilityComplex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "GO:0042611"
+      ],
+      "is_a": "AKObject",
+      "slots": [
+        "akc_id",
+        "mhc_ref",
+        "mhc_class",
+        "mhc_label"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/GO_0042611",
       "@type": "ClassDefinition"
     },
     {
@@ -13581,11 +14390,11 @@
       "mappings": [
         "OBI:0003119"
       ],
-      "is_a": "NamedThing",
+      "is_a": "AKObject",
+      "abstract": true,
       "slots": [
         "akc_id",
-        "name",
-        "description",
+        "species",
         "antibody",
         "antigen"
       ],
@@ -13601,14 +14410,47 @@
         "OBI:0003119"
       ],
       "is_a": "AKObject",
+      "abstract": true,
       "slots": [
         "akc_id",
-        "tcr",
-        "epitope",
+        "species",
+        "ab_tcr",
+        "gd_tcr",
+        "antigen",
         "mhc"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0003119",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "mixins": [
+        "AlphaBetaTCR",
+        "GammaDeltaTCR",
+        "BCellReceptor"
+      ],
+      "slots": [
+        "akc_id",
+        "species",
+        "tcr_complex",
+        "antibody_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "tra_chain",
+        "trb_chain",
+        "trg_chain",
+        "trd_chain",
+        "igh_chain",
+        "igk_chain",
+        "igl_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorComposite",
       "@type": "ClassDefinition"
     },
     {
@@ -14796,7 +15638,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "type",
+        "species",
         "queryAlphaBetaTCR__tra_chain",
         "queryAlphaBetaTCR__trb_chain"
       ],
@@ -14896,9 +15738,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-03-14T09:03:30",
-  "source_file_size": 211905,
-  "generation_date": "2026-03-14T09:03:31",
+  "source_file_date": "2026-07-24T21:41:09",
+  "source_file_size": 220064,
+  "generation_date": "2026-07-24T21:41:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

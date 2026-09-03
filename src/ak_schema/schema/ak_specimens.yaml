@@ -61,21 +61,31 @@ classes:
     slots:
       - repertoire_id
       - tcr_complexes
-    slot_usage:
-      sequencing_files:
-        range: AIRRSequencingData
+      - antibody_complexes
+      - receptor_composites
+      - sequence_files
+    # slot_usage:
+    #   sequencing_files:
+    #     range: AIRRSequencingData
+    #     inlined: false
+
+# todo: for T/B cell assay -> epitope, antigen and MHC are already in the complex, redundant to have in the Assay level?
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
     mixins: TCellReceptorEpitopeSpecificityMeasurement
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
-      - epitope
       - tcr_complexes
+      - mhc_evidence
+      - receptor_composites
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
     class_uri: OBI:0003127 # B cell epitope assay
+    slots:
+      - antibody_complexes
+      - receptor_composites
 
 slots:
   life_event:
@@ -98,10 +108,16 @@ slots:
   target_entity_type:
     description: The type of the entity being measured
 
+  mhc_evidence:
+    description: Evidence code for MHC restriction
+    range: uriorcurie
 
-  epitope:
-    description: The epitope being measured
-    range: Epitope
+#  epitope:
+#    description: The epitope being measured
+#    range: Epitope
+#  antigen:
+#    description: The antigen being measured
+#    range: Antigen
   tcell_receptors:
     description: The T cell receptors being measured
     range: TCellReceptor
@@ -110,6 +126,20 @@ slots:
     description: The T cell receptor/epitope/mhc complex being measured
     range: TCRpMHCComplex
     multivalued: true
+  antibody_complexes:
+    description: The antibody-antigen complex being measured
+    range: AntibodyAntigenComplex
+    multivalued: true
+  receptor_composites:
+    description: Composite object for database optimization
+    range: ReceptorComposite
+    multivalued: true
+  
+  sequence_files:
+    name: sequence_files
+    description: Set of sequencing files produced by the sequencing run
+    range: AIRRSequencingData
+
 
 enums:
   AssayTypeOntology:

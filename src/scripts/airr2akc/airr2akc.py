@@ -89,7 +89,8 @@ def is_array(slot_yaml):
 def is_multivalued(slot_yaml):
     return is_array(slot_yaml) or "additionalProperties" in slot_yaml
 
-def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
+def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix, airr_classes=None):
+    
     if is_deprecated(slot_yaml):
         return dict(), None
 
@@ -117,9 +118,15 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
     slot_range = get_slot_range(orig_slot_name, slot_yaml, version_prefix)
     if slot_range is not None:
         slot[pr_slot_name]["range"] = slot_range
+        # AIRR objects are represented inline in AIRR JSON
+        if slot_range in airr_classes:
+            slot[pr_slot_name]["inlined"] = True
+            # slot[pr_slot_name]["inlined_as_list"] = True
 
     if is_multivalued(slot_yaml):
         slot[pr_slot_name]["multivalued"] = True
+        # if slot_range in airr_classes:
+        #     slot[pr_slot_name]["inlined_as_list"] = True
 
     # is_required = orig_slot_name in required_slots
     # slot[pr_slot_name]["required"] = is_required
@@ -131,13 +138,13 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
     return slot, identifier_slot
     
 
-def get_all_slots(airr_yaml, keyword, version_prefix) -> dict:
+def get_all_slots(airr_yaml, keyword, version_prefix, airr_classes=None) -> dict:
     all_slots = dict()
     identifier_slot = None
     required_slots = airr_yaml[keyword]["required"] if "required" in airr_yaml[keyword] else []
 
     for slot_name, slot_yaml in airr_yaml[keyword]["properties"].items():
-        slot, id_slot = get_slot(slot_name, slot_yaml, required_slots, keyword, version_prefix)
+        slot, id_slot = get_slot(slot_name, slot_yaml, required_slots, keyword, version_prefix, airr_classes)
         all_slots.update(slot)
         
         if id_slot:
@@ -207,9 +214,9 @@ def get_all_enums(keyword_yaml, keyword, version_prefix):
 
 
 
-def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, linkml_superclass):
+def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, linkml_superclass, airr_classes=None):
     # keyword_yaml = airr_yaml[keyword]
-    output_slots, identifier_slot= get_all_slots(airr_yaml, keyword, version_prefix)
+    output_slots, identifier_slot= get_all_slots(airr_yaml, keyword, version_prefix, airr_classes)
     class_name = f"{version_prefix}{keyword}"
     class_def = {"is_a": linkml_superclass, "slots": list(output_slots.keys())}
     # Inject slot_usage if identifier exists
@@ -223,7 +230,7 @@ def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, linkml_super
     return yaml_output_dict
 
 
-def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, linkml_superclass):
+def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, linkml_superclass, airr_classes = None):
 
     class_name = f"{version_prefix}{keyword}"
     composition_yaml = {"classes": {class_name: {"is_a": linkml_superclass,"slots": []}},
@@ -241,7 +248,7 @@ def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, ver
             )
 
         else:
-            new_slots, new_identifier = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
+            new_slots, new_identifier = get_all_slots({keyword: class_yaml}, keyword, version_prefix, airr_classes)
 
             new_enums = get_all_enums(class_yaml, keyword, version_prefix)
             composition_yaml["slots"].update(new_slots)
@@ -459,6 +466,18 @@ def process_simple_keywords():
 
 def main(parsed_args):
     airr_yaml = get_airr_yaml(parsed_args.airr_schema_yaml)
+    
+    ## Get the slot identifiers that are class
+    airr_classes = set()
+    for keyword, value in airr_yaml.items():
+        if keyword in ["Info", "Ontology", "CURIEMap"]:
+            continue
+
+        if "type" in value or "allOf" in value:
+            airr_classes.add(keyword)
+
+    print(f"All the classes: {airr_classes}")
+    
     airr_version = airr_yaml["Info"]["version"]
     version_prefix = f"V{str(airr_version).replace('.', 'p')}" if parsed_args.include_version_prefix else ""
 
@@ -482,12 +501,12 @@ def main(parsed_args):
 
     # Simple keywords: add classes, slots and enums
     for keyword in get_simple_keywords_to_process(airr_yaml, skip_keywords):
-        keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, parsed_args.superclass)
+        keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, parsed_args.superclass, airr_classes)
         safe_update_yaml(output_yaml, keyword_yaml, internal_conflicts)
 
     # composition keywords (consisting of 'allOf')
     for keyword in get_composition_keywords_to_process(airr_yaml, skip_keywords):
-        composition_yaml = get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, parsed_args.superclass)
+        composition_yaml = get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, parsed_args.superclass, airr_classes)
         safe_update_yaml(output_yaml, composition_yaml, internal_conflicts)
 
     write_yaml_output(output_yaml, parsed_args.output_file)
@@ -505,3 +524,4 @@ if __name__ == "__main__":
 
 
 
+# make -f Makefile.AIRR

@@ -1,0 +1,60 @@
+---
+
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  RepertoireDataFile:
+    attributes:
+      info:
+        range: Info
+        inlined: true
+
+      repertoires:
+        range: Repertoire
+        multivalued: true
+        inlined_as_list: true
+
+  Info:
+    slots:
+      - title
+      - description
+      - version
+      - contact
+      - license
+
+  Contact:
+    slots:
+      - name
+      - url
+
+  License:
+    slots:
+      - name
+      - url
+  
+slots:
+  title:
+    range: string
+
+  description:
+    range: string
+
+  version:
+    range: string
+
+  contact:
+    range: Contact
+    inlined: true
+
+  license:
+    range: License
+    inlined: true
+
+  name:
+    range: string
+
+  url:
+    range: uri
+
