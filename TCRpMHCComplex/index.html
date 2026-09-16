@@ -205,6 +205,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-tcrpmhccomplex">Class: TCRpMHCComplex</h1>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
 <p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0003119">OBI:0003119</a></p>
 <div class="mermaid"> classDiagram
     class TCRpMHCComplex
@@ -212,7 +215,25 @@
       AKObject &lt;|-- TCRpMHCComplex
         click AKObject href "../AKObject"
 
+      TCRpMHCComplex : ab_tcr
+
+
+
+
+    TCRpMHCComplex --&gt; "0..1" AlphaBetaTCR : ab_tcr
+    click AlphaBetaTCR href "../AlphaBetaTCR"
+
+
       TCRpMHCComplex : akc_id
+
+      TCRpMHCComplex : antigen
+
+
+
+
+    TCRpMHCComplex --&gt; "0..1" Antigen : antigen
+    click Antigen href "../Antigen"
+
 
       TCRpMHCComplex : epitope
 
@@ -223,22 +244,31 @@
     click Epitope href "../Epitope"
 
 
+      TCRpMHCComplex : gd_tcr
+
+
+
+
+    TCRpMHCComplex --&gt; "0..1" GammaDeltaTCR : gd_tcr
+    click GammaDeltaTCR href "../GammaDeltaTCR"
+
+
       TCRpMHCComplex : mhc
 
 
 
 
-    TCRpMHCComplex --&gt; "0..1" MHCAllele : mhc
-    click MHCAllele href "../MHCAllele"
+    TCRpMHCComplex --&gt; "0..1" MajorHistocompatibilityComplex : mhc
+    click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
 
 
-      TCRpMHCComplex : tcr
+      TCRpMHCComplex : species
 
 
 
 
-    TCRpMHCComplex --&gt; "0..1" TCellReceptor : tcr
-    click TCellReceptor href "../TCellReceptor"
+    TCRpMHCComplex --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
 
 
 
@@ -262,20 +292,38 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../tcr/">tcr</a></td>
-<td>0..1 <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
-<td>T cell receptor</td>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ab_tcr/">ab_tcr</a></td>
+<td>0..1 <br/> <a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
+<td>alpha/beta T cell receptor</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gd_tcr/">gd_tcr</a></td>
+<td>0..1 <br/> <a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td>gamma/delta T cell receptor</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../antigen/">antigen</a></td>
+<td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
+<td>A material entity with antigen role</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../epitope/">epitope</a></td>
 <td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
-<td>The epitope being measured</td>
+<td>Epitope of an antigen, which can be recognized by a T cell receptor or antibo...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../mhc/">mhc</a></td>
-<td>0..1 <br/> <a href="../MHCAllele/">MHCAllele</a></td>
+<td>0..1 <br/> <a href="../MajorHistocompatibilityComplex/">MajorHistocompatibilityComplex</a></td>
 <td>Major histocompatibility complex</td>
 <td>direct</td>
 </tr>
@@ -316,6 +364,42 @@
 <td>range</td>
 <td><a href="./">TCRpMHCComplex</a></td>
 </tr>
+<tr>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
+<tr>
+<td><a href="../AlphaBetaReceptorComposite/">AlphaBetaReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
+<tr>
+<td><a href="../GammaDeltaReceptorComposite/">GammaDeltaReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
+<tr>
+<td><a href="../PairedReceptorComposite/">PairedReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
+<tr>
+<td><a href="../PairedAlphaBetaReceptorComposite/">PairedAlphaBetaReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
+<tr>
+<td><a href="../PairedGammaDeltaReceptorComposite/">PairedGammaDeltaReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -349,8 +433,12 @@
 <pre><code class="language-yaml">name: TCRpMHCComplex
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+abstract: true
 slots:
-- tcr
+- species
+- ab_tcr
+- gd_tcr
+- antigen
 - epitope
 - mhc
 class_uri: OBI:0003119
@@ -362,28 +450,86 @@ class_uri: OBI:0003119
 <pre><code class="language-yaml">name: TCRpMHCComplex
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+abstract: true
 attributes:
-  tcr:
-    name: tcr
-    description: T cell receptor
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: tcr
+    alias: species
+    owner: TCRpMHCComplex
+    domain_of:
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
+  ab_tcr:
+    name: ab_tcr
+    description: alpha/beta T cell receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: ab_tcr
     owner: TCRpMHCComplex
     domain_of:
     - TCRpMHCComplex
-    - QueryObject
-    range: TCellReceptor
+    range: AlphaBetaTCR
+  gd_tcr:
+    name: gd_tcr
+    description: gamma/delta T cell receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gd_tcr
+    owner: TCRpMHCComplex
+    domain_of:
+    - TCRpMHCComplex
+    range: GammaDeltaTCR
+  antigen:
+    name: antigen
+    description: A material entity with antigen role
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: antigen
+    owner: TCRpMHCComplex
+    domain_of:
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
+    - ReceptorReactivity
+    - QueryTCR
+    - QueryIG
+    range: Antigen
   epitope:
     name: epitope
-    description: The epitope being measured
+    description: Epitope of an antigen, which can be recognized by a T cell receptor
+      or antibody
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: epitope
     owner: TCRpMHCComplex
     domain_of:
-    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenComplex
     - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
     range: Epitope
   mhc:
@@ -395,8 +541,12 @@ attributes:
     owner: TCRpMHCComplex
     domain_of:
     - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
-    range: MHCAllele
+    range: MajorHistocompatibilityComplex
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

@@ -245,6 +245,15 @@
     click Investigation href "../Investigation"
 
 
+      QueryExperiment : life_events
+
+
+
+
+    QueryExperiment --&gt; "*" LifeEvent : life_events
+    click LifeEvent href "../LifeEvent"
+
+
       QueryExperiment : name
 
       QueryExperiment : participant
@@ -311,6 +320,12 @@
 <tr>
 <td><a href="../investigation/">investigation</a></td>
 <td>0..1 <br/> <a href="../Investigation/">Investigation</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../life_events/">life_events</a></td>
+<td>* <br/> <a href="../LifeEvent/">LifeEvent</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -415,7 +430,6 @@ attributes:
     name: specimen
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
-    - SpecimenCollection
     - SpecimenProcessing
     - Assay
     - QueryExperiment
@@ -440,6 +454,16 @@ attributes:
     range: Investigation
     multivalued: false
     inlined: true
+  life_events:
+    name: life_events
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Participant
+    - QueryExperiment
+    range: LifeEvent
+    multivalued: true
+    inlined: true
 
 </code></pre>
 </details>
@@ -457,7 +481,6 @@ attributes:
     alias: specimen
     owner: QueryExperiment
     domain_of:
-    - SpecimenCollection
     - SpecimenProcessing
     - Assay
     - QueryExperiment
@@ -486,6 +509,18 @@ attributes:
     range: Investigation
     multivalued: false
     inlined: true
+  life_events:
+    name: life_events
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    alias: life_events
+    owner: QueryExperiment
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Participant
+    - QueryExperiment
+    range: LifeEvent
+    multivalued: true
+    inlined: true
   specimen_processing:
     name: specimen_processing
     description: A series of zero or more specimen processing steps that precede an
@@ -510,8 +545,6 @@ attributes:
     - LifeEvent
     - Assay
     - AKDataItem
-    - TCellReceptor
-    - Epitope
     range: string
   assay_type:
     name: assay_type

@@ -324,7 +324,7 @@
 
 
 <h1 id="slot-epitope">Slot: epitope</h1>
-<p><em>The epitope being measured</em></p>
+<p><em>Epitope of an antigen, which can be recognized by a T cell receptor or antibody</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/epitope">ak_schema:epitope</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -344,12 +344,52 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td><a href="../BCellReceptorComposite/">BCellReceptorComposite</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../QueryTCR/">QueryTCR</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PairedAlphaBetaReceptorComposite/">PairedAlphaBetaReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GammaDeltaReceptorComposite/">GammaDeltaReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AlphaBetaReceptorComposite/">AlphaBetaReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PairedGammaDeltaReceptorComposite/">PairedGammaDeltaReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PairedReceptorComposite/">PairedReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PairedBCellReceptorComposite/">PairedBCellReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -387,13 +427,18 @@
 <details>
 
 <pre><code class="language-yaml">name: epitope
-description: The epitope being measured
+description: Epitope of an antigen, which can be recognized by a T cell receptor or
+  antibody
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: epitope
 domain_of:
-- TCellReceptorEpitopeBindingAssay
+- AntibodyAntigenComplex
 - TCRpMHCComplex
+- ReceptorComposite
+- AlphaBetaReceptorComposite
+- GammaDeltaReceptorComposite
+- BCellReceptorComposite
 - QueryTCR
 range: Epitope
 

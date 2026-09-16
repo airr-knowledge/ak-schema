@@ -209,6 +209,17 @@
 
       QueryAlphaBetaTCR : akc_id
 
+      QueryAlphaBetaTCR : paired_chain
+
+      QueryAlphaBetaTCR : species
+
+
+
+
+    QueryAlphaBetaTCR --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
       QueryAlphaBetaTCR : tra_chain
 
 
@@ -226,8 +237,6 @@
     QueryAlphaBetaTCR --&gt; "0..1" Chain : trb_chain
     click Chain href "../Chain"
 
-
-      QueryAlphaBetaTCR : type
 
 
 </div>
@@ -268,10 +277,16 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../TCellReceptor/">TCellReceptor</a></td>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
+</tr>
+<tr>
+<td><a href="../paired_chain/">paired_chain</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Flag to indicate the receptor object has both chains defined</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -362,20 +377,41 @@ attributes:
     range: Chain
     multivalued: false
     inlined: true
-  type:
-    name: type
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    designates_type: true
-    alias: type
+    alias: species
     owner: QueryAlphaBetaTCR
     domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
-    - Epitope
-    range: string
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
+  paired_chain:
+    name: paired_chain
+    description: Flag to indicate the receptor object has both chains defined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_chain
+    owner: QueryAlphaBetaTCR
+    domain_of:
+    - ImmuneReceptor
+    range: boolean
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

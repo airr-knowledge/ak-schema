@@ -212,27 +212,29 @@
       TCellReceptor &lt;|-- GammaDeltaTCR
         click TCellReceptor href "../TCellReceptor"
 
+
+      GammaDeltaTCR &lt;|-- ReceptorComposite
+        click ReceptorComposite href "../ReceptorComposite"
+      GammaDeltaTCR &lt;|-- GammaDeltaReceptorComposite
+        click GammaDeltaReceptorComposite href "../GammaDeltaReceptorComposite"
+
+
       GammaDeltaTCR : akc_id
+
+      GammaDeltaTCR : paired_chain
+
+      GammaDeltaTCR : species
+
+
+
+
+    GammaDeltaTCR --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
 
       GammaDeltaTCR : trd_chain
 
-
-
-
-    GammaDeltaTCR --&gt; "0..1" Chain : trd_chain
-    click Chain href "../Chain"
-
-
       GammaDeltaTCR : trg_chain
-
-
-
-
-    GammaDeltaTCR --&gt; "0..1" Chain : trg_chain
-    click Chain href "../Chain"
-
-
-      GammaDeltaTCR : type
 
 
 </div>
@@ -262,21 +264,27 @@
 <tbody>
 <tr>
 <td><a href="../trg_chain/">trg_chain</a></td>
-<td>0..1 <br/> <a href="../Chain/">Chain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor gamma chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../trd_chain/">trd_chain</a></td>
-<td>0..1 <br/> <a href="../Chain/">Chain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor delta chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../TCellReceptor/">TCellReceptor</a></td>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
+</tr>
+<tr>
+<td><a href="../paired_chain/">paired_chain</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Flag to indicate the receptor object has both chains defined</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -300,6 +308,12 @@
 <tr>
 <td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../gd_tcell_receptors/">gd_tcell_receptors</a></td>
+<td>range</td>
+<td><a href="./">GammaDeltaTCR</a></td>
+</tr>
+<tr>
+<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../gd_tcr/">gd_tcr</a></td>
 <td>range</td>
 <td><a href="./">GammaDeltaTCR</a></td>
 </tr>
@@ -358,7 +372,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: Chain
+    range: uriorcurie
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
@@ -368,21 +382,42 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: Chain
-  type:
-    name: type
+    range: uriorcurie
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    designates_type: true
-    alias: type
+    alias: species
     owner: GammaDeltaTCR
     domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
-    - Epitope
-    range: string
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
+  paired_chain:
+    name: paired_chain
+    description: Flag to indicate the receptor object has both chains defined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_chain
+    owner: GammaDeltaTCR
+    domain_of:
+    - ImmuneReceptor
+    range: boolean
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

@@ -346,13 +346,21 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
     - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
   epitope:
     name: epitope
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
-    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenComplex
     - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
     range: Epitope
     multivalued: false
@@ -362,6 +370,11 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
     - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - ReceptorReactivity
     - QueryTCR
     - QueryIG
@@ -393,6 +406,10 @@ attributes:
     owner: QueryTCR
     domain_of:
     - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
     range: string
   epitope:
@@ -401,8 +418,12 @@ attributes:
     alias: epitope
     owner: QueryTCR
     domain_of:
-    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenComplex
     - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
     range: Epitope
     multivalued: false
@@ -414,6 +435,11 @@ attributes:
     owner: QueryTCR
     domain_of:
     - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - ReceptorReactivity
     - QueryTCR
     - QueryIG

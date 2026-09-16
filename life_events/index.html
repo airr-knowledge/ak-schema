@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-life_events">Slot: life_events</h1>
+<p><em>The life events for a participant</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/life_events">ak_schema:life_events</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,8 +339,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Participant/">Participant</a></td>
+<td>A participant in an investigation</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td>A container for instances of multiple classes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../QueryExperiment/">QueryExperiment</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -381,15 +392,16 @@
 <details>
 
 <pre><code class="language-yaml">name: life_events
+description: The life events for a participant
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: life_events
-owner: AIRRKnowledgeCommons
 domain_of:
 - AIRRKnowledgeCommons
+- Participant
+- QueryExperiment
 range: LifeEvent
 multivalued: true
-inlined: true
 
 </code></pre>
 

@@ -213,17 +213,19 @@
       NamedThing &lt;|-- Participant
         click NamedThing href "../NamedThing"
 
-      Participant : age
-
       Participant : age_event
+
+      Participant : age_max
+
+      Participant : age_min
 
       Participant : age_unit
 
 
 
 
-    Participant --&gt; "0..1" AgeUnitOntology : age_unit
-    click AgeUnitOntology href "../AgeUnitOntology"
+    Participant --&gt; "0..1" Units : age_unit
+    click Units href "../Units"
 
 
       Participant : akc_id
@@ -239,6 +241,15 @@
 
     Participant --&gt; "0..1" GeolocationOntology : geolocation
     click GeolocationOntology href "../GeolocationOntology"
+
+
+      Participant : life_events
+
+
+
+
+    Participant --&gt; "*" LifeEvent : life_events
+    click LifeEvent href "../LifeEvent"
 
 
       Participant : name
@@ -323,14 +334,20 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../age/">age</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The age of a participant relative to age_event</td>
+<td><a href="../age_min/">age_min</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Specific age or lower boundary of age range</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../age_max/">age_max</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Upper boundary of age range or equal to age_min for specific age</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>0..1 <br/> <a href="../AgeUnitOntology/">AgeUnitOntology</a></td>
+<td>0..1 <br/> <a href="../Units/">Units</a></td>
 <td>Unit of age range</td>
 <td>direct</td>
 </tr>
@@ -362,6 +379,12 @@
 <td><a href="../strain/">strain</a></td>
 <td>0..1 <br/> <a href="../StrainEnum/">StrainEnum</a></td>
 <td>The strain of the participant (non-human study participants)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../life_events/">life_events</a></td>
+<td>* <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>The life events for a participant</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -469,13 +492,15 @@ slots:
 - study_arm
 - species
 - sex
-- age
+- age_min
+- age_max
 - age_unit
 - age_event
 - race
 - ethnicity
 - geolocation
 - strain
+- life_events
 slot_usage:
   species:
     name: species
@@ -483,6 +508,9 @@ slot_usage:
   sex:
     name: sex
     range: PhenotypeAndTraits
+  age_unit:
+    name: age_unit
+    range: Units
 class_uri: OBI:0100026
 
 </code></pre>
@@ -500,6 +528,9 @@ slot_usage:
   sex:
     name: sex
     range: PhenotypeAndTraits
+  age_unit:
+    name: age_unit
+    range: Units
 attributes:
   study_arm:
     name: study_arm
@@ -526,6 +557,13 @@ attributes:
     domain_of:
     - Participant
     - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - AlleleDescription
     - GermlineSet
     - Subject
@@ -545,16 +583,37 @@ attributes:
     - Participant
     - Subject
     range: PhenotypeAndTraits
-  age:
-    name: age
-    description: The age of a participant relative to age_event
+  age_min:
+    name: age_min
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Specific age or lower boundary of age range.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: age
+    alias: age_min
     owner: Participant
     domain_of:
     - Participant
-    range: string
+    - Subject
+    range: float
+  age_max:
+    name: age_max
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Upper boundary of age range or equal to age_min for specific age.
+      This field should only be null if age_min is null.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: age_max
+    owner: Participant
+    domain_of:
+    - Participant
+    - Subject
+    range: float
   age_unit:
     name: age_unit
     annotations:
@@ -569,7 +628,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: AgeUnitOntology
+    range: Units
   age_event:
     name: age_event
     annotations:
@@ -641,6 +700,19 @@ attributes:
     domain_of:
     - Participant
     range: StrainEnum
+  life_events:
+    name: life_events
+    description: The life events for a participant
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: life_events
+    owner: Participant
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Participant
+    - QueryExperiment
+    range: LifeEvent
+    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing

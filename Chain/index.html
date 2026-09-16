@@ -205,6 +205,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-chain">Class: Chain</h1>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/Chain">ak_schema:Chain</a></p>
 <div class="mermaid"> classDiagram
     class Chain
@@ -212,7 +215,22 @@
       AKObject &lt;|-- Chain
         click AKObject href "../AKObject"
 
-      Chain : aa_hash
+
+      Chain &lt;|-- AlphaChain
+        click AlphaChain href "../AlphaChain"
+      Chain &lt;|-- BetaChain
+        click BetaChain href "../BetaChain"
+      Chain &lt;|-- DeltaChain
+        click DeltaChain href "../DeltaChain"
+      Chain &lt;|-- GammaChain
+        click GammaChain href "../GammaChain"
+      Chain &lt;|-- HeavyChain
+        click HeavyChain href "../HeavyChain"
+      Chain &lt;|-- KappaChain
+        click KappaChain href "../KappaChain"
+      Chain &lt;|-- LambdaChain
+        click LambdaChain href "../LambdaChain"
+
 
       Chain : akc_id
 
@@ -220,33 +238,29 @@
 
       Chain : cdr1_aa
 
-      Chain : cdr1_end
-
-      Chain : cdr1_start
-
       Chain : cdr2_aa
 
-      Chain : cdr2_end
-
-      Chain : cdr2_start
-
       Chain : cdr3_aa
-
-      Chain : cdr3_end
-
-      Chain : cdr3_start
 
       Chain : complete_vdj
 
       Chain : d_call
 
+      Chain : hash_infer_vdj_sequence
+
+      Chain : hash_infer_vdj_sequence_aa
+
+      Chain : infer_vdj_sequence
+
+      Chain : infer_vdj_sequence_aa
+
       Chain : j_call
 
+      Chain : j_gene
+
+      Chain : j_subgroup
+
       Chain : junction_aa
-
-      Chain : junction_aa_vj_allele_hash
-
-      Chain : junction_aa_vj_gene_hash
 
       Chain : locus
 
@@ -272,12 +286,25 @@
 
       Chain : v_call
 
+      Chain : v_gene
+
+      Chain : v_subgroup
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><strong>Chain</strong></li>
+<li><strong>Chain</strong><ul>
+<li><a href="../AlphaChain/">AlphaChain</a></li>
+<li><a href="../BetaChain/">BetaChain</a></li>
+<li><a href="../DeltaChain/">DeltaChain</a></li>
+<li><a href="../GammaChain/">GammaChain</a></li>
+<li><a href="../HeavyChain/">HeavyChain</a></li>
+<li><a href="../KappaChain/">KappaChain</a></li>
+<li><a href="../LambdaChain/">LambdaChain</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -299,24 +326,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../aa_hash/">aa_hash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../junction_aa_vj_allele_hash/">junction_aa_vj_allele_hash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../junction_aa_vj_gene_hash/">junction_aa_vj_gene_hash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../complete_vdj/">complete_vdj</a></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>Complete VDJ flag</td>
@@ -329,9 +338,33 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../infer_vdj_sequence/">infer_vdj_sequence</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Inferred complete VDJ nucleotide sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hash_infer_vdj_sequence/">hash_infer_vdj_sequence</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Hash of the inferred complete VDJ nucleotide sequence</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../sequence_aa/">sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of the query nucleotide sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../infer_vdj_sequence_aa/">infer_vdj_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Translation of inferred complete VDJ nucleotide sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hash_infer_vdj_sequence_aa/">hash_infer_vdj_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Hash of the translation of inferred complete VDJ nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -347,6 +380,18 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../v_gene/">v_gene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>V gene designation for the chain</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../v_subgroup/">v_subgroup</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>V gene subgroup/family designation for the chain</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../d_call/">d_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
@@ -356,6 +401,18 @@
 <td><a href="../j_call/">j_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../j_gene/">j_gene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>J gene designation for the chain</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../j_subgroup/">j_subgroup</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>J gene subgroup/family designation for the chain</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -389,42 +446,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cdr1_start/">cdr1_start</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr1_end/">cdr1_end</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr2_start/">cdr2_start</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr2_end/">cdr2_end</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr3_start/">cdr3_start</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr3_end/">cdr3_end</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR3 end position in the query sequence (1-based closed interval)</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../akc_id/">akc_id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
@@ -443,54 +464,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../chains/">chains</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
-<td><a href="../tra_chain/">tra_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
-<td><a href="../trb_chain/">trb_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
-<td><a href="../trg_chain/">trg_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
-<td><a href="../trd_chain/">trd_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../BCellReceptor/">BCellReceptor</a></td>
-<td><a href="../igh_chain/">igh_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../BCellReceptor/">BCellReceptor</a></td>
-<td><a href="../igk_chain/">igk_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../BCellReceptor/">BCellReceptor</a></td>
-<td><a href="../igl_chain/">igl_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
 <tr>
 <td><a href="../SimilarityCalculation/">SimilarityCalculation</a></td>
 <td><a href="../chain_domain/">chain_domain</a></td>
@@ -560,36 +533,36 @@
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+abstract: true
 slots:
 - species
-- aa_hash
-- junction_aa_vj_allele_hash
-- junction_aa_vj_gene_hash
 - complete_vdj
 - sequence
+- infer_vdj_sequence
+- hash_infer_vdj_sequence
 - sequence_aa
+- infer_vdj_sequence_aa
+- hash_infer_vdj_sequence_aa
 - locus
 - v_call
+- v_gene
+- v_subgroup
 - d_call
 - j_call
+- j_gene
+- j_subgroup
 - c_call
 - junction_aa
 - cdr1_aa
 - cdr2_aa
 - cdr3_aa
-- cdr1_start
-- cdr1_end
-- cdr2_start
-- cdr2_end
-- cdr3_start
-- cdr3_end
 slot_usage:
   sequence_aa:
     name: sequence_aa
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   junction_aa:
     name: junction_aa
-    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
 
 </code></pre>
 </details>
@@ -598,13 +571,14 @@ slot_usage:
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+abstract: true
 slot_usage:
   sequence_aa:
     name: sequence_aa
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   junction_aa:
     name: junction_aa
-    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
 attributes:
   species:
     name: species
@@ -620,37 +594,17 @@ attributes:
     domain_of:
     - Participant
     - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - AlleleDescription
     - GermlineSet
     - Subject
     range: SpeciesOntology
-  aa_hash:
-    name: aa_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: aa_hash
-    owner: Chain
-    domain_of:
-    - Chain
-    range: string
-  junction_aa_vj_allele_hash:
-    name: junction_aa_vj_allele_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: junction_aa_vj_allele_hash
-    owner: Chain
-    domain_of:
-    - Chain
-    range: string
-  junction_aa_vj_gene_hash:
-    name: junction_aa_vj_gene_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: junction_aa_vj_gene_hash
-    owner: Chain
-    domain_of:
-    - Chain
-    range: string
   complete_vdj:
     name: complete_vdj
     description: Complete VDJ flag.
@@ -677,6 +631,26 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
+  infer_vdj_sequence:
+    name: infer_vdj_sequence
+    description: Inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: infer_vdj_sequence
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  hash_infer_vdj_sequence:
+    name: hash_infer_vdj_sequence
+    description: Hash of the inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hash_infer_vdj_sequence
+    owner: Chain
+    domain_of:
+    - Chain
+    range: uriorcurie
   sequence_aa:
     name: sequence_aa
     annotations:
@@ -694,6 +668,26 @@ attributes:
     - Rearrangement
     range: string
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
+  infer_vdj_sequence_aa:
+    name: infer_vdj_sequence_aa
+    description: Translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: infer_vdj_sequence_aa
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hash_infer_vdj_sequence_aa
+    owner: Chain
+    domain_of:
+    - Chain
+    range: uriorcurie
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -721,6 +715,26 @@ attributes:
     - Chain
     - Rearrangement
     - Clone
+    range: string
+  v_gene:
+    name: v_gene
+    description: V gene designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: v_gene
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  v_subgroup:
+    name: v_subgroup
+    description: V gene subgroup/family designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: v_subgroup
+    owner: Chain
+    domain_of:
+    - Chain
     range: string
   d_call:
     name: d_call
@@ -751,6 +765,26 @@ attributes:
     - Chain
     - Rearrangement
     - Clone
+    range: string
+  j_gene:
+    name: j_gene
+    description: J gene designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: j_gene
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  j_subgroup:
+    name: j_subgroup
+    description: J gene subgroup/family designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: j_subgroup
+    owner: Chain
+    domain_of:
+    - Chain
     range: string
   c_call:
     name: c_call
@@ -786,7 +820,7 @@ attributes:
     - Clone
     - Node
     range: string
-    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
   cdr1_aa:
     name: cdr1_aa
     annotations:
@@ -832,96 +866,6 @@ attributes:
     - Chain
     - Rearrangement
     range: string
-  cdr1_start:
-    name: cdr1_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr1_start
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr1_end:
-    name: cdr1_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr1_end
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr2_start:
-    name: cdr2_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr2_start
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr2_end:
-    name: cdr2_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr2_end
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr3_start:
-    name: cdr3_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr3_start
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr3_end:
-    name: cdr3_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: CDR3 end position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr3_end
-    owner: Chain
-    domain_of:
-    - Chain
-    - Rearrangement
-    range: integer
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

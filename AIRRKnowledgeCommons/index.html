@@ -200,6 +200,15 @@
 <div class="mermaid"> classDiagram
     class AIRRKnowledgeCommons
     click AIRRKnowledgeCommons href "../AIRRKnowledgeCommons"
+      AIRRKnowledgeCommons : ab_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" AlphaBetaReceptorComposite : ab_receptor_composites
+    click AlphaBetaReceptorComposite href "../AlphaBetaReceptorComposite"
+
+
       AIRRKnowledgeCommons : ab_tcell_receptors
 
 
@@ -207,6 +216,33 @@
 
     AIRRKnowledgeCommons --&gt; "*" AlphaBetaTCR : ab_tcell_receptors
     click AlphaBetaTCR href "../AlphaBetaTCR"
+
+
+      AIRRKnowledgeCommons : alpha_chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" AlphaChain : alpha_chains
+    click AlphaChain href "../AlphaChain"
+
+
+      AIRRKnowledgeCommons : antibody_complexes
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" AntibodyAntigenComplex : antibody_complexes
+    click AntibodyAntigenComplex href "../AntibodyAntigenComplex"
+
+
+      AIRRKnowledgeCommons : antigens
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Antigen : antigens
+    click Antigen href "../Antigen"
 
 
       AIRRKnowledgeCommons : assays
@@ -227,6 +263,15 @@
     click Assessment href "../Assessment"
 
 
+      AIRRKnowledgeCommons : bcell_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" BCellReceptorComposite : bcell_receptor_composites
+    click BCellReceptorComposite href "../BCellReceptorComposite"
+
+
       AIRRKnowledgeCommons : bcell_receptors
 
 
@@ -236,13 +281,13 @@
     click BCellReceptor href "../BCellReceptor"
 
 
-      AIRRKnowledgeCommons : chains
+      AIRRKnowledgeCommons : beta_chains
 
 
 
 
-    AIRRKnowledgeCommons --&gt; "*" Chain : chains
-    click Chain href "../Chain"
+    AIRRKnowledgeCommons --&gt; "*" BetaChain : beta_chains
+    click BetaChain href "../BetaChain"
 
 
       AIRRKnowledgeCommons : conclusions
@@ -263,6 +308,15 @@
     click AKDataSet href "../AKDataSet"
 
 
+      AIRRKnowledgeCommons : delta_chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" DeltaChain : delta_chains
+    click DeltaChain href "../DeltaChain"
+
+
       AIRRKnowledgeCommons : epitopes
 
 
@@ -272,6 +326,24 @@
     click Epitope href "../Epitope"
 
 
+      AIRRKnowledgeCommons : gamma_chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" GammaChain : gamma_chains
+    click GammaChain href "../GammaChain"
+
+
+      AIRRKnowledgeCommons : gd_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" GammaDeltaReceptorComposite : gd_receptor_composites
+    click GammaDeltaReceptorComposite href "../GammaDeltaReceptorComposite"
+
+
       AIRRKnowledgeCommons : gd_tcell_receptors
 
 
@@ -279,6 +351,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" GammaDeltaTCR : gd_tcell_receptors
     click GammaDeltaTCR href "../GammaDeltaTCR"
+
+
+      AIRRKnowledgeCommons : heavy_chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" HeavyChain : heavy_chains
+    click HeavyChain href "../HeavyChain"
 
 
       AIRRKnowledgeCommons : immune_exposures
@@ -308,6 +389,24 @@
     click Investigation href "../Investigation"
 
 
+      AIRRKnowledgeCommons : kappa_chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" KappaChain : kappa_chains
+    click KappaChain href "../KappaChain"
+
+
+      AIRRKnowledgeCommons : lambda_chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" LambdaChain : lambda_chains
+    click LambdaChain href "../LambdaChain"
+
+
       AIRRKnowledgeCommons : life_events
 
 
@@ -317,6 +416,51 @@
     click LifeEvent href "../LifeEvent"
 
 
+      AIRRKnowledgeCommons : mhcs
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" MajorHistocompatibilityComplex : mhcs
+    click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
+
+
+      AIRRKnowledgeCommons : paired_ab_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedAlphaBetaReceptorComposite : paired_ab_receptor_composites
+    click PairedAlphaBetaReceptorComposite href "../PairedAlphaBetaReceptorComposite"
+
+
+      AIRRKnowledgeCommons : paired_bcell_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedBCellReceptorComposite : paired_bcell_receptor_composites
+    click PairedBCellReceptorComposite href "../PairedBCellReceptorComposite"
+
+
+      AIRRKnowledgeCommons : paired_gd_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedGammaDeltaReceptorComposite : paired_gd_receptor_composites
+    click PairedGammaDeltaReceptorComposite href "../PairedGammaDeltaReceptorComposite"
+
+
+      AIRRKnowledgeCommons : paired_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedReceptorComposite : paired_receptor_composites
+    click PairedReceptorComposite href "../PairedReceptorComposite"
+
+
       AIRRKnowledgeCommons : participants
 
 
@@ -324,6 +468,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" Participant : participants
     click Participant href "../Participant"
+
+
+      AIRRKnowledgeCommons : receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" ReceptorComposite : receptor_composites
+    click ReceptorComposite href "../ReceptorComposite"
 
 
       AIRRKnowledgeCommons : references
@@ -524,8 +677,14 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../chains/">chains</a></td>
-<td>* <br/> <a href="../Chain/">Chain</a></td>
+<td><a href="../alpha_chains/">alpha_chains</a></td>
+<td>* <br/> <a href="../AlphaChain/">AlphaChain</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../beta_chains/">beta_chains</a></td>
+<td>* <br/> <a href="../BetaChain/">BetaChain</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -536,8 +695,38 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../gamma_chains/">gamma_chains</a></td>
+<td>* <br/> <a href="../GammaChain/">GammaChain</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../delta_chains/">delta_chains</a></td>
+<td>* <br/> <a href="../DeltaChain/">DeltaChain</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../gd_tcell_receptors/">gd_tcell_receptors</a></td>
 <td>* <br/> <a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../heavy_chains/">heavy_chains</a></td>
+<td>* <br/> <a href="../HeavyChain/">HeavyChain</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../kappa_chains/">kappa_chains</a></td>
+<td>* <br/> <a href="../KappaChain/">KappaChain</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lambda_chains/">lambda_chains</a></td>
+<td>* <br/> <a href="../LambdaChain/">LambdaChain</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -548,14 +737,80 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../antigens/">antigens</a></td>
+<td>* <br/> <a href="../Antigen/">Antigen</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../epitopes/">epitopes</a></td>
 <td>* <br/> <a href="../Epitope/">Epitope</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../mhcs/">mhcs</a></td>
+<td>* <br/> <a href="../MajorHistocompatibilityComplex/">MajorHistocompatibilityComplex</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../tcr_complexes/">tcr_complexes</a></td>
 <td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../antibody_complexes/">antibody_complexes</a></td>
+<td>* <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ab_receptor_composites/">ab_receptor_composites</a></td>
+<td>* <br/> <a href="../AlphaBetaReceptorComposite/">AlphaBetaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gd_receptor_composites/">gd_receptor_composites</a></td>
+<td>* <br/> <a href="../GammaDeltaReceptorComposite/">GammaDeltaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bcell_receptor_composites/">bcell_receptor_composites</a></td>
+<td>* <br/> <a href="../BCellReceptorComposite/">BCellReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_receptor_composites/">paired_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedReceptorComposite/">PairedReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_ab_receptor_composites/">paired_ab_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedAlphaBetaReceptorComposite/">PairedAlphaBetaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_gd_receptor_composites/">paired_gd_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedGammaDeltaReceptorComposite/">PairedGammaDeltaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_bcell_receptor_composites/">paired_bcell_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedBCellReceptorComposite/">PairedBCellReceptorComposite</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -642,9 +897,10 @@ attributes:
   life_events:
     name: life_events
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
+    - Participant
+    - QueryExperiment
     range: LifeEvent
     multivalued: true
     inlined: true
@@ -747,13 +1003,22 @@ attributes:
     range: Conclusion
     multivalued: true
     inlined: true
-  chains:
-    name: chains
+  alpha_chains:
+    name: alpha_chains
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
-    range: Chain
+    range: AlphaChain
+    multivalued: true
+    inlined: true
+  beta_chains:
+    name: beta_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BetaChain
     multivalued: true
     inlined: true
   ab_tcell_receptors:
@@ -765,6 +1030,24 @@ attributes:
     range: AlphaBetaTCR
     multivalued: true
     inlined: true
+  gamma_chains:
+    name: gamma_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaChain
+    multivalued: true
+    inlined: true
+  delta_chains:
+    name: delta_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: DeltaChain
+    multivalued: true
+    inlined: true
   gd_tcell_receptors:
     name: gd_tcell_receptors
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -772,6 +1055,33 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: GammaDeltaTCR
+    multivalued: true
+    inlined: true
+  heavy_chains:
+    name: heavy_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: HeavyChain
+    multivalued: true
+    inlined: true
+  kappa_chains:
+    name: kappa_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: KappaChain
+    multivalued: true
+    inlined: true
+  lambda_chains:
+    name: lambda_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: LambdaChain
     multivalued: true
     inlined: true
   bcell_receptors:
@@ -783,13 +1093,31 @@ attributes:
     range: BCellReceptor
     multivalued: true
     inlined: true
-  epitopes:
-    name: epitopes
+  antigens:
+    name: antigens
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
+    range: Antigen
+    multivalued: true
+    inlined: true
+  epitopes:
+    name: epitopes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Antigen
     range: Epitope
+    multivalued: true
+    inlined: true
+  mhcs:
+    name: mhcs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: MajorHistocompatibilityComplex
     multivalued: true
     inlined: true
   tcr_complexes:
@@ -800,6 +1128,90 @@ attributes:
     - AIRRSequencingAssay
     - TCellReceptorEpitopeBindingAssay
     range: TCRpMHCComplex
+    multivalued: true
+    inlined: true
+  antibody_complexes:
+    name: antibody_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - AntibodyAntigenBindingAssay
+    range: AntibodyAntigenComplex
+    multivalued: true
+    inlined: true
+  receptor_composites:
+    name: receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
+    range: ReceptorComposite
+    multivalued: true
+    inlined: true
+  ab_receptor_composites:
+    name: ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: AlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  gd_receptor_composites:
+    name: gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  bcell_receptor_composites:
+    name: bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BCellReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_receptor_composites:
+    name: paired_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_ab_receptor_composites:
+    name: paired_ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedAlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_gd_receptor_composites:
+    name: paired_gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedGammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_bcell_receptor_composites:
+    name: paired_bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedBCellReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true
@@ -871,11 +1283,12 @@ attributes:
   life_events:
     name: life_events
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     alias: life_events
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
+    - Participant
+    - QueryExperiment
     range: LifeEvent
     multivalued: true
     inlined: true
@@ -1000,15 +1413,26 @@ attributes:
     range: Conclusion
     multivalued: true
     inlined: true
-  chains:
-    name: chains
+  alpha_chains:
+    name: alpha_chains
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: chains
+    alias: alpha_chains
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
-    range: Chain
+    range: AlphaChain
+    multivalued: true
+    inlined: true
+  beta_chains:
+    name: beta_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: beta_chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BetaChain
     multivalued: true
     inlined: true
   ab_tcell_receptors:
@@ -1022,6 +1446,28 @@ attributes:
     range: AlphaBetaTCR
     multivalued: true
     inlined: true
+  gamma_chains:
+    name: gamma_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gamma_chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaChain
+    multivalued: true
+    inlined: true
+  delta_chains:
+    name: delta_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: delta_chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: DeltaChain
+    multivalued: true
+    inlined: true
   gd_tcell_receptors:
     name: gd_tcell_receptors
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1031,6 +1477,39 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: GammaDeltaTCR
+    multivalued: true
+    inlined: true
+  heavy_chains:
+    name: heavy_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: heavy_chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: HeavyChain
+    multivalued: true
+    inlined: true
+  kappa_chains:
+    name: kappa_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: kappa_chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: KappaChain
+    multivalued: true
+    inlined: true
+  lambda_chains:
+    name: lambda_chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: lambda_chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: LambdaChain
     multivalued: true
     inlined: true
   bcell_receptors:
@@ -1044,15 +1523,37 @@ attributes:
     range: BCellReceptor
     multivalued: true
     inlined: true
+  antigens:
+    name: antigens
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: antigens
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: Antigen
+    multivalued: true
+    inlined: true
   epitopes:
     name: epitopes
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     alias: epitopes
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
+    - Antigen
     range: Epitope
+    multivalued: true
+    inlined: true
+  mhcs:
+    name: mhcs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: mhcs
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: MajorHistocompatibilityComplex
     multivalued: true
     inlined: true
   tcr_complexes:
@@ -1065,6 +1566,108 @@ attributes:
     - AIRRSequencingAssay
     - TCellReceptorEpitopeBindingAssay
     range: TCRpMHCComplex
+    multivalued: true
+    inlined: true
+  antibody_complexes:
+    name: antibody_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    alias: antibody_complexes
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - AntibodyAntigenBindingAssay
+    range: AntibodyAntigenComplex
+    multivalued: true
+    inlined: true
+  receptor_composites:
+    name: receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    alias: receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
+    range: ReceptorComposite
+    multivalued: true
+    inlined: true
+  ab_receptor_composites:
+    name: ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: ab_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: AlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  gd_receptor_composites:
+    name: gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gd_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  bcell_receptor_composites:
+    name: bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: bcell_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BCellReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_receptor_composites:
+    name: paired_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_ab_receptor_composites:
+    name: paired_ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_ab_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedAlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_gd_receptor_composites:
+    name: paired_gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_gd_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedGammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_bcell_receptor_composites:
+    name: paired_bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_bcell_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedBCellReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true
