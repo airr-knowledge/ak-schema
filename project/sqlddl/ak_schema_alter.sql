@@ -1,18 +1,18 @@
 -- We modify a few tables to roll-up fields
 -- until we can use single table inheritance with linkml
 
--- roll-up fields from AlphaBetaTCR and GammaDeltaTCR
-ALTER TABLE "TCellReceptor"
-ADD COLUMN tra_chain TEXT REFERENCES "Chain" (akc_id),
-ADD COLUMN trb_chain TEXT REFERENCES "Chain" (akc_id),
-ADD COLUMN trg_chain TEXT REFERENCES "Chain" (akc_id),
-ADD COLUMN trd_chain TEXT REFERENCES "Chain" (akc_id);
-
 -- roll-up fields from PeptidicEpitope
 ALTER TABLE "Epitope"
 ADD COLUMN sequence_aa TEXT,
-ADD COLUMN source_protein TEXT,
-ADD COLUMN source_organism TEXT REFERENCES "TaxonomicSpecies" (term_id);
+ADD COLUMN modifications TEXT;
+
+-- roll-up fields from ImmuneExposure
+ALTER TABLE "LifeEvent"
+-- ImmuneExposure
+ADD COLUMN exposure_material VARCHAR, 
+ADD COLUMN disease TEXT REFERENCES "Diseases" (term_id), 
+ADD COLUMN disease_stage TEXT, 
+ADD COLUMN disease_severity TEXT;
 
 -- roll-up fields from AIRRSequencingData
 ALTER TABLE "SequenceData"
@@ -27,7 +27,7 @@ ADD COLUMN paired_read_length INTEGER,
 ADD COLUMN index_filename TEXT, 
 ADD COLUMN index_length INTEGER;
 
--- roll-up fields from AIRRSequencingAssay and TCellReceptorEpitopeBindingAssay
+-- roll-up fields from subclasses
 ALTER TABLE "Assay"
 -- AIRRSequencingAssay
 ADD COLUMN repertoire_id TEXT, 
@@ -39,16 +39,17 @@ ADD COLUMN sequencing_run_date TIMESTAMP WITHOUT TIME ZONE,
 ADD COLUMN sequencing_kit TEXT, 
 ADD COLUMN sequencing_files TEXT REFERENCES "SequenceData" (akc_id), 
 -- TCellReceptorEpitopeBindingAssay
-ADD COLUMN epitope TEXT REFERENCES "Epitope" (akc_id), 
+ADD COLUMN mhc_evidence TEXT,
 ADD COLUMN measurement_category VARCHAR(21);
+-- AntibodyAntigenBindingAssay
 
 -- custom mapping table
-CREATE TABLE "Assay_tcr_complexes" (
+CREATE TABLE "Assay_receptor_composites" (
 	assay_akc_id TEXT, 
-	tcr_complexes_akc_id TEXT, 
-	PRIMARY KEY (assay_akc_id, tcr_complexes_akc_id), 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY (assay_akc_id, receptor_composites_akc_id), 
 	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
 );
 
 -- tables to support the query API
@@ -57,8 +58,15 @@ CREATE TABLE "QueryAssay" (
        assay_object JSONB,
        PRIMARY KEY (akc_id)
 );
+CREATE INDEX idx_query_assay_fts ON "QueryAssay" USING GIN (to_tsvector('english', assay_object));
 
 -- some useful indexes
-CREATE INDEX "Chain_junction_aa" ON "Chain" ("junction_aa");
-CREATE INDEX "Chain_cdr3_aa" ON "Chain" ("cdr3_aa");
-CREATE INDEX "Chain_aa_hash" ON "Chain" ("aa_hash");
+CREATE INDEX chain_hash_infer_vdj_sequence ON "Chain" ("hash_infer_vdj_sequence");
+CREATE INDEX chain_hash_infer_vdj_sequence_aa ON "Chain" ("hash_infer_vdj_sequence_aa");
+CREATE INDEX chain_junction_aa ON "Chain" ("junction_aa");
+CREATE INDEX chain_v_call ON "Chain" ("v_call");
+CREATE INDEX chain_v_gene ON "Chain" ("v_gene");
+CREATE INDEX chain_v_subgroup ON "Chain" ("v_subgroup");
+CREATE INDEX chain_j_call ON "Chain" ("j_call");
+CREATE INDEX chain_j_gene ON "Chain" ("j_gene");
+CREATE INDEX chain_j_subgroup ON "Chain" ("j_subgroup");

@@ -10,12 +10,13 @@ classes:
     slots:
       - life_event
       - tissue # AIRR standard
+    slot_usage:
+      tissue:
+        range: UberAnatomy
 
   SpecimenCollection:
     is_a: LifeEvent
     class_uri: OBI:0000659 # specimen collection
-    slots:
-      - specimen
 
   SpecimenProcessing:
     is_a: Process
@@ -38,6 +39,11 @@ classes:
       - cell_quality
       - cell_isolation
       - cell_processing_protocol
+    slot_usage:
+      cell_subset:
+        range: Cells
+      cell_species:
+        range: TaxonomicSpecies
 
   LibraryPreparationProcessing:
     is_a: SpecimenProcessing
@@ -61,21 +67,29 @@ classes:
     slots:
       - repertoire_id
       - tcr_complexes
+      - antibody_complexes
+      - receptor_composites
     slot_usage:
       sequencing_files:
         range: AIRRSequencingData
+
+# todo: for T/B cell assay -> epitope, antigen and MHC are already in the complex, redundant to have in the Assay level?
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
     mixins: TCellReceptorEpitopeSpecificityMeasurement
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
-      - epitope
       - tcr_complexes
+      - mhc_evidence
+      - receptor_composites
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
     class_uri: OBI:0003127 # B cell epitope assay
+    slots:
+      - antibody_complexes
+      - receptor_composites
 
 slots:
   life_event:
@@ -98,10 +112,16 @@ slots:
   target_entity_type:
     description: The type of the entity being measured
 
+  mhc_evidence:
+    description: Evidence code for MHC restriction
+    range: uriorcurie
 
-  epitope:
-    description: The epitope being measured
-    range: Epitope
+#  epitope:
+#    description: The epitope being measured
+#    range: Epitope
+#  antigen:
+#    description: The antigen being measured
+#    range: Antigen
   tcell_receptors:
     description: The T cell receptors being measured
     range: TCellReceptor
@@ -110,6 +130,15 @@ slots:
     description: The T cell receptor/epitope/mhc complex being measured
     range: TCRpMHCComplex
     multivalued: true
+  antibody_complexes:
+    description: The antibody-antigen complex being measured
+    range: AntibodyAntigenComplex
+    multivalued: true
+  receptor_composites:
+    description: Composite object for database optimization
+    range: ReceptorComposite
+    multivalued: true
+
 
 enums:
   AssayTypeOntology:
