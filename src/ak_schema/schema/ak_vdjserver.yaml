@@ -1,0 +1,2041 @@
+---
+
+id: https://github.com/airr-knowledge/ak-schema
+
+name: ak-schema
+
+classes:
+  CommonExtension:
+    is_a: VDJServer
+    slots:
+      - vdjserver_uuid
+      - version
+  StudyExtension:
+    is_a: VDJServer
+    slots:
+      - vdjserver_uuid
+      - version
+      - owner
+      - keywords
+  Study:
+    is_a: VDJServer
+    slots:
+      - study_id
+      - study_title
+      - study_type
+      - study_description
+      - inclusion_exclusion_criteria
+      - grants
+      - study_contact
+      - collected_by
+      - lab_name
+      - lab_address
+      - submitted_by
+      - pub_ids
+      - keywords_study
+      - adc_publish_date
+      - adc_update_date
+      - vdjserver
+  ProjectExtension:
+    is_a: VDJServer
+    slots:
+      - vdjserver_uuid
+      - version
+      - owner
+      - keywords
+      - showArchivedJobs
+  ProjectPermission:
+    is_a: VDJServer
+    slots:
+      - username
+      - permission
+  Project:
+    is_a: VDJServer
+    slots:
+      - study_id
+      - study_title
+      - study_type
+      - study_description
+      - inclusion_exclusion_criteria
+      - grants
+      - study_contact
+      - collected_by
+      - lab_name
+      - lab_address
+      - submitted_by
+      - pub_ids
+      - keywords_study
+      - adc_publish_date
+      - adc_update_date
+      - vdjserver
+  RepertoireExtension:
+    is_a: VDJServer
+    slots:
+      - vdjserver_uuid
+      - version
+      - owner
+  Repertoire:
+    is_a: VDJServer
+    slots:
+      - repertoire_id
+      - repertoire_name
+      - repertoire_description
+      - study
+      - subject
+      - sample
+      - data_processing
+  AIRRRepertoire:
+    is_a: VDJServer
+    slots:
+      - repertoire_id
+      - repertoire_name
+      - repertoire_description
+      - study
+      - subject
+      - sample
+      - data_processing
+      - vdjserver
+  RepertoireGroup:
+    is_a: VDJServer
+    slots:
+      - repertoire_group_id
+      - repertoire_group_name
+      - repertoire_group_description
+      - repertoires
+      - vdjserver
+  Subject:
+    is_a: VDJServer
+    slots:
+      - subject_id
+      - synthetic
+      - species
+      - sex
+      - age_min
+      - age_max
+      - age_unit
+      - age_event
+      - ancestry_population
+      - ethnicity
+      - race
+      - strain_name
+      - linked_subjects
+      - link_type
+      - diagnosis
+      - genotype
+      - vdjserver
+  SampleProcessing:
+    is_a: VDJServer
+    slots:
+      - sample_processing_id
+      - sample_id
+      - sample_type
+      - tissue
+      - anatomic_site
+      - disease_state_sample
+      - collection_time_point_relative
+      - collection_time_point_relative_unit
+      - collection_time_point_reference
+      - biomaterial_provider
+      - tissue_processing
+      - cell_subset
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
+      - template_class
+      - template_quality
+      - template_amount
+      - template_amount_unit
+      - library_generation_method
+      - library_generation_protocol
+      - library_generation_kit_version
+      - pcr_target
+      - complete_sequences
+      - physical_linkage
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
+      - sequencing_files
+      - vdjserver
+  DataProcessing:
+    is_a: VDJServer
+    slots:
+      - data_processing_id
+      - primary_annotation
+      - software_versions
+      - paired_reads_assembly
+      - quality_thresholds
+      - primer_match_cutoffs
+      - collapsing_method
+      - data_processing_protocols
+      - data_processing_files
+      - germline_database
+      - germline_set_ref
+      - analysis_provenance_id
+      - vdjserver
+  DataFileExtension:
+    is_a: VDJServer
+    slots:
+      - vdjserver:app:igblast
+  TapisMetaObject:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+  UserAccount:
+    is_a: VDJServer
+    slots:
+      - username
+      - password
+      - email
+      - isEmailVerified
+      - firstName
+      - lastName
+      - city
+      - state
+      - country
+      - affiliation
+      - disableJobEmail
+      - disableUserEmail
+      - disablePublishEmail
+      - showArchivedProjects
+  UserAccountMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  UserVerification:
+    is_a: VDJServer
+    slots:
+      - username
+      - isVerified
+  UserVerificationMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  Feedback:
+    is_a: VDJServer
+    slots:
+      - feedbackMessage
+      - username
+      - email
+  FeedbackMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  PrivateProjectMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+      - permission
+  ArchivedProjectMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+      - permission
+  PublicProjectMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  RepertoireMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  RepertoireGroupMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  SubjectMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  SampleProcessingMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  DataProcessingMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ProjectFile:
+    is_a: VDJServer
+    slots:
+      - path
+      - name
+      - size
+      - readDirection
+      - fileType
+      - tags
+      - url
+      - pairedReadMetadataUuid
+      - readMetadataUuid
+      - qualityScoreMetadataUuid
+  ProjectFileMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  DeletedFileMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ProjectJobFile:
+    is_a: VDJServer
+    slots:
+      - projectUuid
+      - jobUuid
+      - name
+      - length
+  ProjectJobFileMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ProjectJob:
+    is_a: VDJServer
+    slots:
+      - projectUuid
+      - jobUuid
+      - displayName
+      - secondaryInputs
+  ProjectJobMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCRepository:
+    is_a: VDJServer
+    slots:
+      - repository_id
+      - disable
+      - title
+      - server_host
+      - base_url
+      - enable_cache
+      - supports_async
+      - async_host
+      - async_base_url
+      - enable_statistics_cache
+  ADCRepositorySet:
+    is_a: VDJServer
+    slots:
+      - adc
+      - staging
+  ADCRepositorySetMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCAsyncQuery:
+    is_a: VDJServer
+    slots:
+      - endpoint
+      - collection
+      - lrq_id
+      - status
+      - message
+      - notification
+      - body
+      - raw_file
+      - final_file
+      - download_url
+      - postit_id
+      - count_lrq_id
+      - estimated_count
+  ADCAsyncQueryMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCQueryFilter:
+    is_a: VDJServer
+    slots:
+      - body
+  ADCProjectLoad:
+    is_a: VDJServer
+    slots:
+      - projectUuid
+      - collection
+      - shouldLoad
+      - isLoaded
+      - repertoireMetadataLoaded
+      - rearrangementDataLoaded
+  ADCProjectLoadMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCRearrangementLoad:
+    is_a: VDJServer
+    slots:
+      - projectUuid
+      - repertoire_id
+      - collection
+      - isLoaded
+      - load_set
+  ADCRearrangementLoadMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCDownloadCache:
+    is_a: VDJServer
+    slots:
+      - enable_cache
+  ADCDownloadCacheMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCDownloadCacheStudy:
+    is_a: VDJServer
+    slots:
+      - repository_id
+      - study_id
+      - should_cache
+      - is_cached
+      - archive_file
+      - download_url
+  ADCDownloadCacheStudyMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ADCDownloadCacheRepertoire:
+    is_a: VDJServer
+    slots:
+      - repository_id
+      - study_id
+      - repertoire_id
+      - should_cache
+      - is_cached
+      - archive_file
+      - download_url
+  ADCDownloadCacheRepertoireMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  StatisticsCache:
+    is_a: VDJServer
+    slots:
+      - enable_cache
+      - jobs_submitted
+  StatisticsCacheMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  StatisticsCacheStudy:
+    is_a: VDJServer
+    slots:
+      - repository_id
+      - study_id
+      - download_cache_id
+      - should_cache
+      - is_cached
+  StatisticsCacheStudyMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  StatisticsCacheRepertoire:
+    is_a: VDJServer
+    slots:
+      - repository_id
+      - study_id
+      - repertoire_id
+      - download_cache_id
+      - should_cache
+      - is_cached
+      - statistics_job_id
+      - timeMultiplier
+  StatisticsCacheRepertoireMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  ProvDocument:
+    is_a: VDJServer
+    slots:
+      - entity
+      - agent
+      - activity
+      - used
+      - wasAttributedTo
+      - wasAssociatedWith
+      - wasDerivedFrom
+      - wasGeneratedBy
+  TaskDocument:
+    is_a: VDJServer
+    slots:
+      - uses
+      - isAttributedTo
+      - isAssociatedWith
+      - isDerivedFrom
+      - isGeneratedBy
+  AnalysisProperties:
+    is_a: VDJServer
+    slots:
+      - workflow_name
+      - workflow_mode
+      - status
+      - status_message
+  AnalysisDocument:
+    is_a: VDJServer
+    slots:
+      - entity
+      - agent
+      - activity
+      - used
+      - wasAttributedTo
+      - wasAssociatedWith
+      - wasDerivedFrom
+      - wasGeneratedBy
+      - uses
+      - isAttributedTo
+      - isAssociatedWith
+      - isDerivedFrom
+      - isGeneratedBy
+      - workflow_name
+      - workflow_mode
+      - status
+      - status_message
+  AnalysisDocumentMeta:
+    is_a: VDJServer
+    slots:
+      - uuid
+      - associationIds
+      - owner
+      - created
+      - lastUpdated
+      - name
+      - value
+  VDJPipeInputs:
+    is_a: VDJServer
+    slots:
+      - JobFiles
+      - SequenceFASTQ
+      - SequenceFASTA
+      - SequenceQualityFiles
+      - SequenceForwardPairedFiles
+      - SequenceReversePairedFiles
+      - ForwardPrimerFile
+      - ReversePrimerFile
+      - BarcodeFile
+  VDJPipeParameters:
+    is_a: VDJServer
+    slots:
+      - Workflow
+      - SecondaryInputsFlag
+      - MergeMinimumScore
+      - PreFilterStatisticsFlag
+      - FilterFlag
+      - MinimumAverageQuality
+      - MinimumLength
+      - MaximumHomopolymer
+      - PostFilterStatisticsFlag
+      - Barcode
+      - BarcodeLocation
+      - BarcodeDiscard
+      - BarcodeGenerateHistogram
+      - BarcodeMaximumMismatches
+      - BarcodeTrim
+      - BarcodeSearchWindow
+      - BarcodeSplitFlag
+      - ForwardPrimer
+      - ForwardPrimerMaximumMismatches
+      - ForwardPrimerTrim
+      - ForwardPrimerSearchWindow
+      - ReversePrimer
+      - ReversePrimerMaximumMismatches
+      - ReversePrimerTrim
+      - ReversePrimerSearchWindow
+      - FindUniqueFlag
+  VisualizationDocument:
+    is_a: VDJServer
+    slots:
+      - name
+      - repertoire_id
+      - repertoire_group_id
+      - processing_stage
+  BasicResponse:
+    is_a: VDJServer
+    slots:
+      - status
+      - message
+  Recaptcha:
+    is_a: VDJServer
+    slots:
+      - g-recaptcha-response
+  UserAccountCreation:
+    is_a: VDJServer
+    slots:
+      - username
+      - password
+      - email
+      - isEmailVerified
+      - firstName
+      - lastName
+      - city
+      - state
+      - country
+      - affiliation
+      - disableJobEmail
+      - disableUserEmail
+      - disablePublishEmail
+      - showArchivedProjects
+  FilePostitRequest:
+    is_a: VDJServer
+    slots:
+      - path
+      - allowedUses
+      - validSeconds
+  ProjectPermissionRequest:
+    is_a: VDJServer
+    slots:
+      - username
+  FeedbackRequest:
+    is_a: VDJServer
+    slots:
+      - feedback
+  PublicFeedbackRequest:
+    is_a: VDJServer
+    slots:
+      - feedbackMessage
+      - username
+      - email
+      - g-recaptcha-response
+  ErrorTelemetry:
+    is_a: VDJServer
+    slots:
+      - project_uuid
+      - job_uuid
+      - filename
+      - method
+      - error
+      - view
+      - browser
+      - os
+  AnalysisRequest:
+    is_a: VDJServer
+    slots:
+      - entity
+      - agent
+      - activity
+      - used
+      - wasAttributedTo
+      - wasAssociatedWith
+      - wasDerivedFrom
+      - wasGeneratedBy
+      - uses
+      - isAttributedTo
+      - isAssociatedWith
+      - isDerivedFrom
+      - isGeneratedBy
+      - workflow_name
+      - workflow_mode
+      - status
+      - status_message
+  VisualizationRequest:
+    is_a: VDJServer
+    slots:
+      - visualization
+  ADCRepositoryUpdateRequest:
+    is_a: VDJServer
+    slots:
+      - repository_set
+      - repository
+
+slots:
+  vdjserver_uuid:
+    name: vdjserver_uuid
+    description: link to object in Tapis Meta
+    range: string
+    annotations:
+      nullable: true
+  version:
+    name: version
+    description: Timestamp of the object
+    range: string
+    annotations:
+      nullable: true
+  owner:
+    name: owner
+    range: string
+  keywords:
+    name: keywords
+    description: VDJServer specific keywords.
+    range: string
+    multivalued: true
+    annotations:
+      nullable: true
+  study_id:
+    name: study_id
+    range: string
+  study_title:
+    name: study_title
+    description: Descriptive study title
+    range: string
+    annotations:
+      nullable: true
+  study_type:
+    name: study_type
+    description: Type of study design
+    slot_uri: rdf:type
+    annotations:
+      nullable: true
+  study_description:
+    name: study_description
+    description: Generic study description
+    range: string
+    annotations:
+      nullable: true
+  inclusion_exclusion_criteria:
+    name: inclusion_exclusion_criteria
+    description: List of criteria for inclusion/exclusion for the study
+    range: string
+    annotations:
+      nullable: true
+  grants:
+    name: grants
+    description: Funding agencies and grant numbers
+    range: string
+    annotations:
+      nullable: true
+  study_contact:
+    name: study_contact
+    description: Full contact information of the contact persons for this study This should include an e-mail address and a persistent identifier such as an ORCID ID.
+    range: string
+    annotations:
+      nullable: true
+  collected_by:
+    name: collected_by
+    description: Full contact information of the data collector, i.e. the person who is legally responsible for data collection and release. This should include an e-mail address and a persistent identifier such as an ORCID ID.
+    range: string
+    annotations:
+      nullable: true
+  lab_name:
+    name: lab_name
+    description: Department of data collector
+    range: string
+    annotations:
+      nullable: true
+  lab_address:
+    name: lab_address
+    description: Institution and institutional address of data collector
+    range: string
+    annotations:
+      nullable: true
+  submitted_by:
+    name: submitted_by
+    description: Full contact information of the data depositor, i.e., the person submitting the data to a repository. This should include an e-mail address and a persistent identifier such as an ORCID ID. This is supposed to be a short-lived and technical role until the submission is relased.
+    range: string
+    annotations:
+      nullable: true
+  pub_ids:
+    name: pub_ids
+    description: Publications describing the rationale and/or outcome of the study. Where ever possible, a persistent identifier should be used such as a DOI or a Pubmed ID
+    range: string
+    annotations:
+      nullable: true
+  keywords_study:
+    name: keywords_study
+    description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
+    range: KeywordsStudyEnum
+    multivalued: true
+    annotations:
+      nullable: true
+  adc_publish_date:
+    name: adc_publish_date
+    description: Date the study was first published in the AIRR Data Commons.
+    range: datetime
+    annotations:
+      nullable: true
+  adc_update_date:
+    name: adc_update_date
+    description: Date the study data was updated in the AIRR Data Commons.
+    range: datetime
+    annotations:
+      nullable: true
+  vdjserver:
+    name: vdjserver
+  showArchivedJobs:
+    name: showArchivedJobs
+    description: Flag for archived jobs.
+    range: boolean
+  username:
+    name: username
+    range: string
+  permission:
+    name: permission
+    description: ''
+  repertoire_id:
+    name: repertoire_id
+    range: string
+  repertoire_name:
+    name: repertoire_name
+    description: Short generic display name for the repertoire
+    range: string
+    annotations:
+      nullable: true
+  repertoire_description:
+    name: repertoire_description
+    description: Generic repertoire description
+    range: string
+    annotations:
+      nullable: true
+  study:
+    name: study
+  subject:
+    name: subject
+  sample:
+    name: sample
+    multivalued: true
+    annotations:
+      nullable: false
+  data_processing:
+    name: data_processing
+    multivalued: true
+    annotations:
+      nullable: false
+  repertoire_group_id:
+    name: repertoire_group_id
+    range: string
+  repertoire_group_name:
+    name: repertoire_group_name
+    description: Short display name for this repertoire collection
+    range: string
+    annotations:
+      nullable: true
+  repertoire_group_description:
+    name: repertoire_group_description
+    description: Repertoire collection description
+    range: string
+    annotations:
+      nullable: true
+  repertoires:
+    name: repertoires
+    description: List of repertoires in this collection with an associated description and time point designation
+    multivalued: true
+    annotations:
+      nullable: true
+  subject_id:
+    name: subject_id
+    description: Subject ID assigned by submitter, unique within study. If possible, a persistent subject ID linked to an INSDC or similar repository study should be used.
+    range: string
+    annotations:
+      nullable: true
+  synthetic:
+    name: synthetic
+    description: TRUE for libraries in which the diversity has been synthetically generated (e.g. phage display)
+    range: boolean
+    annotations:
+      nullable: false
+  species:
+    name: species
+    description: Binomial designation of subject's species
+    annotations:
+      nullable: false
+  sex:
+    name: sex
+    description: Biological sex of subject
+    range: SexEnum
+    annotations:
+      nullable: true
+  age_min:
+    name: age_min
+    description: Specific age or lower boundary of age range.
+    range: float
+    annotations:
+      nullable: true
+  age_max:
+    name: age_max
+    description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
+    range: float
+    annotations:
+      nullable: true
+  age_unit:
+    name: age_unit
+    description: Unit of age range
+    annotations:
+      nullable: true
+  age_event:
+    name: age_event
+    description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
+    range: string
+    annotations:
+      nullable: true
+  ancestry_population:
+    name: ancestry_population
+    description: Broad geographic origin of ancestry (continent)
+    range: string
+    annotations:
+      nullable: true
+  ethnicity:
+    name: ethnicity
+    description: Ethnic group of subject (defined as cultural/language-based membership)
+    range: string
+    annotations:
+      nullable: true
+  race:
+    name: race
+    description: Racial group of subject (as defined by NIH)
+    range: string
+    annotations:
+      nullable: true
+  strain_name:
+    name: strain_name
+    description: Non-human designation of the strain or breed of animal used
+    range: string
+    annotations:
+      nullable: true
+  linked_subjects:
+    name: linked_subjects
+    description: Subject ID to which `Relation type` refers
+    range: string
+    annotations:
+      nullable: true
+  link_type:
+    name: link_type
+    description: Relation between subject and `linked_subjects`, can be genetic or environmental (e.g.exposure)
+    slot_uri: rdf:type
+    range: string
+    annotations:
+      nullable: true
+  diagnosis:
+    name: diagnosis
+    description: Diagnosis information for subject
+    multivalued: true
+    annotations:
+      nullable: false
+  genotype:
+    name: genotype
+    description: ''
+    annotations:
+      nullable: true
+  sample_processing_id:
+    name: sample_processing_id
+    description: Identifier for the sample processing object. This field should be unique within the repertoire. This field can be used to uniquely identify the combination of sample, cell processing, nucleic acid processing and sequencing run information for the repertoire.
+    range: string
+    annotations:
+      nullable: true
+  sample_id:
+    name: sample_id
+    description: Sample ID assigned by submitter, unique within study. If possible, a persistent sample ID linked to INSDC or similar repository study should be used.
+    range: string
+    annotations:
+      nullable: true
+  sample_type:
+    name: sample_type
+    description: The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture
+    slot_uri: rdf:type
+    range: string
+    annotations:
+      nullable: true
+  tissue:
+    name: tissue
+    description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
+    annotations:
+      nullable: true
+  anatomic_site:
+    name: anatomic_site
+    description: The anatomic location of the tissue, e.g. Inguinal, femur
+    range: string
+    annotations:
+      nullable: true
+  disease_state_sample:
+    name: disease_state_sample
+    description: Histopathologic evaluation of the sample
+    range: string
+    annotations:
+      nullable: true
+  collection_time_point_relative:
+    name: collection_time_point_relative
+    description: Time point at which sample was taken, relative to `Collection time event`
+    range: float
+    annotations:
+      nullable: true
+  collection_time_point_relative_unit:
+    name: collection_time_point_relative_unit
+    description: Unit of Sample collection time
+    annotations:
+      nullable: true
+  collection_time_point_reference:
+    name: collection_time_point_reference
+    description: Event in the study schedule to which `Sample collection time` relates to
+    range: string
+    annotations:
+      nullable: true
+  biomaterial_provider:
+    name: biomaterial_provider
+    description: Name and address of the entity providing the sample
+    range: string
+    annotations:
+      nullable: true
+  tissue_processing:
+    name: tissue_processing
+    description: Enzymatic digestion and/or physical methods used to isolate cells from sample
+    range: string
+    annotations:
+      nullable: true
+  cell_subset:
+    name: cell_subset
+    description: Commonly-used designation of isolated cell population
+    annotations:
+      nullable: true
+  cell_phenotype:
+    name: cell_phenotype
+    description: List of cellular markers and their expression levels used to isolate the cell population
+    range: string
+    annotations:
+      nullable: true
+  cell_species:
+    name: cell_species
+    description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
+    annotations:
+      nullable: true
+  single_cell:
+    name: single_cell
+    description: TRUE if single cells were isolated into separate compartments
+    range: boolean
+    annotations:
+      nullable: true
+  cell_number:
+    name: cell_number
+    description: Total number of cells that went into the experiment
+    range: integer
+    annotations:
+      nullable: true
+  cells_per_reaction:
+    name: cells_per_reaction
+    description: Number of cells for each biological replicate
+    range: integer
+    annotations:
+      nullable: true
+  cell_storage:
+    name: cell_storage
+    description: TRUE if cells were cryo-preserved between isolation and further processing
+    range: boolean
+    annotations:
+      nullable: true
+  cell_quality:
+    name: cell_quality
+    description: Relative amount of viable cells after preparation and (if applicable) thawing
+    range: string
+    annotations:
+      nullable: true
+  cell_isolation:
+    name: cell_isolation
+    description: Description of the procedure used for marker-based isolation or enrich cells
+    range: string
+    annotations:
+      nullable: true
+  cell_processing_protocol:
+    name: cell_processing_protocol
+    description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
+    range: string
+    annotations:
+      nullable: true
+  template_class:
+    name: template_class
+    description: The class of nucleic acid that was used as primary starting material for the following procedures
+    range: TemplateClassEnum
+    annotations:
+      nullable: false
+  template_quality:
+    name: template_quality
+    description: Description and results of the quality control performed on the template material
+    range: string
+    annotations:
+      nullable: true
+  template_amount:
+    name: template_amount
+    description: Amount of template that went into the process
+    range: float
+    annotations:
+      nullable: true
+  template_amount_unit:
+    name: template_amount_unit
+    description: Unit of template amount
+    annotations:
+      nullable: true
+  library_generation_method:
+    name: library_generation_method
+    description: Generic type of library generation
+    range: LibraryGenerationMethodEnum
+    annotations:
+      nullable: false
+  library_generation_protocol:
+    name: library_generation_protocol
+    description: Description of processes applied to substrate to obtain a library that is ready for sequencing
+    range: string
+    annotations:
+      nullable: true
+  library_generation_kit_version:
+    name: library_generation_kit_version
+    description: When using a library generation protocol from a commercial provider, provide the protocol version number
+    range: string
+    annotations:
+      nullable: true
+  pcr_target:
+    name: pcr_target
+    description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
+    multivalued: true
+    annotations:
+      nullable: false
+  complete_sequences:
+    name: complete_sequences
+    description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
+    range: CompleteSequencesEnum
+    annotations:
+      nullable: false
+  physical_linkage:
+    name: physical_linkage
+    description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
+    range: PhysicalLinkageEnum
+    annotations:
+      nullable: false
+  sequencing_run_id:
+    name: sequencing_run_id
+    description: ID of sequencing run assigned by the sequencing facility
+    range: string
+    annotations:
+      nullable: true
+  total_reads_passing_qc_filter:
+    name: total_reads_passing_qc_filter
+    description: Number of usable reads for analysis
+    range: integer
+    annotations:
+      nullable: true
+  sequencing_platform:
+    name: sequencing_platform
+    description: Designation of sequencing instrument used
+    range: string
+    annotations:
+      nullable: true
+  sequencing_facility:
+    name: sequencing_facility
+    description: Name and address of sequencing facility
+    range: string
+    annotations:
+      nullable: true
+  sequencing_run_date:
+    name: sequencing_run_date
+    description: Date of sequencing run
+    range: datetime
+    annotations:
+      nullable: true
+  sequencing_kit:
+    name: sequencing_kit
+    description: Name, manufacturer, order and lot numbers of sequencing kit
+    range: string
+    annotations:
+      nullable: true
+  sequencing_files:
+    name: sequencing_files
+    description: Set of sequencing files produced by the sequencing run
+    annotations:
+      nullable: false
+  data_processing_id:
+    name: data_processing_id
+    description: Identifier for the data processing object.
+    range: string
+    annotations:
+      nullable: true
+  primary_annotation:
+    name: primary_annotation
+    description: If true, indicates this is the primary or default data processing for the repertoire and its rearrangements. If false, indicates this is a secondary or additional data processing.
+    range: boolean
+    annotations:
+      nullable: false
+  software_versions:
+    name: software_versions
+    description: Version number and / or date, include company pipelines
+    range: string
+    annotations:
+      nullable: true
+  paired_reads_assembly:
+    name: paired_reads_assembly
+    description: How paired end reads were assembled into a single receptor sequence
+    range: string
+    annotations:
+      nullable: true
+  quality_thresholds:
+    name: quality_thresholds
+    description: How/if sequences were removed from (4) based on base quality scores
+    range: string
+    annotations:
+      nullable: true
+  primer_match_cutoffs:
+    name: primer_match_cutoffs
+    description: How primers were identified in the sequences, were they removed/masked/etc?
+    range: string
+    annotations:
+      nullable: true
+  collapsing_method:
+    name: collapsing_method
+    description: The method used for combining multiple sequences from (4) into a single sequence in (5)
+    range: string
+    annotations:
+      nullable: true
+  data_processing_protocols:
+    name: data_processing_protocols
+    description: General description of how QC is performed
+    range: string
+    annotations:
+      nullable: true
+  data_processing_files:
+    name: data_processing_files
+    description: Array of file names for data produced by this data processing.
+    range: string
+    multivalued: true
+    annotations:
+      nullable: true
+  germline_database:
+    name: germline_database
+    description: Source of germline V(D)J genes with version number or date accessed.
+    range: string
+    annotations:
+      nullable: true
+  germline_set_ref:
+    name: germline_set_ref
+    description: Unique identifier of the germline set and version, in standardized form (Repo:Label:Version)
+    range: string
+    annotations:
+      nullable: true
+  analysis_provenance_id:
+    name: analysis_provenance_id
+    description: Identifier for machine-readable PROV model of analysis provenance
+    range: string
+    annotations:
+      nullable: true
+  vdjserver:app:igblast:
+    name: vdjserver:app:igblast
+    description: Username that owns the project.
+    range: string
+  uuid:
+    name: uuid
+    description: object identifier
+    range: string
+    annotations:
+      nullable: false
+  associationIds:
+    name: associationIds
+    description: object associations
+    range: string
+    multivalued: true
+    annotations:
+      nullable: true
+  created:
+    name: created
+    description: object creation timestamp
+    range: datetime
+    annotations:
+      nullable: true
+  lastUpdated:
+    name: lastUpdated
+    description: object last update timestamp
+    range: datetime
+    annotations:
+      nullable: true
+  name:
+    name: name
+  password:
+    name: password
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  email:
+    name: email
+    range: string
+  isEmailVerified:
+    name: isEmailVerified
+    description: ''
+    range: boolean
+  firstName:
+    name: firstName
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  lastName:
+    name: lastName
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  city:
+    name: city
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  state:
+    name: state
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  country:
+    name: country
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  affiliation:
+    name: affiliation
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  disableJobEmail:
+    name: disableJobEmail
+    description: ''
+    range: boolean
+  disableUserEmail:
+    name: disableUserEmail
+    description: ''
+    range: boolean
+  disablePublishEmail:
+    name: disablePublishEmail
+    description: ''
+    range: boolean
+  showArchivedProjects:
+    name: showArchivedProjects
+    description: ''
+    range: boolean
+  value:
+    name: value
+  isVerified:
+    name: isVerified
+    description: ''
+    range: boolean
+  feedbackMessage:
+    name: feedbackMessage
+    description: ''
+    range: string
+  path:
+    name: path
+    range: string
+  size:
+    name: size
+    description: ''
+    range: float
+  readDirection:
+    name: readDirection
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  fileType:
+    name: fileType
+    description: ''
+    range: float
+  tags:
+    name: tags
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  url:
+    name: url
+    description: ''
+    range: string
+  pairedReadMetadataUuid:
+    name: pairedReadMetadataUuid
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  readMetadataUuid:
+    name: readMetadataUuid
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  qualityScoreMetadataUuid:
+    name: qualityScoreMetadataUuid
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  projectUuid:
+    name: projectUuid
+    range: string
+  jobUuid:
+    name: jobUuid
+    description: ''
+    range: string
+  length:
+    name: length
+    description: ''
+    range: float
+  displayName:
+    name: displayName
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  secondaryInputs:
+    name: secondaryInputs
+    description: ''
+    range: string
+    annotations:
+      nullable: true
+  repository_id:
+    name: repository_id
+    range: string
+    annotations:
+      nullable: false
+  disable:
+    name: disable
+    description: Disable the repository
+    range: boolean
+  title:
+    name: title
+    description: Display name of repository
+    range: string
+  server_host:
+    name: server_host
+    description: Hostname for repository
+    range: string
+    annotations:
+      nullable: false
+  base_url:
+    name: base_url
+    description: Base ADC URL for repository
+    range: string
+    annotations:
+      nullable: false
+  enable_cache:
+    name: enable_cache
+    range: boolean
+  supports_async:
+    name: supports_async
+    description: Repository supports AIRR ADC ASYNC API extension
+    range: boolean
+  async_host:
+    name: async_host
+    description: Hostname for repository
+    range: string
+  async_base_url:
+    name: async_base_url
+    description: Base ADC ASYNC API URL for repository
+    range: string
+    annotations:
+      nullable: false
+  enable_statistics_cache:
+    name: enable_statistics_cache
+    description: Statistics cache enable/disable for the repository
+    range: boolean
+  adc:
+    name: adc
+    description: List of production repositories. Each entry is keyed by the repository id.
+    multivalued: true
+  staging:
+    name: staging
+    description: List of staging repositories. Each entry is keyed by the repository id.
+    multivalued: true
+  endpoint:
+    name: endpoint
+    description: API endpoint for query
+    range: EndpointEnum
+    annotations:
+      nullable: false
+  collection:
+    name: collection
+    range: string
+    annotations:
+      nullable: false
+  lrq_id:
+    name: lrq_id
+    description: Tapis LRQ identifier
+    range: string
+    annotations:
+      nullable: true
+  status:
+    name: status
+  message:
+    name: message
+    range: string
+  notification:
+    name: notification
+    description: Query status notification URL
+    range: string
+    annotations:
+      nullable: true
+  body:
+    name: body
+  raw_file:
+    name: raw_file
+    description: Tapis file containing raw JSON data from LRQ query
+    range: string
+    annotations:
+      nullable: true
+  final_file:
+    name: final_file
+    description: Filename for final processed data to be downloaded by user
+    range: string
+    annotations:
+      nullable: true
+  download_url:
+    name: download_url
+    range: string
+  postit_id:
+    name: postit_id
+    description: Tapis postit identifier for download file
+    range: string
+    annotations:
+      nullable: true
+  count_lrq_id:
+    name: count_lrq_id
+    description: Tapis LRQ identifier for estimated count of query result
+    range: string
+    annotations:
+      nullable: true
+  estimated_count:
+    name: estimated_count
+    description: Estimated count of query result. Used to enforce maximum result size.
+    range: float
+    annotations:
+      nullable: true
+  shouldLoad:
+    name: shouldLoad
+    description: Flag to indicate project should be loaded into ADC.
+    range: boolean
+  isLoaded:
+    name: isLoaded
+    range: boolean
+  repertoireMetadataLoaded:
+    name: repertoireMetadataLoaded
+    description: Flag to indicate if repertoire data has finished loading into ADC.
+    range: boolean
+  rearrangementDataLoaded:
+    name: rearrangementDataLoaded
+    description: Flag to indicate if rearrangement data has finished loading into ADC.
+    range: boolean
+  load_set:
+    name: load_set
+    description: Last rearrangement set that was loaded.
+    range: float
+  should_cache:
+    name: should_cache
+    range: boolean
+  is_cached:
+    name: is_cached
+    range: boolean
+  archive_file:
+    name: archive_file
+    range: string
+  jobs_submitted:
+    name: jobs_submitted
+    description: Flag indicating if statistics jobs are being run.
+    range: boolean
+  download_cache_id:
+    name: download_cache_id
+    range: string
+    annotations:
+      nullable: false
+  statistics_job_id:
+    name: statistics_job_id
+    description: Tapis jobs identifier for statistics calculation
+    range: string
+  timeMultiplier:
+    name: timeMultiplier
+    description: Estimated run time multiplier for statistics job
+    range: float
+  entity:
+    name: entity
+    description: ''
+    multivalued: true
+  agent:
+    name: agent
+    description: ''
+    multivalued: true
+  activity:
+    name: activity
+    description: ''
+    multivalued: true
+  used:
+    name: used
+    description: ''
+    multivalued: true
+  wasAttributedTo:
+    name: wasAttributedTo
+    description: ''
+    multivalued: true
+  wasAssociatedWith:
+    name: wasAssociatedWith
+    description: ''
+    multivalued: true
+  wasDerivedFrom:
+    name: wasDerivedFrom
+    description: ''
+    multivalued: true
+  wasGeneratedBy:
+    name: wasGeneratedBy
+    description: ''
+    multivalued: true
+  uses:
+    name: uses
+    description: ''
+    multivalued: true
+  isAttributedTo:
+    name: isAttributedTo
+    description: ''
+    multivalued: true
+  isAssociatedWith:
+    name: isAssociatedWith
+    description: ''
+    multivalued: true
+  isDerivedFrom:
+    name: isDerivedFrom
+    description: ''
+    multivalued: true
+  isGeneratedBy:
+    name: isGeneratedBy
+    description: ''
+    multivalued: true
+  workflow_name:
+    name: workflow_name
+    description: The workflow analysis name
+    range: string
+  workflow_mode:
+    name: workflow_mode
+    description: The workflow analysis mode
+    range: string
+  status_message:
+    name: status_message
+    description: Status message
+    range: string
+  JobFiles:
+    name: JobFiles
+    description: ''
+    range: string
+    multivalued: true
+  SequenceFASTQ:
+    name: SequenceFASTQ
+    description: ''
+    range: string
+    multivalued: true
+  SequenceFASTA:
+    name: SequenceFASTA
+    description: ''
+    range: string
+    multivalued: true
+  SequenceQualityFiles:
+    name: SequenceQualityFiles
+    description: ''
+    range: string
+    multivalued: true
+  SequenceForwardPairedFiles:
+    name: SequenceForwardPairedFiles
+    description: ''
+    range: string
+    multivalued: true
+  SequenceReversePairedFiles:
+    name: SequenceReversePairedFiles
+    description: ''
+    range: string
+    multivalued: true
+  ForwardPrimerFile:
+    name: ForwardPrimerFile
+    description: ''
+    range: string
+  ReversePrimerFile:
+    name: ReversePrimerFile
+    description: ''
+    range: string
+  BarcodeFile:
+    name: BarcodeFile
+    description: ''
+    range: string
+  Workflow:
+    name: Workflow
+    description: The workflow analysis mode
+    range: string
+  SecondaryInputsFlag:
+    name: SecondaryInputsFlag
+    description: ''
+    range: boolean
+  MergeMinimumScore:
+    name: MergeMinimumScore
+    description: ''
+    range: integer
+  PreFilterStatisticsFlag:
+    name: PreFilterStatisticsFlag
+    description: ''
+    range: boolean
+  FilterFlag:
+    name: FilterFlag
+    description: ''
+    range: boolean
+  MinimumAverageQuality:
+    name: MinimumAverageQuality
+    description: ''
+    range: float
+  MinimumLength:
+    name: MinimumLength
+    description: ''
+    range: integer
+  MaximumHomopolymer:
+    name: MaximumHomopolymer
+    description: ''
+    range: integer
+  PostFilterStatisticsFlag:
+    name: PostFilterStatisticsFlag
+    description: ''
+    range: boolean
+  Barcode:
+    name: Barcode
+    description: ''
+    range: boolean
+  BarcodeLocation:
+    name: BarcodeLocation
+    description: ''
+    range: BarcodelocationEnum
+  BarcodeDiscard:
+    name: BarcodeDiscard
+    description: ''
+    range: boolean
+  BarcodeGenerateHistogram:
+    name: BarcodeGenerateHistogram
+    description: ''
+    range: boolean
+  BarcodeMaximumMismatches:
+    name: BarcodeMaximumMismatches
+    description: ''
+    range: integer
+  BarcodeTrim:
+    name: BarcodeTrim
+    description: ''
+    range: boolean
+  BarcodeSearchWindow:
+    name: BarcodeSearchWindow
+    description: ''
+    range: integer
+  BarcodeSplitFlag:
+    name: BarcodeSplitFlag
+    description: ''
+    range: boolean
+  ForwardPrimer:
+    name: ForwardPrimer
+    description: ''
+    range: boolean
+  ForwardPrimerMaximumMismatches:
+    name: ForwardPrimerMaximumMismatches
+    description: ''
+    range: integer
+  ForwardPrimerTrim:
+    name: ForwardPrimerTrim
+    description: ''
+    range: boolean
+  ForwardPrimerSearchWindow:
+    name: ForwardPrimerSearchWindow
+    description: ''
+    range: integer
+  ReversePrimer:
+    name: ReversePrimer
+    description: ''
+    range: boolean
+  ReversePrimerMaximumMismatches:
+    name: ReversePrimerMaximumMismatches
+    description: ''
+    range: integer
+  ReversePrimerTrim:
+    name: ReversePrimerTrim
+    description: ''
+    range: boolean
+  ReversePrimerSearchWindow:
+    name: ReversePrimerSearchWindow
+    description: ''
+    range: integer
+  FindUniqueFlag:
+    name: FindUniqueFlag
+    description: ''
+    range: boolean
+  processing_stage:
+    name: processing_stage
+    description: ''
+    range: string
+  g-recaptcha-response:
+    name: g-recaptcha-response
+    description: The recaptcha response
+    range: string
+  allowedUses:
+    name: allowedUses
+    description: file path
+    range: float
+  validSeconds:
+    name: validSeconds
+    description: file path
+    range: float
+  feedback:
+    name: feedback
+    description: message content
+    range: string
+  project_uuid:
+    name: project_uuid
+    description: ''
+    range: string
+  job_uuid:
+    name: job_uuid
+    description: ''
+    range: string
+  filename:
+    name: filename
+    description: ''
+    range: string
+  method:
+    name: method
+    description: ''
+    range: string
+  error:
+    name: error
+    description: ''
+    range: string
+  view:
+    name: view
+    description: ''
+    range: string
+  browser:
+    name: browser
+    description: ''
+    range: string
+  os:
+    name: os
+    description: ''
+    range: string
+  visualization:
+    name: visualization
+    description: Task document
+  repository_set:
+    name: repository_set
+    description: ''
+    range: string
+  repository:
+    name: repository
+    description: VDJServer object to represent an ADC repository, this includes VDJServer.
+
+enums:
+  KeywordsStudyEnum:
+    name: KeywordsStudyEnum
+    permissible_values:
+      contains_ig:
+      contains_tr:
+      contains_paired_chain:
+      contains_schema_rearrangement:
+      contains_schema_clone:
+      contains_schema_cell:
+      contains_schema_receptor:
+  SexEnum:
+    name: SexEnum
+    permissible_values:
+      male:
+      female:
+      pooled:
+      hermaphrodite:
+      intersex:
+  TemplateClassEnum:
+    name: TemplateClassEnum
+    permissible_values:
+      DNA:
+      RNA:
+  LibraryGenerationMethodEnum:
+    name: LibraryGenerationMethodEnum
+    permissible_values:
+      PCR:
+      RT(RHP)+PCR:
+      RT(oligo-dT)+PCR:
+      RT(oligo-dT)+TS+PCR:
+      RT(oligo-dT)+TS(UMI)+PCR:
+      RT(specific)+PCR:
+      RT(specific)+TS+PCR:
+      RT(specific)+TS(UMI)+PCR:
+      RT(specific+UMI)+PCR:
+      RT(specific+UMI)+TS+PCR:
+      RT(specific)+TS:
+      other:
+  CompleteSequencesEnum:
+    name: CompleteSequencesEnum
+    permissible_values:
+      partial:
+      complete:
+      complete+untemplated:
+      mixed:
+  PhysicalLinkageEnum:
+    name: PhysicalLinkageEnum
+    permissible_values:
+      none:
+      hetero_head-head:
+      hetero_tail-head:
+      hetero_prelinked:
+  EndpointEnum:
+    name: EndpointEnum
+    permissible_values:
+      rearrangement:
+  StatusEnum:
+    name: StatusEnum
+    permissible_values:
+      SUBMITTED:
+      FINISHED:
+  BarcodelocationEnum:
+    name: BarcodelocationEnum
+    permissible_values:
+      forward:
+      reverse:
+  NameEnum:
+    name: NameEnum
+    permissible_values:
+      heartbeat:
+      mutational_hedgehog:
