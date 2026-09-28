@@ -75,7 +75,7 @@ classes:
     description: annotated VDJ sequence data
 
   AIRRGenotypeData:
-    is_a: AKDataItem
+    is_a: DataItem
     mixins: GenotypeSet # slots from AIRR class
 
   RNATranscriptomeData:
