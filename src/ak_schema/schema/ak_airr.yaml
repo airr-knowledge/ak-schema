@@ -356,6 +356,10 @@ classes:
       - paired_read_length
       - index_filename
       - index_length
+    slot_usage:
+      sequencing_data_id:
+        identifier: true
+        required: true
   DataProcessing:
     is_a: AIRRStandards
     slots:
@@ -1874,6 +1878,7 @@ slots:
     name: sequencing_files
     description: Set of sequencing files produced by the sequencing run
     range: SequencingData
+    inlined: false # manual hack for V3
     annotations:
       nullable: false
   sequencing_data_id:

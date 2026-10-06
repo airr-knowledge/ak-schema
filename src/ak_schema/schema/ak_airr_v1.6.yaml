@@ -18,6 +18,10 @@ classes:
       - V1p6individual_full_name
       - V1p6institution_name
       - V1p6orcid_id
+    slot_usage:
+      V1p6acknowledgement_id:
+        identifier: true
+        required: true
   V1p6RearrangedSequence:
     is_a: AIRRStandards_v1p6
     slots:
@@ -31,6 +35,10 @@ classes:
       - V1p6deposited_version
       - V1p6sequence_start
       - V1p6sequence_end
+    slot_usage:
+      V1p6sequence_id:
+        identifier: true
+        required: true
   V1p6UnrearrangedSequence:
     is_a: AIRRStandards_v1p6
     slots:
@@ -67,6 +75,10 @@ classes:
       - V1p6fwr3_end
       - V1p6cdr3_start
       - V1p6alignment_labels
+    slot_usage:
+      V1p6sequence_delineation_id:
+        identifier: true
+        required: true
   V1p6AlleleDescription:
     is_a: AIRRStandards_v1p6
     slots:
@@ -121,6 +133,10 @@ classes:
       - V1p6paralogs
       - V1p6curation
       - V1p6curational_tags
+    slot_usage:
+      V1p6allele_description_id:
+        identifier: true
+        required: true
   V1p6GermlineSet:
     is_a: AIRRStandards_v1p6
     slots:
@@ -141,11 +157,19 @@ classes:
       - V1p6locus
       - V1p6allele_descriptions
       - V1p6curation
+    slot_usage:
+      V1p6germline_set_id:
+        identifier: true
+        required: true
   V1p6GenotypeSet:
     is_a: AIRRStandards_v1p6
     slots:
       - V1p6receptor_genotype_set_id
       - V1p6genotype_class_list
+    slot_usage:
+      V1p6receptor_genotype_set_id:
+        identifier: true
+        required: true
   V1p6Genotype:
     is_a: AIRRStandards_v1p6
     slots:
@@ -155,6 +179,10 @@ classes:
       - V1p6undocumented_alleles
       - V1p6deleted_genes
       - V1p6inference_process
+    slot_usage:
+      V1p6receptor_genotype_id:
+        identifier: true
+        required: true
   V1p6DocumentedAllele:
     is_a: AIRRStandards_v1p6
     slots:
@@ -178,6 +206,10 @@ classes:
     slots:
       - V1p6mhc_genotype_set_id
       - V1p6mhc_genotype_list
+    slot_usage:
+      V1p6mhc_genotype_set_id:
+        identifier: true
+        required: true
   V1p6MHCGenotype:
     is_a: AIRRStandards_v1p6
     slots:
@@ -185,6 +217,10 @@ classes:
       - V1p6mhc_class
       - V1p6mhc_alleles
       - V1p6mhc_genotyping_method
+    slot_usage:
+      V1p6mhc_genotype_id:
+        identifier: true
+        required: true
   V1p6MHCAllele:
     is_a: AIRRStandards_v1p6
     slots:
@@ -218,6 +254,10 @@ classes:
       - V1p6keywords_study
       - V1p6adc_publish_date
       - V1p6adc_update_date
+    slot_usage:
+      V1p6study_id:
+        identifier: true
+        required: true
   V1p6Subject:
     is_a: AIRRStandards_v1p6
     slots:
@@ -316,6 +356,10 @@ classes:
       - V1p6paired_read_length
       - V1p6index_filename
       - V1p6index_length
+    slot_usage:
+      V1p6sequencing_data_id:
+        identifier: true
+        required: true
   V1p6DataProcessing:
     is_a: AIRRStandards_v1p6
     slots:
@@ -331,6 +375,10 @@ classes:
       - V1p6germline_database
       - V1p6germline_set_ref
       - V1p6analysis_provenance_id
+    slot_usage:
+      V1p6data_processing_id:
+        identifier: true
+        required: true
   V1p6Repertoire:
     is_a: AIRRStandards_v1p6
     slots:
@@ -358,6 +406,10 @@ classes:
       - V1p6repertoire_group_name
       - V1p6repertoire_group_description
       - V1p6repertoires
+    slot_usage:
+      V1p6repertoire_group_id:
+        identifier: true
+        required: true
   V1p6Alignment:
     is_a: AIRRStandards_v1p6
     slots:
@@ -375,6 +427,10 @@ classes:
       - V1p6germline_end
       - V1p6rank
       - V1p6data_processing_id
+    slot_usage:
+      V1p6sequence_id:
+        identifier: true
+        required: true
   V1p6Rearrangement:
     is_a: AIRRStandards_v1p6
     slots:
@@ -530,6 +586,10 @@ classes:
       - V1p6repertoire_id
       - V1p6sample_processing_id
       - V1p6data_processing_id
+    slot_usage:
+      V1p6sequence_id:
+        identifier: true
+        required: true
   V1p6Clone:
     is_a: AIRRStandards_v1p6
     slots:
@@ -557,6 +617,10 @@ classes:
       - V1p6umi_count
       - V1p6clone_count
       - V1p6seed_id
+    slot_usage:
+      V1p6clone_id:
+        identifier: true
+        required: true
   V1p6Tree:
     is_a: AIRRStandards_v1p6
     slots:
@@ -564,6 +628,10 @@ classes:
       - V1p6clone_id
       - V1p6newick
       - V1p6nodes
+    slot_usage:
+      V1p6tree_id:
+        identifier: true
+        required: true
   V1p6Node:
     is_a: AIRRStandards_v1p6
     slots:
@@ -583,6 +651,10 @@ classes:
       - V1p6expression_raw_doi
       - V1p6expression_index
       - V1p6virtual_pairing
+    slot_usage:
+      V1p6cell_id:
+        identifier: true
+        required: true
   V1p6CellExpression:
     is_a: AIRRStandards_v1p6
     slots:
@@ -593,6 +665,10 @@ classes:
       - V1p6property_type
       - V1p6property
       - V1p6property_value
+    slot_usage:
+      V1p6expression_id:
+        identifier: true
+        required: true
   V1p6Receptor:
     is_a: AIRRStandards_v1p6
     slots:
@@ -605,6 +681,10 @@ classes:
       - V1p6receptor_variable_domain_2_locus
       - V1p6receptor_ref
       - V1p6reactivity_measurements
+    slot_usage:
+      V1p6receptor_id:
+        identifier: true
+        required: true
   V1p6ReceptorReactivity:
     is_a: AIRRStandards_v1p6
     slots:
@@ -664,6 +744,10 @@ classes:
       - V1p6sequencing_run_date
       - V1p6sequencing_kit
       - V1p6sequencing_files
+    slot_usage:
+      V1p6sample_processing_id:
+        identifier: true
+        required: true
 
 slots:
   V1p6time_point_label:
