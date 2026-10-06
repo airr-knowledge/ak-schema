@@ -258,7 +258,7 @@
 <tbody>
 <tr>
 <td><a href="../data_processing_id/">data_processing_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -393,6 +393,11 @@ slots:
 - germline_database
 - germline_set_ref
 - analysis_provenance_id
+slot_usage:
+  data_processing_id:
+    name: data_processing_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -401,6 +406,11 @@ slots:
 <pre><code class="language-yaml">name: DataProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  data_processing_id:
+    name: data_processing_id
+    identifier: true
+    required: true
 attributes:
   data_processing_id:
     name: data_processing_id
@@ -410,6 +420,7 @@ attributes:
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: data_processing_id
     owner: DataProcessing
     domain_of:
@@ -420,6 +431,7 @@ attributes:
     - Cell
     - CellExpression
     range: string
+    required: true
   primary_annotation:
     name: primary_annotation
     annotations:

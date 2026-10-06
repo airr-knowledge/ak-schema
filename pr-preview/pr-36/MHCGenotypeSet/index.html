@@ -245,7 +245,7 @@
 <tbody>
 <tr>
 <td><a href="../mhc_genotype_set_id/">mhc_genotype_set_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for this MHCGenotypeSet</td>
 <td>direct</td>
 </tr>
@@ -310,6 +310,11 @@ is_a: AIRRStandards
 slots:
 - mhc_genotype_set_id
 - mhc_genotype_list
+slot_usage:
+  mhc_genotype_set_id:
+    name: mhc_genotype_set_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -318,6 +323,11 @@ slots:
 <pre><code class="language-yaml">name: MHCGenotypeSet
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  mhc_genotype_set_id:
+    name: mhc_genotype_set_id
+    identifier: true
+    required: true
 attributes:
   mhc_genotype_set_id:
     name: mhc_genotype_set_id
@@ -328,11 +338,13 @@ attributes:
     description: A unique identifier for this MHCGenotypeSet
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: mhc_genotype_set_id
     owner: MHCGenotypeSet
     domain_of:
     - MHCGenotypeSet
     range: string
+    required: true
   mhc_genotype_list:
     name: mhc_genotype_list
     annotations:
@@ -348,6 +360,7 @@ attributes:
     - MHCGenotypeSet
     range: MHCGenotype
     multivalued: true
+    inlined: true
 
 </code></pre>
 </details>

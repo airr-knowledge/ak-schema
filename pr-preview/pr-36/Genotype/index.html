@@ -281,7 +281,7 @@
 <tbody>
 <tr>
 <td><a href="../receptor_genotype_id/">receptor_genotype_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier within the file for this Receptor Genotype, typically gen...</td>
 <td>direct</td>
 </tr>
@@ -380,6 +380,11 @@ slots:
 - undocumented_alleles
 - deleted_genes
 - inference_process
+slot_usage:
+  receptor_genotype_id:
+    name: receptor_genotype_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -388,6 +393,11 @@ slots:
 <pre><code class="language-yaml">name: Genotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  receptor_genotype_id:
+    name: receptor_genotype_id
+    identifier: true
+    required: true
 attributes:
   receptor_genotype_id:
     name: receptor_genotype_id
@@ -400,11 +410,13 @@ attributes:
       ID of the database record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: receptor_genotype_id
     owner: Genotype
     domain_of:
     - Genotype
     range: string
+    required: true
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -433,6 +445,7 @@ attributes:
     - Genotype
     range: DocumentedAllele
     multivalued: true
+    inlined: true
   undocumented_alleles:
     name: undocumented_alleles
     annotations:
@@ -449,6 +462,7 @@ attributes:
     - Genotype
     range: UndocumentedAllele
     multivalued: true
+    inlined: true
   deleted_genes:
     name: deleted_genes
     annotations:
@@ -464,6 +478,7 @@ attributes:
     - Genotype
     range: DeletedGene
     multivalued: true
+    inlined: true
   inference_process:
     name: inference_process
     annotations:

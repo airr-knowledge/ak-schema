@@ -244,7 +244,7 @@
 <tbody>
 <tr>
 <td><a href="../tree_id/">tree_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the tree</td>
 <td>direct</td>
 </tr>
@@ -304,6 +304,11 @@ slots:
 - clone_id
 - newick
 - nodes
+slot_usage:
+  tree_id:
+    name: tree_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -312,6 +317,11 @@ slots:
 <pre><code class="language-yaml">name: Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  tree_id:
+    name: tree_id
+    identifier: true
+    required: true
 attributes:
   tree_id:
     name: tree_id
@@ -322,11 +332,13 @@ attributes:
     description: Identifier for the tree.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: tree_id
     owner: Tree
     domain_of:
     - Tree
     range: string
+    required: true
   clone_id:
     name: clone_id
     annotations:
@@ -371,6 +383,7 @@ attributes:
     - Tree
     range: Node
     multivalued: true
+    inlined: true
 
 </code></pre>
 </details>

@@ -275,7 +275,7 @@
 <tbody>
 <tr>
 <td><a href="../receptor_id/">receptor_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>ID of the current Receptor object, unique within the local repository</td>
 <td>direct</td>
 </tr>
@@ -370,6 +370,11 @@ slots:
 - receptor_variable_domain_2_locus
 - receptor_ref
 - reactivity_measurements
+slot_usage:
+  receptor_id:
+    name: receptor_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -378,6 +383,11 @@ slots:
 <pre><code class="language-yaml">name: Receptor
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  receptor_id:
+    name: receptor_id
+    identifier: true
+    required: true
 attributes:
   receptor_id:
     name: receptor_id
@@ -388,11 +398,13 @@ attributes:
     description: ID of the current Receptor object, unique within the local repository.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: receptor_id
     owner: Receptor
     domain_of:
     - Receptor
     range: string
+    required: true
   receptor_hash:
     name: receptor_hash
     annotations:
@@ -519,6 +531,7 @@ attributes:
     - Receptor
     range: ReceptorReactivity
     multivalued: true
+    inlined: true
 
 </code></pre>
 </details>

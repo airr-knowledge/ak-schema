@@ -214,6 +214,11 @@
       AKDataItem &lt;|-- AKDataSet
         click AKDataItem href "../AKDataItem"
 
+
+      AKDataSet &lt;|-- AIRRGenotypeData
+        click AIRRGenotypeData href "../AIRRGenotypeData"
+
+
       AKDataSet : akc_id
 
       AKDataSet : data_item_types
@@ -242,7 +247,10 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../AKDataItem/">AKDataItem</a><ul>
-<li><strong>AKDataSet</strong> [ <a href="../DataSet/">DataSet</a>]</li>
+<li><strong>AKDataSet</strong> [ <a href="../DataSet/">DataSet</a>]<ul>
+<li><a href="../AIRRGenotypeData/">AIRRGenotypeData</a> [ <a href="../GenotypeSet/">GenotypeSet</a>]</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

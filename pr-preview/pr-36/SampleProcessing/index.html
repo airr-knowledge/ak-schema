@@ -387,7 +387,7 @@
 <tbody>
 <tr>
 <td><a href="../sample_processing_id/">sample_processing_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -704,6 +704,11 @@ slots:
 - sequencing_run_date
 - sequencing_kit
 - sequencing_files
+slot_usage:
+  sample_processing_id:
+    name: sample_processing_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -712,6 +717,11 @@ slots:
 <pre><code class="language-yaml">name: SampleProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  sample_processing_id:
+    name: sample_processing_id
+    identifier: true
+    required: true
 attributes:
   sample_processing_id:
     name: sample_processing_id
@@ -721,12 +731,14 @@ attributes:
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: sample_processing_id
     owner: SampleProcessing
     domain_of:
     - Rearrangement
     - SampleProcessing
     range: string
+    required: true
   sample_id:
     name: sample_id
     annotations:
@@ -1186,6 +1198,7 @@ attributes:
     - SampleProcessing
     range: PCRTarget
     multivalued: true
+    inlined: true
   complete_sequences:
     name: complete_sequences
     annotations:
@@ -1340,6 +1353,7 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: SequencingData
+    inlined: false
 
 </code></pre>
 </details>

@@ -277,7 +277,7 @@
 <tbody>
 <tr>
 <td><a href="../clone_id/">clone_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -477,6 +477,11 @@ slots:
 - umi_count
 - clone_count
 - seed_id
+slot_usage:
+  clone_id:
+    name: clone_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -485,6 +490,11 @@ slots:
 <pre><code class="language-yaml">name: Clone
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  clone_id:
+    name: clone_id
+    identifier: true
+    required: true
 attributes:
   clone_id:
     name: clone_id
@@ -494,6 +504,7 @@ attributes:
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: clone_id
     owner: Clone
     domain_of:
@@ -501,6 +512,7 @@ attributes:
     - Clone
     - Tree
     range: string
+    required: true
   repertoire_id:
     name: repertoire_id
     from_schema: https://github.com/airr-knowledge/ak-schema

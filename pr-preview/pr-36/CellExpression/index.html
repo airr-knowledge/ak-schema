@@ -243,7 +243,7 @@
 <tbody>
 <tr>
 <td><a href="../expression_id/">expression_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of this expression property measurement</td>
 <td>direct</td>
 </tr>
@@ -324,6 +324,11 @@ slots:
 - property_type
 - property
 - property_value
+slot_usage:
+  expression_id:
+    name: expression_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -332,6 +337,11 @@ slots:
 <pre><code class="language-yaml">name: CellExpression
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  expression_id:
+    name: expression_id
+    identifier: true
+    required: true
 attributes:
   expression_id:
     name: expression_id
@@ -342,11 +352,13 @@ attributes:
     description: Identifier of this expression property measurement.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: expression_id
     owner: CellExpression
     domain_of:
     - CellExpression
     range: string
+    required: true
   cell_id:
     name: cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
