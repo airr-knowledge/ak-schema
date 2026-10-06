@@ -72,7 +72,6 @@ classes:
     slot_usage:
       sequencing_files:
         range: AIRRSequencingData
-        inlined: false
 
 # todo: for T/B cell assay -> epitope, antigen and MHC are already in the complex, redundant to have in the Assay level?
 
