@@ -69,14 +69,20 @@ classes:
   AIRRSequencingData:
     is_a: SequenceData
     mixins: SequencingData # slots from AIRR class
+    slot_usage:
+      sequencing_data_id:
+        identifier: false
 
   AIRRSequenceAnnotationData:
     is_a: AKDataItem
     description: annotated VDJ sequence data
 
   AIRRGenotypeData:
-    is_a: DataItem
+    is_a: AKDataSet
     mixins: GenotypeSet # slots from AIRR class
+    slot_usage:
+      receptor_genotype_set_id:
+        identifier: false
 
   RNATranscriptomeData:
     is_a: SequenceData
