@@ -4293,6 +4293,7 @@
       "range": "Acknowledgement",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5130,6 +5131,7 @@
       "range": "SequenceDelineationV",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5152,6 +5154,7 @@
       "range": "UnrearrangedSequence",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5174,6 +5177,7 @@
       "range": "RearrangedSequence",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5360,6 +5364,7 @@
       "range": "AlleleDescription",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5402,6 +5407,7 @@
       "range": "Genotype",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5444,6 +5450,7 @@
       "range": "DocumentedAllele",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5466,6 +5473,7 @@
       "range": "UndocumentedAllele",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5488,6 +5496,7 @@
       "range": "DeletedGene",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5592,6 +5601,7 @@
       "range": "MHCGenotype",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5634,6 +5644,7 @@
       "range": "MHCAllele",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6271,6 +6282,7 @@
       "range": "Diagnosis",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7115,6 +7127,7 @@
       "range": "PCRTarget",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7847,6 +7860,7 @@
       "range": "SampleProcessing",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7868,6 +7882,7 @@
       "range": "DataProcessing",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7971,6 +7986,7 @@
       "range": "RepertoireFilter",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11406,6 +11422,7 @@
       "range": "ReceptorReactivity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -16894,9 +16911,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-10-06T19:12:58",
-  "source_file_size": 227327,
-  "generation_date": "2026-10-06T19:13:00",
+  "source_file_date": "2026-10-08T21:17:39",
+  "source_file_size": 227463,
+  "generation_date": "2026-10-08T21:17:41",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

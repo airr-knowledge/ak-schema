@@ -978,7 +978,7 @@ slots:
   acknowledgements:
     name: acknowledgements
     range: Acknowledgement
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1221,7 +1221,7 @@ slots:
     name: v_gene_delineations
     description: ''
     range: SequenceDelineationV
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1229,7 +1229,7 @@ slots:
     name: unrearranged_support
     description: ''
     range: UnrearrangedSequence
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1237,7 +1237,7 @@ slots:
     name: rearranged_support
     description: ''
     range: RearrangedSequence
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1292,7 +1292,7 @@ slots:
     name: allele_descriptions
     description: list of allele_descriptions in the germline set
     range: AlleleDescription
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1306,7 +1306,7 @@ slots:
     name: genotype_class_list
     description: List of Genotypes included in this Receptor Genotype Set.
     range: Genotype
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1320,7 +1320,7 @@ slots:
     name: documented_alleles
     description: List of alleles documented in reference set(s)
     range: DocumentedAllele
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1328,7 +1328,7 @@ slots:
     name: undocumented_alleles
     description: List of alleles inferred to be present and not documented in an identified GermlineSet
     range: UndocumentedAllele
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1336,7 +1336,7 @@ slots:
     name: deleted_genes
     description: Array of genes identified as being deleted in this genotype
     range: DeletedGene
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1368,7 +1368,7 @@ slots:
     name: mhc_genotype_list
     description: List of MHCGenotypes included in this set
     range: MHCGenotype
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1385,7 +1385,7 @@ slots:
     name: mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     range: MHCAllele
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1578,7 +1578,7 @@ slots:
     name: diagnosis
     description: Diagnosis information for subject
     range: Diagnosis
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -1822,7 +1822,7 @@ slots:
     name: pcr_target
     description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
     range: PCRTarget
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -2040,7 +2040,7 @@ slots:
     name: sample
     description: List of Sample Processing objects
     range: SampleProcessing
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -2048,7 +2048,7 @@ slots:
     name: data_processing
     description: List of Data Processing objects
     range: DataProcessing
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -2081,7 +2081,7 @@ slots:
     name: repertoires
     description: List of repertoires in this collection with an associated description and time point designation
     range: RepertoireFilter
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -3103,7 +3103,7 @@ slots:
     name: reactivity_measurements
     description: Records of reactivity measurement
     range: ReceptorReactivity
-    inlined: true
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
