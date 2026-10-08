@@ -2378,6 +2378,19 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "genotype_set",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/genotype_set",
+      "description": "Adaptive Immune loci genotype set",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/genotype_set",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "AIRRGenotypeData",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "study_arms",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_arms",
       "description": "The study arms that are relevant for a study event",
@@ -4280,6 +4293,7 @@
       "range": "Acknowledgement",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5117,6 +5131,7 @@
       "range": "SequenceDelineationV",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5138,6 +5153,8 @@
       ],
       "range": "UnrearrangedSequence",
       "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5160,6 +5177,7 @@
       "range": "RearrangedSequence",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5346,6 +5364,7 @@
       "range": "AlleleDescription",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5388,6 +5407,7 @@
       "range": "Genotype",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5430,6 +5450,7 @@
       "range": "DocumentedAllele",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5452,6 +5473,7 @@
       "range": "UndocumentedAllele",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5474,6 +5496,7 @@
       "range": "DeletedGene",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5578,6 +5601,7 @@
       "range": "MHCGenotype",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5619,6 +5643,8 @@
       ],
       "range": "MHCAllele",
       "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -6256,6 +6282,7 @@
       "range": "Diagnosis",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7100,6 +7127,7 @@
       "range": "PCRTarget",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7286,7 +7314,6 @@
         "SampleProcessing"
       ],
       "range": "SequencingData",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7833,6 +7860,7 @@
       "range": "SampleProcessing",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7854,6 +7882,7 @@
       "range": "DataProcessing",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -7957,6 +7986,7 @@
       "range": "RepertoireFilter",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11392,6 +11422,7 @@
       "range": "ReceptorReactivity",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12760,6 +12791,58 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "AIRRSequencingData_sequencing_data_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_data_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequencing_data_id",
+      "domain": "AIRRSequencingData",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_data_id",
+      "alias": "sequencing_data_id",
+      "owner": "AIRRSequencingData",
+      "domain_of": [
+        "AIRRSequencingData"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequencing_data_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "AIRRGenotypeData_receptor_genotype_set_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/receptor_genotype_set_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "A unique identifier for this Receptor Genotype Set, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "receptor_genotype_set_id",
+      "domain": "AIRRGenotypeData",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_genotype_set_id",
+      "alias": "receptor_genotype_set_id",
+      "owner": "AIRRGenotypeData",
+      "domain_of": [
+        "AIRRGenotypeData"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "receptor_genotype_set_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Chain_sequence_aa",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_aa",
       "annotations": {
@@ -12878,6 +12961,61 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Acknowledgement_acknowledgement_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/acknowledgement_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "unique identifier of this Acknowledgement within the file",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "acknowledgement_id",
+      "domain": "Acknowledgement",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/acknowledgement_id",
+      "identifier": true,
+      "alias": "acknowledgement_id",
+      "owner": "Acknowledgement",
+      "domain_of": [
+        "Acknowledgement"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "acknowledgement_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "RearrangedSequence_sequence_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_id",
+      "domain": "RearrangedSequence",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "identifier": true,
+      "alias": "sequence_id",
+      "owner": "RearrangedSequence",
+      "domain_of": [
+        "RearrangedSequence"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "UnrearrangedSequence_sequence_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
       "annotations": {
@@ -12900,6 +13038,202 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sequence_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "SequenceDelineationV_sequence_delineation_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_delineation_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Unique identifier of this SequenceDelineationV within the file. Typically, generated by the  repository hosting the record.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_delineation_id",
+      "domain": "SequenceDelineationV",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_delineation_id",
+      "identifier": true,
+      "alias": "sequence_delineation_id",
+      "owner": "SequenceDelineationV",
+      "domain_of": [
+        "SequenceDelineationV"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_delineation_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "AlleleDescription_allele_description_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/allele_description_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Unique identifier of this AlleleDescription within the file. Typically, generated by the  repository hosting the record.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "allele_description_id",
+      "domain": "AlleleDescription",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/allele_description_id",
+      "identifier": true,
+      "alias": "allele_description_id",
+      "owner": "AlleleDescription",
+      "domain_of": [
+        "AlleleDescription"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "allele_description_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "GermlineSet_germline_set_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/germline_set_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Unique identifier of the GermlineSet within this file. Typically, generated by the  repository hosting the record.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "germline_set_id",
+      "domain": "GermlineSet",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/germline_set_id",
+      "identifier": true,
+      "alias": "germline_set_id",
+      "owner": "GermlineSet",
+      "domain_of": [
+        "GermlineSet"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "germline_set_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "GenotypeSet_receptor_genotype_set_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/receptor_genotype_set_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "A unique identifier for this Receptor Genotype Set, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "receptor_genotype_set_id",
+      "domain": "GenotypeSet",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_genotype_set_id",
+      "identifier": true,
+      "alias": "receptor_genotype_set_id",
+      "owner": "GenotypeSet",
+      "domain_of": [
+        "GenotypeSet"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "receptor_genotype_set_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Genotype_receptor_genotype_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/receptor_genotype_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "A unique identifier within the file for this Receptor Genotype, typically generated by the  repository hosting the schema, for example from the underlying ID of the database record.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "receptor_genotype_id",
+      "domain": "Genotype",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_genotype_id",
+      "identifier": true,
+      "alias": "receptor_genotype_id",
+      "owner": "Genotype",
+      "domain_of": [
+        "Genotype"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "receptor_genotype_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "MHCGenotypeSet_mhc_genotype_set_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_genotype_set_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "A unique identifier for this MHCGenotypeSet",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "mhc_genotype_set_id",
+      "domain": "MHCGenotypeSet",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_genotype_set_id",
+      "identifier": true,
+      "alias": "mhc_genotype_set_id",
+      "owner": "MHCGenotypeSet",
+      "domain_of": [
+        "MHCGenotypeSet"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "mhc_genotype_set_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "MHCGenotype_mhc_genotype_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_genotype_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "A unique identifier for this MHCGenotype, assumed to be unique in the context of the study",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "mhc_genotype_id",
+      "domain": "MHCGenotype",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_genotype_id",
+      "identifier": true,
+      "alias": "mhc_genotype_id",
+      "owner": "MHCGenotype",
+      "domain_of": [
+        "MHCGenotype"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "mhc_genotype_id",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -12932,6 +13266,89 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Study_study_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Unique ID assigned by study registry such as one of the International Nucleotide Sequence Database Collaboration (INSDC) repositories.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "study_id",
+      "domain": "Study",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/study_id",
+      "identifier": true,
+      "alias": "study_id",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "study_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "SequencingData_sequencing_data_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_data_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequencing_data_id",
+      "domain": "SequencingData",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_data_id",
+      "identifier": true,
+      "alias": "sequencing_data_id",
+      "owner": "SequencingData",
+      "domain_of": [
+        "SequencingData"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequencing_data_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataProcessing_data_processing_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_processing_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "data_processing_id",
+      "domain": "DataProcessing",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_processing_id",
+      "identifier": true,
+      "alias": "data_processing_id",
+      "owner": "DataProcessing",
+      "domain_of": [
+        "DataProcessing"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "data_processing_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Repertoire_repertoire_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12946,6 +13363,245 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "repertoire_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "RepertoireGroup_repertoire_group_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_group_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Identifier for this repertoire collection",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "repertoire_group_id",
+      "domain": "RepertoireGroup",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_group_id",
+      "identifier": true,
+      "alias": "repertoire_group_id",
+      "owner": "RepertoireGroup",
+      "domain_of": [
+        "RepertoireGroup"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "repertoire_group_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Alignment_sequence_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_id",
+      "domain": "Alignment",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "identifier": true,
+      "alias": "sequence_id",
+      "owner": "Alignment",
+      "domain_of": [
+        "Alignment"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Rearrangement_sequence_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_id",
+      "domain": "Rearrangement",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "identifier": true,
+      "alias": "sequence_id",
+      "owner": "Rearrangement",
+      "domain_of": [
+        "Rearrangement"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Clone_clone_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/clone_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "clone_id",
+      "domain": "Clone",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/clone_id",
+      "identifier": true,
+      "alias": "clone_id",
+      "owner": "Clone",
+      "domain_of": [
+        "Clone"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "clone_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Tree_tree_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tree_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Identifier for the tree.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "tree_id",
+      "domain": "Tree",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tree_id",
+      "identifier": true,
+      "alias": "tree_id",
+      "owner": "Tree",
+      "domain_of": [
+        "Tree"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "tree_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Cell_cell_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "cell_id",
+      "domain": "Cell",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_id",
+      "identifier": true,
+      "alias": "cell_id",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "cell_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CellExpression_expression_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/expression_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": false,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Identifier of this expression property measurement.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "expression_id",
+      "domain": "CellExpression",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/expression_id",
+      "identifier": true,
+      "alias": "expression_id",
+      "owner": "CellExpression",
+      "domain_of": [
+        "CellExpression"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "expression_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Receptor_receptor_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/receptor_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": false,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "ID of the current Receptor object, unique within the local repository.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "receptor_id",
+      "domain": "Receptor",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_id",
+      "identifier": true,
+      "alias": "receptor_id",
+      "owner": "Receptor",
+      "domain_of": [
+        "Receptor"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "receptor_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "SampleProcessing_sample_processing_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sample_processing_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sample_processing_id",
+      "domain": "SampleProcessing",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sample_processing_id",
+      "identifier": true,
+      "alias": "sample_processing_id",
+      "owner": "SampleProcessing",
+      "domain_of": [
+        "SampleProcessing"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sample_processing_id",
       "range": "string",
       "required": true,
       "@type": "SlotDefinition"
@@ -13656,7 +14312,8 @@
         "ethnicity",
         "geolocation",
         "strain",
-        "life_events"
+        "life_events",
+        "genotype_set"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0100026",
@@ -14132,7 +14789,7 @@
         "akc_id",
         "type",
         "data_item_types",
-        "sequencing_data_id",
+        "AIRRSequencingData_sequencing_data_id",
         "file_type",
         "filename",
         "read_direction",
@@ -14166,7 +14823,7 @@
       "name": "AIRRGenotypeData",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRGenotypeData",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "AKDataItem",
+      "is_a": "AKDataSet",
       "mixins": [
         "GenotypeSet"
       ],
@@ -14174,7 +14831,8 @@
         "akc_id",
         "type",
         "data_item_types",
-        "receptor_genotype_set_id",
+        "data_items",
+        "AIRRGenotypeData_receptor_genotype_set_id",
         "genotype_class_list"
       ],
       "slot_usage": {},
@@ -15109,7 +15767,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "acknowledgement_id",
+        "Acknowledgement_acknowledgement_id",
         "individual_full_name",
         "institution_name",
         "orcid_id"
@@ -15124,7 +15782,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequence_id",
+        "RearrangedSequence_sequence_id",
         "sequence",
         "derivation",
         "observation_type",
@@ -15166,7 +15824,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequence_delineation_id",
+        "SequenceDelineationV_sequence_delineation_id",
         "delineation_scheme",
         "unaligned_sequence",
         "aligned_sequence",
@@ -15193,7 +15851,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "allele_description_id",
+        "AlleleDescription_allele_description_id",
         "allele_description_ref",
         "maintainer",
         "acknowledgements",
@@ -15255,7 +15913,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "germline_set_id",
+        "GermlineSet_germline_set_id",
         "author",
         "lab_name",
         "lab_address",
@@ -15283,7 +15941,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "receptor_genotype_set_id",
+        "GenotypeSet_receptor_genotype_set_id",
         "genotype_class_list"
       ],
       "slot_usage": {},
@@ -15296,7 +15954,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "receptor_genotype_id",
+        "Genotype_receptor_genotype_id",
         "locus",
         "documented_alleles",
         "undocumented_alleles",
@@ -15355,7 +16013,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "mhc_genotype_set_id",
+        "MHCGenotypeSet_mhc_genotype_set_id",
         "mhc_genotype_list"
       ],
       "slot_usage": {},
@@ -15368,7 +16026,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "mhc_genotype_id",
+        "MHCGenotype_mhc_genotype_id",
         "mhc_class",
         "mhc_alleles",
         "mhc_genotyping_method"
@@ -15410,7 +16068,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "study_id",
+        "Study_study_id",
         "study_title",
         "study_type",
         "study_description",
@@ -15577,7 +16235,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequencing_data_id",
+        "SequencingData_sequencing_data_id",
         "file_type",
         "filename",
         "read_direction",
@@ -15598,7 +16256,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "data_processing_id",
+        "DataProcessing_data_processing_id",
         "primary_annotation",
         "software_versions",
         "paired_reads_assembly",
@@ -15653,7 +16311,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "repertoire_group_id",
+        "RepertoireGroup_repertoire_group_id",
         "repertoire_group_name",
         "repertoire_group_description",
         "repertoires"
@@ -15668,7 +16326,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequence_id",
+        "Alignment_sequence_id",
         "segment",
         "rev_comp",
         "call",
@@ -15693,7 +16351,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequence_id",
+        "Rearrangement_sequence_id",
         "sequence",
         "quality",
         "sequence_aa",
@@ -15856,7 +16514,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "clone_id",
+        "Clone_clone_id",
         "repertoire_id",
         "data_processing_id",
         "sequences",
@@ -15891,7 +16549,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "tree_id",
+        "Tree_tree_id",
         "clone_id",
         "newick",
         "nodes"
@@ -15921,7 +16579,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "cell_id",
+        "Cell_cell_id",
         "rearrangements",
         "receptors",
         "repertoire_id",
@@ -15941,7 +16599,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "expression_id",
+        "CellExpression_expression_id",
         "cell_id",
         "repertoire_id",
         "data_processing_id",
@@ -15959,7 +16617,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "receptor_id",
+        "Receptor_receptor_id",
         "receptor_hash",
         "receptor_type",
         "receptor_variable_domain_1_aa",
@@ -16005,7 +16663,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sample_processing_id",
+        "SampleProcessing_sample_processing_id",
         "sample_id",
         "sample_type",
         "tissue",
@@ -16253,9 +16911,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-08-28T19:41:38",
-  "source_file_size": 224004,
-  "generation_date": "2026-08-28T19:41:40",
+  "source_file_date": "2026-10-08T21:17:39",
+  "source_file_size": 227463,
+  "generation_date": "2026-10-08T21:17:41",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

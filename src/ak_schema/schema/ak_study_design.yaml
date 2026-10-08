@@ -65,6 +65,7 @@ classes:
       - geolocation # at birth
       - strain # For non-human organisms
       - life_events
+      - genotype_set
     slot_usage:
       species:
         range: TaxonomicSpecies
@@ -220,6 +221,9 @@ slots:
     description: The life events for a participant
     range: LifeEvent
     multivalued: true
+  genotype_set:
+    description: Adaptive Immune loci genotype set
+    range: AIRRGenotypeData
 
   study_arms:
     description: The study arms that are relevant for a study event

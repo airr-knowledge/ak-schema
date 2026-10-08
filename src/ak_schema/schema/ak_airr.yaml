@@ -18,6 +18,10 @@ classes:
       - individual_full_name
       - institution_name
       - orcid_id
+    slot_usage:
+      acknowledgement_id:
+        identifier: true
+        required: true
   RearrangedSequence:
     is_a: AIRRStandards
     slots:
@@ -31,6 +35,10 @@ classes:
       - deposited_version
       - sequence_start
       - sequence_end
+    slot_usage:
+      sequence_id:
+        identifier: true
+        required: true
   UnrearrangedSequence:
     is_a: AIRRStandards
     slots:
@@ -67,6 +75,10 @@ classes:
       - fwr3_end
       - cdr3_start
       - alignment_labels
+    slot_usage:
+      sequence_delineation_id:
+        identifier: true
+        required: true
   AlleleDescription:
     is_a: AIRRStandards
     slots:
@@ -121,6 +133,10 @@ classes:
       - paralogs
       - curation
       - curational_tags
+    slot_usage:
+      allele_description_id:
+        identifier: true
+        required: true
   GermlineSet:
     is_a: AIRRStandards
     slots:
@@ -141,11 +157,19 @@ classes:
       - locus
       - allele_descriptions
       - curation
+    slot_usage:
+      germline_set_id:
+        identifier: true
+        required: true
   GenotypeSet:
     is_a: AIRRStandards
     slots:
       - receptor_genotype_set_id
       - genotype_class_list
+    slot_usage:
+      receptor_genotype_set_id:
+        identifier: true
+        required: true
   Genotype:
     is_a: AIRRStandards
     slots:
@@ -155,6 +179,10 @@ classes:
       - undocumented_alleles
       - deleted_genes
       - inference_process
+    slot_usage:
+      receptor_genotype_id:
+        identifier: true
+        required: true
   DocumentedAllele:
     is_a: AIRRStandards
     slots:
@@ -178,6 +206,10 @@ classes:
     slots:
       - mhc_genotype_set_id
       - mhc_genotype_list
+    slot_usage:
+      mhc_genotype_set_id:
+        identifier: true
+        required: true
   MHCGenotype:
     is_a: AIRRStandards
     slots:
@@ -185,6 +217,10 @@ classes:
       - mhc_class
       - mhc_alleles
       - mhc_genotyping_method
+    slot_usage:
+      mhc_genotype_id:
+        identifier: true
+        required: true
   MHCAllele:
     is_a: AIRRStandards
     slots:
@@ -218,6 +254,10 @@ classes:
       - keywords_study
       - adc_publish_date
       - adc_update_date
+    slot_usage:
+      study_id:
+        identifier: true
+        required: true
   Subject:
     is_a: AIRRStandards
     slots:
@@ -316,6 +356,10 @@ classes:
       - paired_read_length
       - index_filename
       - index_length
+    slot_usage:
+      sequencing_data_id:
+        identifier: true
+        required: true
   DataProcessing:
     is_a: AIRRStandards
     slots:
@@ -331,6 +375,10 @@ classes:
       - germline_database
       - germline_set_ref
       - analysis_provenance_id
+    slot_usage:
+      data_processing_id:
+        identifier: true
+        required: true
   Repertoire:
     is_a: AIRRStandards
     slots:
@@ -358,6 +406,10 @@ classes:
       - repertoire_group_name
       - repertoire_group_description
       - repertoires
+    slot_usage:
+      repertoire_group_id:
+        identifier: true
+        required: true
   Alignment:
     is_a: AIRRStandards
     slots:
@@ -375,6 +427,10 @@ classes:
       - germline_end
       - rank
       - data_processing_id
+    slot_usage:
+      sequence_id:
+        identifier: true
+        required: true
   Rearrangement:
     is_a: AIRRStandards
     slots:
@@ -530,6 +586,10 @@ classes:
       - repertoire_id
       - sample_processing_id
       - data_processing_id
+    slot_usage:
+      sequence_id:
+        identifier: true
+        required: true
   Clone:
     is_a: AIRRStandards
     slots:
@@ -557,6 +617,10 @@ classes:
       - umi_count
       - clone_count
       - seed_id
+    slot_usage:
+      clone_id:
+        identifier: true
+        required: true
   Tree:
     is_a: AIRRStandards
     slots:
@@ -564,6 +628,10 @@ classes:
       - clone_id
       - newick
       - nodes
+    slot_usage:
+      tree_id:
+        identifier: true
+        required: true
   Node:
     is_a: AIRRStandards
     slots:
@@ -583,6 +651,10 @@ classes:
       - expression_raw_doi
       - expression_index
       - virtual_pairing
+    slot_usage:
+      cell_id:
+        identifier: true
+        required: true
   CellExpression:
     is_a: AIRRStandards
     slots:
@@ -593,6 +665,10 @@ classes:
       - property_type
       - property
       - property_value
+    slot_usage:
+      expression_id:
+        identifier: true
+        required: true
   Receptor:
     is_a: AIRRStandards
     slots:
@@ -605,6 +681,10 @@ classes:
       - receptor_variable_domain_2_locus
       - receptor_ref
       - reactivity_measurements
+    slot_usage:
+      receptor_id:
+        identifier: true
+        required: true
   ReceptorReactivity:
     is_a: AIRRStandards
     slots:
@@ -664,6 +744,10 @@ classes:
       - sequencing_run_date
       - sequencing_kit
       - sequencing_files
+    slot_usage:
+      sample_processing_id:
+        identifier: true
+        required: true
 
 slots:
   time_point_label:
@@ -894,6 +978,7 @@ slots:
   acknowledgements:
     name: acknowledgements
     range: Acknowledgement
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1136,6 +1221,7 @@ slots:
     name: v_gene_delineations
     description: ''
     range: SequenceDelineationV
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1143,6 +1229,7 @@ slots:
     name: unrearranged_support
     description: ''
     range: UnrearrangedSequence
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1150,6 +1237,7 @@ slots:
     name: rearranged_support
     description: ''
     range: RearrangedSequence
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1204,6 +1292,7 @@ slots:
     name: allele_descriptions
     description: list of allele_descriptions in the germline set
     range: AlleleDescription
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1217,6 +1306,7 @@ slots:
     name: genotype_class_list
     description: List of Genotypes included in this Receptor Genotype Set.
     range: Genotype
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1230,6 +1320,7 @@ slots:
     name: documented_alleles
     description: List of alleles documented in reference set(s)
     range: DocumentedAllele
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1237,6 +1328,7 @@ slots:
     name: undocumented_alleles
     description: List of alleles inferred to be present and not documented in an identified GermlineSet
     range: UndocumentedAllele
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1244,6 +1336,7 @@ slots:
     name: deleted_genes
     description: Array of genes identified as being deleted in this genotype
     range: DeletedGene
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1275,6 +1368,7 @@ slots:
     name: mhc_genotype_list
     description: List of MHCGenotypes included in this set
     range: MHCGenotype
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1291,6 +1385,7 @@ slots:
     name: mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     range: MHCAllele
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -1316,12 +1411,14 @@ slots:
     name: receptor_genotype_set
     description: Immune receptor genotype set for this subject.
     range: GenotypeSet
+    inlined: true
     annotations:
       nullable: true
   mhc_genotype_set:
     name: mhc_genotype_set
     description: MHC genotype set for this subject.
     range: MHCGenotypeSet
+    inlined: true
     annotations:
       nullable: true
   study_id:
@@ -1481,6 +1578,7 @@ slots:
     name: diagnosis
     description: Diagnosis information for subject
     range: Diagnosis
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -1488,6 +1586,7 @@ slots:
     name: genotype
     description: ''
     range: SubjectGenotype
+    inlined: true
     annotations:
       nullable: true
   study_group_description:
@@ -1723,6 +1822,7 @@ slots:
     name: pcr_target
     description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
     range: PCRTarget
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -1778,6 +1878,7 @@ slots:
     name: sequencing_files
     description: Set of sequencing files produced by the sequencing run
     range: SequencingData
+    inlined: false # manual hack for V3
     annotations:
       nullable: false
   sequencing_data_id:
@@ -1925,18 +2026,21 @@ slots:
     name: study
     description: Study object
     range: Study
+    inlined: true
     annotations:
       nullable: false
   subject:
     name: subject
     description: Subject object
     range: Subject
+    inlined: true
     annotations:
       nullable: false
   sample:
     name: sample
     description: List of Sample Processing objects
     range: SampleProcessing
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -1944,6 +2048,7 @@ slots:
     name: data_processing
     description: List of Data Processing objects
     range: DataProcessing
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: false
@@ -1951,6 +2056,7 @@ slots:
     name: time_point
     description: Time point designation for this repertoire within the group
     range: TimePoint
+    inlined: true
     annotations:
       nullable: true
   repertoire_group_id:
@@ -1975,6 +2081,7 @@ slots:
     name: repertoires
     description: List of repertoires in this collection with an associated description and time point designation
     range: RepertoireFilter
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
@@ -2875,6 +2982,7 @@ slots:
     name: nodes
     description: Dictionary of nodes in the tree, keyed by sequence_id string
     range: Node
+    inlined: true
     multivalued: true
     annotations:
       nullable: true
@@ -2995,6 +3103,7 @@ slots:
     name: reactivity_measurements
     description: Records of reactivity measurement
     range: ReceptorReactivity
+    inlined_as_list: true
     multivalued: true
     annotations:
       nullable: true
