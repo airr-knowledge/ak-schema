@@ -2260,7 +2260,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Acknowledgement
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   lab_address:
     name: lab_address
     annotations:
@@ -2643,7 +2643,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SequenceDelineationV
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   unrearranged_support:
     name: unrearranged_support
     annotations:
@@ -2654,7 +2654,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: UnrearrangedSequence
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   rearranged_support:
     name: rearranged_support
     annotations:
@@ -2665,7 +2665,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: RearrangedSequence
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   paralogs:
     name: paralogs
     annotations:
@@ -2748,7 +2748,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: AlleleDescription
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   receptor_genotype_set_id:
     name: receptor_genotype_set_id
     annotations:
@@ -2770,7 +2770,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Genotype
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   receptor_genotype_id:
     name: receptor_genotype_id
     annotations:
@@ -2792,7 +2792,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DocumentedAllele
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   undocumented_alleles:
     name: undocumented_alleles
     annotations:
@@ -2804,7 +2804,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: UndocumentedAllele
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   deleted_genes:
     name: deleted_genes
     annotations:
@@ -2815,7 +2815,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DeletedGene
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   inference_process:
     name: inference_process
     annotations:
@@ -2863,7 +2863,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MHCGenotype
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   mhc_genotype_id:
     name: mhc_genotype_id
     annotations:
@@ -2884,7 +2884,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MHCAllele
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   mhc_genotyping_method:
     name: mhc_genotyping_method
     annotations:
@@ -3194,7 +3194,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Diagnosis
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   genotype:
     name: genotype
     annotations:
@@ -3589,7 +3589,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: PCRTarget
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   complete_sequences:
     name: complete_sequences
     annotations:
@@ -3938,7 +3938,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SampleProcessing
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   data_processing:
     name: data_processing
     annotations:
@@ -3949,7 +3949,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DataProcessing
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   time_point:
     name: time_point
     annotations:
@@ -3998,7 +3998,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: RepertoireFilter
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   segment:
     name: segment
     annotations:
@@ -5631,7 +5631,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: ReceptorReactivity
     multivalued: true
-    inlined: true
+    inlined_as_list: true
   ligand_type:
     name: ligand_type
     annotations:

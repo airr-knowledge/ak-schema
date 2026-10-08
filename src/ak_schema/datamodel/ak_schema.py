@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-06T19:13:04
+# Generation date: 2026-10-08T21:17:45
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -2227,7 +2227,7 @@ class AIRRGenotypeData(AKDataSet):
         if self.receptor_genotype_set_id is not None and not isinstance(self.receptor_genotype_set_id, str):
             self.receptor_genotype_set_id = str(self.receptor_genotype_set_id)
 
-        self._normalize_inlined_as_dict(slot_name="genotype_class_list", slot_type=Genotype, key_name="receptor_genotype_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="genotype_class_list", slot_type=Genotype, key_name="receptor_genotype_id", keyed=True)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -3722,7 +3722,7 @@ class AlleleDescription(AIRRStandards):
         if self.maintainer is not None and not isinstance(self.maintainer, str):
             self.maintainer = str(self.maintainer)
 
-        self._normalize_inlined_as_dict(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=True)
 
         if self.lab_address is not None and not isinstance(self.lab_address, str):
             self.lab_address = str(self.lab_address)
@@ -3845,11 +3845,11 @@ class AlleleDescription(AIRRStandards):
         if self.j_donor_splice is not None and not isinstance(self.j_donor_splice, int):
             self.j_donor_splice = int(self.j_donor_splice)
 
-        self._normalize_inlined_as_dict(slot_name="v_gene_delineations", slot_type=SequenceDelineationV, key_name="sequence_delineation_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="v_gene_delineations", slot_type=SequenceDelineationV, key_name="sequence_delineation_id", keyed=True)
 
-        self._normalize_inlined_as_dict(slot_name="unrearranged_support", slot_type=UnrearrangedSequence, key_name="sequence_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="unrearranged_support", slot_type=UnrearrangedSequence, key_name="sequence_id", keyed=True)
 
-        self._normalize_inlined_as_dict(slot_name="rearranged_support", slot_type=RearrangedSequence, key_name="sequence_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="rearranged_support", slot_type=RearrangedSequence, key_name="sequence_id", keyed=True)
 
         if not isinstance(self.paralogs, list):
             self.paralogs = [self.paralogs] if self.paralogs is not None else []
@@ -3907,7 +3907,7 @@ class GermlineSet(AIRRStandards):
         if self.lab_address is not None and not isinstance(self.lab_address, str):
             self.lab_address = str(self.lab_address)
 
-        self._normalize_inlined_as_dict(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=True)
 
         if self.release_version is not None and not isinstance(self.release_version, int):
             self.release_version = int(self.release_version)
@@ -3936,7 +3936,7 @@ class GermlineSet(AIRRStandards):
         if self.locus is not None and not isinstance(self.locus, LocusEnum):
             self.locus = LocusEnum(self.locus)
 
-        self._normalize_inlined_as_dict(slot_name="allele_descriptions", slot_type=AlleleDescription, key_name="allele_description_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="allele_descriptions", slot_type=AlleleDescription, key_name="allele_description_id", keyed=True)
 
         if self.curation is not None and not isinstance(self.curation, str):
             self.curation = str(self.curation)
@@ -3962,7 +3962,7 @@ class GenotypeSet(AIRRStandards):
         if not isinstance(self.receptor_genotype_set_id, GenotypeSetReceptorGenotypeSetId):
             self.receptor_genotype_set_id = GenotypeSetReceptorGenotypeSetId(self.receptor_genotype_set_id)
 
-        self._normalize_inlined_as_dict(slot_name="genotype_class_list", slot_type=Genotype, key_name="receptor_genotype_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="genotype_class_list", slot_type=Genotype, key_name="receptor_genotype_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -4106,7 +4106,7 @@ class MHCGenotypeSet(AIRRStandards):
         if not isinstance(self.mhc_genotype_set_id, MHCGenotypeSetMhcGenotypeSetId):
             self.mhc_genotype_set_id = MHCGenotypeSetMhcGenotypeSetId(self.mhc_genotype_set_id)
 
-        self._normalize_inlined_as_dict(slot_name="mhc_genotype_list", slot_type=MHCGenotype, key_name="mhc_genotype_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="mhc_genotype_list", slot_type=MHCGenotype, key_name="mhc_genotype_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -4134,7 +4134,7 @@ class MHCGenotype(AIRRStandards):
         if self.mhc_class is not None and not isinstance(self.mhc_class, MhcClassEnum):
             self.mhc_class = MhcClassEnum(self.mhc_class)
 
-        self._normalize_inlined_as_dict(slot_name="mhc_alleles", slot_type=MHCAllele, key_name="allele_designation", keyed=True)
+        self._normalize_inlined_as_list(slot_name="mhc_alleles", slot_type=MHCAllele, key_name="allele_designation", keyed=True)
 
         if self.mhc_genotyping_method is not None and not isinstance(self.mhc_genotyping_method, str):
             self.mhc_genotyping_method = str(self.mhc_genotyping_method)
@@ -4751,9 +4751,9 @@ class Repertoire(AIRRStandards):
         if self.subject is not None and not isinstance(self.subject, Subject):
             self.subject = Subject(**as_dict(self.subject))
 
-        self._normalize_inlined_as_dict(slot_name="sample", slot_type=SampleProcessing, key_name="sample_processing_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="sample", slot_type=SampleProcessing, key_name="sample_processing_id", keyed=True)
 
-        self._normalize_inlined_as_dict(slot_name="data_processing", slot_type=DataProcessing, key_name="data_processing_id", keyed=True)
+        self._normalize_inlined_as_list(slot_name="data_processing", slot_type=DataProcessing, key_name="data_processing_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
