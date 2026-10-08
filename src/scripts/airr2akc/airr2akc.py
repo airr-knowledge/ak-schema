@@ -120,8 +120,10 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
         slot[pr_slot_name]["range"] = slot_range
         # AIRR objects are represented inline in AIRR JSON
         if slot_range in airr_classes:
-            slot[pr_slot_name]["inlined"] = True
-            # slot[pr_slot_name]["inlined_as_list"] = True
+            if is_array(slot_yaml):
+                slot[pr_slot_name]["inlined_as_list"] = True
+            else:
+                slot[pr_slot_name]["inlined"] = True
 
     if is_multivalued(slot_yaml):
         slot[pr_slot_name]["multivalued"] = True
