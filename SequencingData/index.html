@@ -280,7 +280,7 @@
 <tbody>
 <tr>
 <td><a href="../sequencing_data_id/">sequencing_data_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Persistent identifier of raw data stored in an archive (e</td>
 <td>direct</td>
 </tr>
@@ -407,6 +407,11 @@ slots:
 - paired_read_length
 - index_filename
 - index_length
+slot_usage:
+  sequencing_data_id:
+    name: sequencing_data_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -415,6 +420,11 @@ slots:
 <pre><code class="language-yaml">name: SequencingData
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  sequencing_data_id:
+    name: sequencing_data_id
+    identifier: true
+    required: true
 attributes:
   sequencing_data_id:
     name: sequencing_data_id
@@ -426,11 +436,13 @@ attributes:
       run ID). Data archive should  be identified in the CURIE prefix.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: sequencing_data_id
     owner: SequencingData
     domain_of:
     - SequencingData
     range: string
+    required: true
   file_type:
     name: file_type
     annotations:

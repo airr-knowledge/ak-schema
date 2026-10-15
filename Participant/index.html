@@ -234,6 +234,15 @@
 
       Participant : ethnicity
 
+      Participant : genotype_set
+
+
+
+
+    Participant --&gt; "0..1" AIRRGenotypeData : genotype_set
+    click AIRRGenotypeData href "../AIRRGenotypeData"
+
+
       Participant : geolocation
 
 
@@ -388,6 +397,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../genotype_set/">genotype_set</a></td>
+<td>0..1 <br/> <a href="../AIRRGenotypeData/">AIRRGenotypeData</a></td>
+<td>Adaptive Immune loci genotype set</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
@@ -501,6 +516,7 @@ slots:
 - geolocation
 - strain
 - life_events
+- genotype_set
 slot_usage:
   species:
     name: species
@@ -713,6 +729,16 @@ attributes:
     - QueryExperiment
     range: LifeEvent
     multivalued: true
+  genotype_set:
+    name: genotype_set
+    description: Adaptive Immune loci genotype set
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: genotype_set
+    owner: Participant
+    domain_of:
+    - Participant
+    range: AIRRGenotypeData
   name:
     name: name
     description: A human-readable name for a thing

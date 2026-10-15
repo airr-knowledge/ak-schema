@@ -254,7 +254,7 @@
 <tbody>
 <tr>
 <td><a href="../cell_id/">cell_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -349,6 +349,11 @@ slots:
 - expression_raw_doi
 - expression_index
 - virtual_pairing
+slot_usage:
+  cell_id:
+    name: cell_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -357,11 +362,17 @@ slots:
 <pre><code class="language-yaml">name: Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  cell_id:
+    name: cell_id
+    identifier: true
+    required: true
 attributes:
   cell_id:
     name: cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: cell_id
     owner: Cell
     domain_of:
@@ -369,6 +380,7 @@ attributes:
     - Cell
     - CellExpression
     range: string
+    required: true
   rearrangements:
     name: rearrangements
     annotations:

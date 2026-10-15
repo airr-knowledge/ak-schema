@@ -242,7 +242,7 @@
 <tbody>
 <tr>
 <td><a href="../acknowledgement_id/">acknowledgement_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>unique identifier of this Acknowledgement within the file</td>
 <td>direct</td>
 </tr>
@@ -327,6 +327,11 @@ slots:
 - individual_full_name
 - institution_name
 - orcid_id
+slot_usage:
+  acknowledgement_id:
+    name: acknowledgement_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -335,6 +340,11 @@ slots:
 <pre><code class="language-yaml">name: Acknowledgement
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  acknowledgement_id:
+    name: acknowledgement_id
+    identifier: true
+    required: true
 attributes:
   acknowledgement_id:
     name: acknowledgement_id
@@ -345,11 +355,13 @@ attributes:
     description: unique identifier of this Acknowledgement within the file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: acknowledgement_id
     owner: Acknowledgement
     domain_of:
     - Acknowledgement
     range: string
+    required: true
   individual_full_name:
     name: individual_full_name
     annotations:
