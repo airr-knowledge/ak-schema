@@ -77,6 +77,7 @@ CREATE INDEX epitope_sequence_aa ON "Epitope" ("sequence_aa");
 
 -- Receptor composites
 CREATE INDEX assay_receptor_composites_index ON "Assay_receptor_composites" ("receptor_composites_akc_id");
+CREATE INDEX assay_akc_id_index ON "Assay_receptor_composites" ("assay_akc_id");
 
 CREATE INDEX ab_receptor_composites_trb_chain ON "AlphaBetaReceptorComposite" ("trb_chain");
 CREATE INDEX ab_receptor_composites_tra_chain ON "AlphaBetaReceptorComposite" ("tra_chain");
