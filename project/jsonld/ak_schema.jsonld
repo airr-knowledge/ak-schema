@@ -2706,6 +2706,18 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sequence_files",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_files",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_files",
+      "owner": "AIRRSequencingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay"
+      ],
+      "range": "AIRRSequencingData",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "measurement_value",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_value",
       "description": "The measurement result value",
@@ -7314,6 +7326,7 @@
         "SampleProcessing"
       ],
       "range": "SequencingData",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12747,32 +12760,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "AIRRSequencingAssay_sequencing_files",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
-      "annotations": {
-        "nullable": {
-          "tag": "nullable",
-          "value": false,
-          "extensions": {},
-          "annotations": {}
-        }
-      },
-      "description": "Set of sequencing files produced by the sequencing run",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "sequencing_files",
-      "domain": "AIRRSequencingAssay",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
-      "alias": "sequencing_files",
-      "owner": "AIRRSequencingAssay",
-      "domain_of": [
-        "AIRRSequencingAssay"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "sequencing_files",
-      "range": "AIRRSequencingData",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "TCellReceptorEpitopeSpecificityMeasurement_measurement_category",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
       "description": "The measurement result category",
@@ -14584,13 +14571,14 @@
         "tcr_complexes",
         "antibody_complexes",
         "receptor_composites",
-        "AIRRSequencingAssay_sequencing_files",
+        "sequence_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
         "sequencing_platform",
         "sequencing_facility",
         "sequencing_run_date",
-        "sequencing_kit"
+        "sequencing_kit",
+        "sequencing_files"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0600047",
@@ -16911,9 +16899,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-10-15T19:36:52",
-  "source_file_size": 227463,
-  "generation_date": "2026-10-15T19:36:54",
+  "source_file_date": "2026-10-20T21:41:26",
+  "source_file_size": 227512,
+  "generation_date": "2026-10-20T21:41:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

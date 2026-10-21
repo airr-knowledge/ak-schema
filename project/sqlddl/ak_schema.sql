@@ -192,13 +192,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AIRRSequencingAssay" Description: ""
 --     * Slot: repertoire_id Description: 
+--     * Slot: sequence_files Description: 
 --     * Slot: sequencing_run_id Description: ID of sequencing run assigned by the sequencing facility
 --     * Slot: total_reads_passing_qc_filter Description: Number of usable reads for analysis
 --     * Slot: sequencing_platform Description: Designation of sequencing instrument used
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
---     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
@@ -206,6 +206,7 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: sequencing_files_sequencing_data_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "TCellReceptorEpitopeBindingAssay" Description: ""
 --     * Slot: mhc_evidence Description: Evidence code for MHC restriction
 --     * Slot: specimen Description: The specimen that was input for an assay
@@ -920,7 +921,7 @@
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
---     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
+--     * Slot: sequencing_files_sequencing_data_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "SequencingData" Description: ""
 --     * Slot: sequencing_data_id Description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
 --     * Slot: file_type Description: File format for the raw reads or sequences
@@ -1243,8 +1244,8 @@
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
---     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
 --     * Slot: Repertoire_repertoire_id Description: Autocreated FK slot
+--     * Slot: sequencing_files_sequencing_data_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "OntologyTable_parent" Description: ""
 --     * Slot: OntologyTable_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
@@ -2382,9 +2383,9 @@ CREATE TABLE "SequencingRun" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "SequencingData" (sequencing_data_id)
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
 );
 CREATE TABLE "RepertoireFilter" (
 	id INTEGER NOT NULL, 
@@ -3101,11 +3102,11 @@ CREATE TABLE "SampleProcessing" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
 	"Repertoire_repertoire_id" TEXT, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (sample_processing_id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "SequencingData" (sequencing_data_id), 
-	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id)
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
 );
 CREATE TABLE "Investigation_participants" (
 	investigation_akc_id TEXT, 
@@ -3250,13 +3251,13 @@ CREATE TABLE "Assay" (
 );
 CREATE TABLE "AIRRSequencingAssay" (
 	repertoire_id TEXT, 
+	sequence_files TEXT, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type VARCHAR, 
@@ -3264,10 +3265,12 @@ CREATE TABLE "AIRRSequencingAssay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "AIRRSequencingData" (akc_id), 
+	FOREIGN KEY(sequence_files) REFERENCES "AIRRSequencingData" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	mhc_evidence TEXT, 

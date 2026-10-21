@@ -898,6 +898,12 @@
                         "null"
                     ]
                 },
+                "sequence_files": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "sequencing_facility": {
                     "description": "Name and address of sequencing facility",
                     "type": [
@@ -906,11 +912,15 @@
                     ]
                 },
                 "sequencing_files": {
-                    "description": "Set of sequencing files produced by the sequencing run",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Set of sequencing files produced by the sequencing run"
                 },
                 "sequencing_kit": {
                     "description": "Name, manufacturer, order and lot numbers of sequencing kit",
@@ -1050,6 +1060,12 @@
                         "null"
                     ]
                 },
+                "sequence_files": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "sequencing_facility": {
                     "description": "Name and address of sequencing facility",
                     "type": [
@@ -1058,11 +1074,15 @@
                     ]
                 },
                 "sequencing_files": {
-                    "description": "Set of sequencing files produced by the sequencing run",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Set of sequencing files produced by the sequencing run"
                 },
                 "sequencing_kit": {
                     "description": "Name, manufacturer, order and lot numbers of sequencing kit",
@@ -11677,11 +11697,15 @@
                     ]
                 },
                 "sequencing_files": {
-                    "description": "Set of sequencing files produced by the sequencing run",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Set of sequencing files produced by the sequencing run"
                 },
                 "sequencing_kit": {
                     "description": "Name, manufacturer, order and lot numbers of sequencing kit",
@@ -12036,11 +12060,15 @@
                     ]
                 },
                 "sequencing_files": {
-                    "description": "Set of sequencing files produced by the sequencing run",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Set of sequencing files produced by the sequencing run"
                 },
                 "sequencing_kit": {
                     "description": "Name, manufacturer, order and lot numbers of sequencing kit",

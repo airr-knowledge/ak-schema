@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-15T19:36:58
+# Generation date: 2026-10-20T21:41:32
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1815,13 +1815,14 @@ class AIRRSequencingAssay(Assay):
     tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
     antibody_complexes: Optional[Union[Union[str, AntibodyAntigenComplexAkcId], List[Union[str, AntibodyAntigenComplexAkcId]]]] = empty_list()
     receptor_composites: Optional[Union[Union[str, ReceptorCompositeAkcId], List[Union[str, ReceptorCompositeAkcId]]]] = empty_list()
-    sequencing_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
+    sequence_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
     sequencing_platform: Optional[str] = None
     sequencing_facility: Optional[str] = None
     sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
     sequencing_kit: Optional[str] = None
+    sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1844,8 +1845,8 @@ class AIRRSequencingAssay(Assay):
             self.receptor_composites = [self.receptor_composites] if self.receptor_composites is not None else []
         self.receptor_composites = [v if isinstance(v, ReceptorCompositeAkcId) else ReceptorCompositeAkcId(v) for v in self.receptor_composites]
 
-        if self.sequencing_files is not None and not isinstance(self.sequencing_files, AIRRSequencingDataAkcId):
-            self.sequencing_files = AIRRSequencingDataAkcId(self.sequencing_files)
+        if self.sequence_files is not None and not isinstance(self.sequence_files, AIRRSequencingDataAkcId):
+            self.sequence_files = AIRRSequencingDataAkcId(self.sequence_files)
 
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)
@@ -1864,6 +1865,9 @@ class AIRRSequencingAssay(Assay):
 
         if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
+
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
+            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -4568,7 +4572,7 @@ class SequencingRun(AIRRStandards):
     sequencing_facility: Optional[str] = None
     sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
     sequencing_kit: Optional[str] = None
-    sequencing_files: Optional[Union[str, SequencingDataSequencingDataId]] = None
+    sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
@@ -4589,8 +4593,8 @@ class SequencingRun(AIRRStandards):
         if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
 
-        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingDataSequencingDataId):
-            self.sequencing_files = SequencingDataSequencingDataId(self.sequencing_files)
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
+            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
 
         super().__post_init__(**kwargs)
 
@@ -5952,7 +5956,7 @@ class SampleProcessing(AIRRStandards):
     sequencing_facility: Optional[str] = None
     sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
     sequencing_kit: Optional[str] = None
-    sequencing_files: Optional[Union[str, SequencingDataSequencingDataId]] = None
+    sequencing_files: Optional[Union[dict, SequencingData]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.sample_processing_id):
@@ -6054,8 +6058,8 @@ class SampleProcessing(AIRRStandards):
         if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
 
-        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingDataSequencingDataId):
-            self.sequencing_files = SequencingDataSequencingDataId(self.sequencing_files)
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
+            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
 
         super().__post_init__(**kwargs)
 
@@ -7310,6 +7314,9 @@ slots.antibody_complexes = Slot(uri=AK_SCHEMA.antibody_complexes, name="antibody
 slots.receptor_composites = Slot(uri=AK_SCHEMA.receptor_composites, name="receptor_composites", curie=AK_SCHEMA.curie('receptor_composites'),
                    model_uri=AK_SCHEMA.receptor_composites, domain=None, range=Optional[Union[Union[str, ReceptorCompositeAkcId], List[Union[str, ReceptorCompositeAkcId]]]])
 
+slots.sequence_files = Slot(uri=AK_SCHEMA.sequence_files, name="sequence_files", curie=AK_SCHEMA.curie('sequence_files'),
+                   model_uri=AK_SCHEMA.sequence_files, domain=None, range=Optional[Union[str, AIRRSequencingDataAkcId]])
+
 slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
                    model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])
 
@@ -8037,7 +8044,7 @@ slots.sequencing_kit = Slot(uri=AK_SCHEMA.sequencing_kit, name="sequencing_kit",
                    model_uri=AK_SCHEMA.sequencing_kit, domain=None, range=Optional[str])
 
 slots.sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
-                   model_uri=AK_SCHEMA.sequencing_files, domain=None, range=Optional[Union[str, SequencingDataSequencingDataId]])
+                   model_uri=AK_SCHEMA.sequencing_files, domain=None, range=Optional[Union[dict, SequencingData]])
 
 slots.sequencing_data_id = Slot(uri=AK_SCHEMA.sequencing_data_id, name="sequencing_data_id", curie=AK_SCHEMA.curie('sequencing_data_id'),
                    model_uri=AK_SCHEMA.sequencing_data_id, domain=None, range=Optional[str])
@@ -8896,9 +8903,6 @@ slots.CellIsolationProcessing_cell_subset = Slot(uri=AK_SCHEMA.cell_subset, name
 
 slots.CellIsolationProcessing_cell_species = Slot(uri=AK_SCHEMA.cell_species, name="CellIsolationProcessing_cell_species", curie=AK_SCHEMA.curie('cell_species'),
                    model_uri=AK_SCHEMA.CellIsolationProcessing_cell_species, domain=CellIsolationProcessing, range=Optional[Union[str, TaxonomicSpeciesTermId]])
-
-slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="AIRRSequencingAssay_sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
-                   model_uri=AK_SCHEMA.AIRRSequencingAssay_sequencing_files, domain=AIRRSequencingAssay, range=Optional[Union[str, AIRRSequencingDataAkcId]])
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
