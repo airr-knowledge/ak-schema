@@ -22,6 +22,7 @@ classes:
     is_a: Process
     class_uri: OBI:0000094 # material processing
     slots:
+      - type
       - specimen
 
   CellIsolationProcessing:
