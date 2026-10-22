@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-20T21:41:32
+# Generation date: 2026-10-22T17:03:04
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1611,6 +1611,7 @@ class SpecimenProcessing(Process):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SpecimenProcessing
 
     akc_id: Union[str, SpecimenProcessingAkcId] = None
+    type: Optional[str] = None
     specimen: Optional[Union[str, SpecimenAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1619,10 +1620,29 @@ class SpecimenProcessing(Process):
         if not isinstance(self.akc_id, SpecimenProcessingAkcId):
             self.akc_id = SpecimenProcessingAkcId(self.akc_id)
 
+        self.type = str(self.class_name)
+
         if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
             self.specimen = SpecimenAkcId(self.specimen)
 
         super().__post_init__(**kwargs)
+
+
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls,*args,**kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+
+            if target_cls is None:
+                raise ValueError(f"Wrong type designator value: class {cls.__name__} "
+                                 f"has no subclass with ['class_name']='{kwargs[type_designator]}'")
+            return super().__new__(target_cls,*args,**kwargs)
+
 
 
 @dataclass(repr=False)
@@ -1687,6 +1707,7 @@ class CellIsolationProcessing(SpecimenProcessing):
             self.cell_processing_protocol = str(self.cell_processing_protocol)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -1745,6 +1766,7 @@ class LibraryPreparationProcessing(SpecimenProcessing):
             self.physical_linkage = PhysicalLinkageEnum(self.physical_linkage)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)

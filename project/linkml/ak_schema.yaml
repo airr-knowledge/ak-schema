@@ -6264,6 +6264,7 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Process
     slots:
+    - type
     - specimen
     class_uri: OBI:0000094
   CellIsolationProcessing:

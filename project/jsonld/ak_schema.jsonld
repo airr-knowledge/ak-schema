@@ -1972,6 +1972,7 @@
       "owner": "AKDataItem",
       "domain_of": [
         "LifeEvent",
+        "SpecimenProcessing",
         "Assay",
         "AKDataItem"
       ],
@@ -14459,6 +14460,7 @@
         "akc_id",
         "name",
         "description",
+        "type",
         "specimen"
       ],
       "slot_usage": {},
@@ -14477,6 +14479,7 @@
         "akc_id",
         "name",
         "description",
+        "type",
         "specimen",
         "tissue_processing",
         "CellIsolationProcessing_cell_subset",
@@ -14509,6 +14512,7 @@
         "akc_id",
         "name",
         "description",
+        "type",
         "specimen",
         "template_class",
         "template_quality",
@@ -16899,9 +16903,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-10-20T21:41:26",
-  "source_file_size": 227512,
-  "generation_date": "2026-10-20T21:41:28",
+  "source_file_date": "2026-10-22T17:02:58",
+  "source_file_size": 227523,
+  "generation_date": "2026-10-22T17:03:00",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

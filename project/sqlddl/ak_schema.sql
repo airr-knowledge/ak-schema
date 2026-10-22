@@ -148,6 +148,7 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "SpecimenProcessing" Description: ""
+--     * Slot: type Description: 
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -164,6 +165,7 @@
 --     * Slot: cell_quality Description: Relative amount of viable cells after preparation and (if applicable) thawing
 --     * Slot: cell_isolation Description: Description of the procedure used for marker-based isolation or enrich cells
 --     * Slot: cell_processing_protocol Description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
+--     * Slot: type Description: 
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -178,6 +180,7 @@
 --     * Slot: library_generation_kit_version Description: When using a library generation protocol from a commercial provider, provide the protocol version number
 --     * Slot: complete_sequences Description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
 --     * Slot: physical_linkage Description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
+--     * Slot: type Description: 
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -3192,6 +3195,7 @@ CREATE TABLE "DataProcessing_data_processing_files" (
 	FOREIGN KEY("DataProcessing_data_processing_id") REFERENCES "DataProcessing" (data_processing_id)
 );
 CREATE TABLE "SpecimenProcessing" (
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -3211,6 +3215,7 @@ CREATE TABLE "CellIsolationProcessing" (
 	cell_quality TEXT, 
 	cell_isolation TEXT, 
 	cell_processing_protocol TEXT, 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -3230,6 +3235,7 @@ CREATE TABLE "LibraryPreparationProcessing" (
 	library_generation_kit_version TEXT, 
 	complete_sequences VARCHAR(20), 
 	physical_linkage VARCHAR(16), 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 

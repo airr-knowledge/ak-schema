@@ -1779,6 +1779,7 @@ CREATE TABLE "DataProcessing_data_processing_files" (
 	FOREIGN KEY("DataProcessing_data_processing_id") REFERENCES "DataProcessing" (data_processing_id)
 );COMMENT ON TABLE "DataProcessing_data_processing_files" IS 'None';COMMENT ON COLUMN "DataProcessing_data_processing_files"."DataProcessing_data_processing_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "DataProcessing_data_processing_files".data_processing_files IS 'Array of file names for data produced by this data processing.';
 CREATE TABLE "SpecimenProcessing" (
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -1798,6 +1799,7 @@ CREATE TABLE "CellIsolationProcessing" (
 	cell_quality TEXT, 
 	cell_isolation TEXT, 
 	cell_processing_protocol TEXT, 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -1817,6 +1819,7 @@ CREATE TABLE "LibraryPreparationProcessing" (
 	library_generation_kit_version TEXT, 
 	complete_sequences "CompleteSequencesEnum", 
 	physical_linkage "PhysicalLinkageEnum", 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
