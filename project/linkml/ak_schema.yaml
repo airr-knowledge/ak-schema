@@ -1612,6 +1612,10 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: ReceptorComposite
     multivalued: true
+  sequence_files:
+    name: sequence_files
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AIRRSequencingData
   measurement_value:
     name: measurement_value
     description: The measurement result value
@@ -3690,7 +3694,7 @@ slots:
     description: Set of sequencing files produced by the sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SequencingData
-    inlined: false
+    inlined: true
   sequencing_data_id:
     name: sequencing_data_id
     annotations:
@@ -6260,6 +6264,7 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Process
     slots:
+    - type
     - specimen
     class_uri: OBI:0000094
   CellIsolationProcessing:
@@ -6315,10 +6320,7 @@ classes:
     - tcr_complexes
     - antibody_complexes
     - receptor_composites
-    slot_usage:
-      sequencing_files:
-        name: sequencing_files
-        range: AIRRSequencingData
+    - sequence_files
     class_uri: OBI:0600047
   TCellReceptorEpitopeBindingAssay:
     name: TCellReceptorEpitopeBindingAssay

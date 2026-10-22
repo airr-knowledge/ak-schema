@@ -22,6 +22,7 @@ classes:
     is_a: Process
     class_uri: OBI:0000094 # material processing
     slots:
+      - type
       - specimen
 
   CellIsolationProcessing:
@@ -69,9 +70,7 @@ classes:
       - tcr_complexes
       - antibody_complexes
       - receptor_composites
-    slot_usage:
-      sequencing_files:
-        range: AIRRSequencingData
+      - sequence_files
 
 # todo: for T/B cell assay -> epitope, antigen and MHC are already in the complex, redundant to have in the Assay level?
 
@@ -138,6 +137,8 @@ slots:
     description: Composite object for database optimization
     range: ReceptorComposite
     multivalued: true
+  sequence_files:
+    range: AIRRSequencingData
 
 
 enums:

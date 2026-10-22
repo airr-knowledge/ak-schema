@@ -148,6 +148,7 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "SpecimenProcessing" Description: ""
+--     * Slot: type Description: 
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -164,6 +165,7 @@
 --     * Slot: cell_quality Description: Relative amount of viable cells after preparation and (if applicable) thawing
 --     * Slot: cell_isolation Description: Description of the procedure used for marker-based isolation or enrich cells
 --     * Slot: cell_processing_protocol Description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
+--     * Slot: type Description: 
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -178,6 +180,7 @@
 --     * Slot: library_generation_kit_version Description: When using a library generation protocol from a commercial provider, provide the protocol version number
 --     * Slot: complete_sequences Description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
 --     * Slot: physical_linkage Description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
+--     * Slot: type Description: 
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -192,13 +195,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AIRRSequencingAssay" Description: ""
 --     * Slot: repertoire_id Description: 
+--     * Slot: sequence_files Description: 
 --     * Slot: sequencing_run_id Description: ID of sequencing run assigned by the sequencing facility
 --     * Slot: total_reads_passing_qc_filter Description: Number of usable reads for analysis
 --     * Slot: sequencing_platform Description: Designation of sequencing instrument used
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
---     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
@@ -206,6 +209,7 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: sequencing_files_sequencing_data_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "TCellReceptorEpitopeBindingAssay" Description: ""
 --     * Slot: mhc_evidence Description: Evidence code for MHC restriction
 --     * Slot: specimen Description: The specimen that was input for an assay
@@ -920,7 +924,7 @@
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
---     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
+--     * Slot: sequencing_files_sequencing_data_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "SequencingData" Description: ""
 --     * Slot: sequencing_data_id Description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
 --     * Slot: file_type Description: File format for the raw reads or sequences
@@ -1243,8 +1247,8 @@
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
---     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
 --     * Slot: Repertoire_repertoire_id Description: Autocreated FK slot
+--     * Slot: sequencing_files_sequencing_data_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "OntologyTable_parent" Description: ""
 --     * Slot: OntologyTable_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
@@ -2382,9 +2386,9 @@ CREATE TABLE "SequencingRun" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "SequencingData" (sequencing_data_id)
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
 );
 CREATE TABLE "RepertoireFilter" (
 	id INTEGER NOT NULL, 
@@ -3101,11 +3105,11 @@ CREATE TABLE "SampleProcessing" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
 	"Repertoire_repertoire_id" TEXT, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (sample_processing_id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "SequencingData" (sequencing_data_id), 
-	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id)
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
 );
 CREATE TABLE "Investigation_participants" (
 	investigation_akc_id TEXT, 
@@ -3191,6 +3195,7 @@ CREATE TABLE "DataProcessing_data_processing_files" (
 	FOREIGN KEY("DataProcessing_data_processing_id") REFERENCES "DataProcessing" (data_processing_id)
 );
 CREATE TABLE "SpecimenProcessing" (
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -3210,6 +3215,7 @@ CREATE TABLE "CellIsolationProcessing" (
 	cell_quality TEXT, 
 	cell_isolation TEXT, 
 	cell_processing_protocol TEXT, 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -3229,6 +3235,7 @@ CREATE TABLE "LibraryPreparationProcessing" (
 	library_generation_kit_version TEXT, 
 	complete_sequences VARCHAR(20), 
 	physical_linkage VARCHAR(16), 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -3250,13 +3257,13 @@ CREATE TABLE "Assay" (
 );
 CREATE TABLE "AIRRSequencingAssay" (
 	repertoire_id TEXT, 
+	sequence_files TEXT, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type VARCHAR, 
@@ -3264,10 +3271,12 @@ CREATE TABLE "AIRRSequencingAssay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "AIRRSequencingData" (akc_id), 
+	FOREIGN KEY(sequence_files) REFERENCES "AIRRSequencingData" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	mhc_evidence TEXT, 
