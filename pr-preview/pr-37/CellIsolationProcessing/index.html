@@ -258,6 +258,8 @@
 
       CellIsolationProcessing : tissue_processing
 
+      CellIsolationProcessing : type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -352,6 +354,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../SpecimenProcessing/">SpecimenProcessing</a></td>
 </tr>
 <tr>
 <td><a href="../specimen/">specimen</a></td>
@@ -632,6 +640,19 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
+    range: string
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: CellIsolationProcessing
+    domain_of:
+    - LifeEvent
+    - SpecimenProcessing
+    - Assay
+    - AKDataItem
     range: string
   specimen:
     name: specimen

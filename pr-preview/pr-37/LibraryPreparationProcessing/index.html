@@ -286,6 +286,8 @@
 
       LibraryPreparationProcessing : template_quality
 
+      LibraryPreparationProcessing : type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -374,6 +376,12 @@
 <td>0..1 <br/> <a href="../PhysicalLinkageEnum/">PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../SpecimenProcessing/">SpecimenProcessing</a></td>
 </tr>
 <tr>
 <td><a href="../specimen/">specimen</a></td>
@@ -627,6 +635,19 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: PhysicalLinkageEnum
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - LifeEvent
+    - SpecimenProcessing
+    - Assay
+    - AKDataItem
+    range: string
   specimen:
     name: specimen
     description: The specimen that was input for an assay
