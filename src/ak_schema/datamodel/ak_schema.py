@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-31T23:08:40
+# Generation date: 2026-08-28T19:41:43
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -41,6 +41,7 @@ GAZ = CurieNamespace('GAZ', 'http://purl.obolibrary.org/obo/GAZ_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 IEDB_EPITOPE = CurieNamespace('IEDB_EPITOPE', 'http://www.iedb.org/epitope/')
+MRO = CurieNamespace('MRO', 'http://purl.obolibrary.org/obo/MRO_')
 NCBITAXON = CurieNamespace('NCBITAXON', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')

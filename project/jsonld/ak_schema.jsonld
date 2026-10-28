@@ -61,6 +61,10 @@
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
+      "prefix_prefix": "MRO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/MRO_"
+    },
+    {
       "prefix_prefix": "NCBITAXON",
       "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
     },
@@ -16249,9 +16253,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-31T23:08:34",
-  "source_file_size": 223916,
-  "generation_date": "2026-07-31T23:08:36",
+  "source_file_date": "2026-08-28T19:41:38",
+  "source_file_size": 224004,
+  "generation_date": "2026-08-28T19:41:40",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
