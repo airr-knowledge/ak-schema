@@ -129,7 +129,13 @@ classes:
     class_uri: OBI:1110034 # antigen
     slots:
       - source_molecule
+      - source_molecule_iri
+      - parent_molecule
+      - parent_molecule_iri
       - source_species
+      - source_species_iri
+      - source_organism
+      - source_organism_iri
       - epitopes
 
   MajorHistocompatibilityComplex:
@@ -278,10 +284,29 @@ slots:
     range: GammaDeltaTCR
 
   source_molecule:
-    description: The protein or other molecule that this antigen represents
+    description: The exact protein or other molecule that this antigen represents (e.g., the exact mutated protein)
+
+  source_molecule_iri:
+    description: The IRI for the source_molecule
+
+  parent_molecule:
+    description: The parent group of the protein or other molecule that this antigen represents, that the source_molecule was derived from
+
+  parent_molecule_iri:
+    description: The IRI for the parent_molecule
+
+  source_organism:
+    description: The name of the organism that the source molecule comes from (e.g., a specific strain)
+
+  source_organism_iri:
+    description: The IRI for the source_organism
+    range: TaxonomicSpecies
 
   source_species:
-    description: The species that the source molecule comes from
+    description: The name of the species that the source molecule comes from
+
+  source_species_iri:
+    description: The IRI for the source_species
     range: TaxonomicSpecies
 
   antibody:
