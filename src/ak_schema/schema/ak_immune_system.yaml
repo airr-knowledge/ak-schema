@@ -16,11 +16,7 @@ classes:
       - species
       - complete_vdj
       - sequence
-      - infer_vdj_sequence
-      - hash_infer_vdj_sequence
       - sequence_aa
-      - infer_vdj_sequence_aa
-      - hash_infer_vdj_sequence_aa
       - locus
       - v_call
       - v_gene
@@ -33,33 +29,89 @@ classes:
       - junction_aa
       - cdr1_aa
       - cdr2_aa
-      - cdr3_aa
     slot_usage:
       sequence_aa:
         pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
       junction_aa:
         pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+$"
 
+  ChainInferences:
+    abstract: true
+    slots:
+      - infer_vdj_sequence
+      - hash_infer_vdj_sequence
+      - infer_vdj_sequence_aa
+      - hash_infer_vdj_sequence_aa
+
+  CanonicalAlphaChain:
+    is_a: Chain
+
+  CanonicalBetaChain:
+    is_a: Chain
+
+  CanonicalDeltaChain:
+    is_a: Chain
+
+  CanonicalGammaChain:
+    is_a: Chain
+
+  CanonicalHeavyChain:
+    is_a: Chain
+
+  CanonicalKappaChain:
+    is_a: Chain
+
+  CanonicalLambdaChain:
+    is_a: Chain
+
   AlphaChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalAlphaChain
 
   BetaChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalBetaChain
 
   DeltaChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalDeltaChain
 
   GammaChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalGammaChain
 
   HeavyChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalHeavyChain
 
   KappaChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalKappaChain
 
   LambdaChain:
     is_a: Chain
+    mixins: ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        range: CanonicalLambdaChain
 
   ImmuneReceptor:
     abstract: true
@@ -88,10 +140,19 @@ classes:
       - trd_chain
 
   BCellReceptor:
+    abstract: true
     is_a: ImmuneReceptor
+
+  HeavyKappaBCR:
+    is_a: BCellReceptor
     slots:
       - igh_chain
       - igk_chain
+
+  HeavyLambdaBCR:
+    is_a: BCellReceptor
+    slots:
+      - igh_chain
       - igl_chain
 
   # the akc_id is same CURIE as the epitope_ref
@@ -143,39 +204,44 @@ classes:
       mhc_ref:
         range: MHCRestriction
 
-  AntibodyAntigenComplex:
+  HeavyKappaBCRAntigenComplex:
     abstract: true
     is_a: AKObject
     class_uri: OBI:0003119
     slots:
       - species
-      - antibody
+      - hk_bcr
       - antigen
       - epitope
 
-  TCRpMHCComplex:
+  HeavyLambdaBCRAntigenComplex:
+    abstract: true
+    is_a: AKObject
+    class_uri: OBI:0003119
+    slots:
+      - species
+      - hl_bcr
+      - antigen
+      - epitope
+
+  AlphaBetaTCRpMHCComplex:
     abstract: true
     is_a: AKObject
     class_uri: OBI:0003119
     slots:
       - species
       - ab_tcr
-      - gd_tcr
       - antigen
       - epitope
       - mhc
 
-  # class for database optimization
-  ReceptorComposite:
+  GammaDeltaTCRpMHCComplex:
+    abstract: true
     is_a: AKObject
-    mixins:
-      - AlphaBetaTCR
-      - GammaDeltaTCR
-      - BCellReceptor
+    class_uri: OBI:0003119
     slots:
       - species
-      - tcr_complex
-      - antibody_complex
+      - gd_tcr
       - antigen
       - epitope
       - mhc
@@ -243,31 +309,31 @@ slots:
 
   igh_chain:
     description: IG heavy chain
-    range: uriorcurie
+    range: CanonicalHeavyChain
 
   igl_chain:
     description: IG lambda light chain
-    range: uriorcurie
+    range: CanonicalLambdaChain
 
   igk_chain:
     description: IG kappa light chain
-    range: uriorcurie
+    range: CanonicalKappaChain
 
   tra_chain:
     description: T cell receptor alpha chain
-    range: uriorcurie
+    range: CanonicalAlphaChain
 
   trb_chain:
     description: T cell receptor beta chain
-    range: uriorcurie
+    range: CanonicalBetaChain
 
   trd_chain:
     description: T cell receptor delta chain
-    range: uriorcurie
+    range: CanonicalDeltaChain
 
   trg_chain:
     description: T cell receptor gamma chain
-    range: uriorcurie
+    range: CanonicalGammaChain
 
   ab_tcr:
     description: alpha/beta T cell receptor
@@ -276,6 +342,14 @@ slots:
   gd_tcr:
     description: gamma/delta T cell receptor
     range: GammaDeltaTCR
+
+  hk_bcr:
+    description: heavy/kappa B cell receptor
+    range: HeavyKappaBCR
+
+  hl_bcr:
+    description: heavy/lambda B cell receptor
+    range: HeavyLambdaBCR
 
   source_molecule:
     description: The protein or other molecule that this antigen represents
@@ -332,11 +406,3 @@ slots:
   mhc_class:
     description: Class of the major histocompatibility complex
     range: MhcClassEnum # from AIRR
-
-  tcr_complex:
-    description: TCR complex
-    range: TCRpMHCComplex
-
-  antibody_complex:
-    description: Antibody antigen complex
-    range: AntibodyAntigenComplex
