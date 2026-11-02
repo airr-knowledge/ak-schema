@@ -1583,35 +1583,31 @@ slots:
     name: target_entity_type
     description: The type of the entity being measured
     from_schema: https://github.com/airr-knowledge/ak-schema
+  ab_tcell_complexes:
+    name: ab_tcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AlphaBetaTCRpMHCComplex
+    multivalued: true
+  gd_tcell_complexes:
+    name: gd_tcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: GammaDeltaTCRpMHCComplex
+    multivalued: true
+  hk_bcell_complexes:
+    name: hk_bcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: HeavyKappaBCRAntigenComplex
+    multivalued: true
+  hl_bcell_complexes:
+    name: hl_bcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: HeavyLambdaBCRAntigenComplex
+    multivalued: true
   mhc_evidence:
     name: mhc_evidence
     description: Evidence code for MHC restriction
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: uriorcurie
-  tcell_receptors:
-    name: tcell_receptors
-    description: The T cell receptors being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: TCellReceptor
-    multivalued: true
-  tcr_complexes:
-    name: tcr_complexes
-    description: The T cell receptor/epitope/mhc complex being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: TCRpMHCComplex
-    multivalued: true
-  antibody_complexes:
-    name: antibody_complexes
-    description: The antibody-antigen complex being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AntibodyAntigenComplex
-    multivalued: true
-  receptor_composites:
-    name: receptor_composites
-    description: Composite object for database optimization
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ReceptorComposite
-    multivalued: true
   sequence_files:
     name: sequence_files
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1768,37 +1764,37 @@ slots:
     name: igh_chain
     description: IG heavy chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalHeavyChain
   igl_chain:
     name: igl_chain
     description: IG lambda light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalLambdaChain
   igk_chain:
     name: igk_chain
     description: IG kappa light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalKappaChain
   tra_chain:
     name: tra_chain
     description: T cell receptor alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalAlphaChain
   trb_chain:
     name: trb_chain
     description: T cell receptor beta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalBetaChain
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalDeltaChain
   trg_chain:
     name: trg_chain
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: CanonicalGammaChain
   ab_tcr:
     name: ab_tcr
     description: alpha/beta T cell receptor
@@ -1809,6 +1805,16 @@ slots:
     description: gamma/delta T cell receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: GammaDeltaTCR
+  hk_bcr:
+    name: hk_bcr
+    description: heavy/kappa B cell receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: HeavyKappaBCR
+  hl_bcr:
+    name: hl_bcr
+    description: heavy/lambda B cell receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: HeavyLambdaBCR
   source_molecule:
     name: source_molecule
     description: The protein or other molecule that this antigen represents
@@ -1880,16 +1886,62 @@ slots:
     description: Class of the major histocompatibility complex
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MhcClassEnum
-  tcr_complex:
-    name: tcr_complex
-    description: TCR complex
+  tra_sequence:
+    name: tra_sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: TCRpMHCComplex
-  antibody_complex:
-    name: antibody_complex
-    description: Antibody antigen complex
+    is_a: sequence
+  tra_junction_aa:
+    name: tra_junction_aa
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AntibodyAntigenComplex
+    is_a: junction_aa
+  trb_sequence:
+    name: trb_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: sequence
+  trb_junction_aa:
+    name: trb_junction_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: junction_aa
+  trd_sequence:
+    name: trd_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: sequence
+  trd_junction_aa:
+    name: trd_junction_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: junction_aa
+  trg_sequence:
+    name: trg_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: sequence
+  trg_junction_aa:
+    name: trg_junction_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: junction_aa
+  igh_sequence:
+    name: igh_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: sequence
+  igh_junction_aa:
+    name: igh_junction_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: junction_aa
+  igk_sequence:
+    name: igk_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: sequence
+  igk_junction_aa:
+    name: igk_junction_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: junction_aa
+  igl_sequence:
+    name: igl_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: sequence
+  igl_junction_aa:
+    name: igl_junction_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: junction_aa
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
@@ -5994,10 +6046,22 @@ classes:
         range: AlphaChain
         multivalued: true
         inlined: true
+      canonical_alpha_chains:
+        name: canonical_alpha_chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: CanonicalAlphaChain
+        multivalued: true
+        inlined: true
       beta_chains:
         name: beta_chains
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: BetaChain
+        multivalued: true
+        inlined: true
+      canonical_beta_chains:
+        name: canonical_beta_chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: CanonicalBetaChain
         multivalued: true
         inlined: true
       ab_tcell_receptors:
@@ -6012,10 +6076,22 @@ classes:
         range: GammaChain
         multivalued: true
         inlined: true
+      canonical_gamma_chains:
+        name: canonical_gamma_chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: CanonicalGammaChain
+        multivalued: true
+        inlined: true
       delta_chains:
         name: delta_chains
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: DeltaChain
+        multivalued: true
+        inlined: true
+      canonical_delta_chains:
+        name: canonical_delta_chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: CanonicalDeltaChain
         multivalued: true
         inlined: true
       gd_tcell_receptors:
@@ -6030,10 +6106,22 @@ classes:
         range: HeavyChain
         multivalued: true
         inlined: true
+      canonical_heavy_chains:
+        name: canonical_heavy_chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: CanonicalHeavyChain
+        multivalued: true
+        inlined: true
       kappa_chains:
         name: kappa_chains
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: KappaChain
+        multivalued: true
+        inlined: true
+      canonical_kappa_chains:
+        name: canonical_kappa_chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: CanonicalKappaChain
         multivalued: true
         inlined: true
       lambda_chains:
@@ -6042,10 +6130,22 @@ classes:
         range: LambdaChain
         multivalued: true
         inlined: true
-      bcell_receptors:
-        name: bcell_receptors
+      canonical_lambda_chains:
+        name: canonical_lambda_chains
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: BCellReceptor
+        range: CanonicalLambdaChain
+        multivalued: true
+        inlined: true
+      hk_bcell_receptors:
+        name: hk_bcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: HeavyKappaBCR
+        multivalued: true
+        inlined: true
+      hl_bcell_receptors:
+        name: hl_bcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: HeavyLambdaBCR
         multivalued: true
         inlined: true
       antigens:
@@ -6066,64 +6166,76 @@ classes:
         range: MajorHistocompatibilityComplex
         multivalued: true
         inlined: true
-      tcr_complexes:
-        name: tcr_complexes
+      ab_tcell_complexes:
+        name: ab_tcell_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: TCRpMHCComplex
+        range: AlphaBetaTCRpMHCComplex
         multivalued: true
         inlined: true
-      antibody_complexes:
-        name: antibody_complexes
+      gd_tcell_complexes:
+        name: gd_tcell_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: AntibodyAntigenComplex
+        range: GammaDeltaTCRpMHCComplex
         multivalued: true
         inlined: true
-      receptor_composites:
-        name: receptor_composites
+      hk_bcell_complexes:
+        name: hk_bcell_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: ReceptorComposite
+        range: HeavyKappaBCRAntigenComplex
         multivalued: true
         inlined: true
-      ab_receptor_composites:
-        name: ab_receptor_composites
+      hl_bcell_complexes:
+        name: hl_bcell_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: AlphaBetaReceptorComposite
+        range: HeavyLambdaBCRAntigenComplex
         multivalued: true
         inlined: true
-      gd_receptor_composites:
-        name: gd_receptor_composites
+      ab_complex_composites:
+        name: ab_complex_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: GammaDeltaReceptorComposite
+        range: AlphaBetaTCRComplexComposite
         multivalued: true
         inlined: true
-      bcell_receptor_composites:
-        name: bcell_receptor_composites
+      gd_complex_composites:
+        name: gd_complex_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: BCellReceptorComposite
+        range: GammaDeltaTCRComplexComposite
         multivalued: true
         inlined: true
-      paired_receptor_composites:
-        name: paired_receptor_composites
+      hk_complex_composites:
+        name: hk_complex_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: PairedReceptorComposite
+        range: HeavyKappaBCRComplexComposite
         multivalued: true
         inlined: true
-      paired_ab_receptor_composites:
-        name: paired_ab_receptor_composites
+      hl_complex_composites:
+        name: hl_complex_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: PairedAlphaBetaReceptorComposite
+        range: HeavyLambdaBCRComplexComposite
         multivalued: true
         inlined: true
-      paired_gd_receptor_composites:
-        name: paired_gd_receptor_composites
+      paired_ab_complex_composites:
+        name: paired_ab_complex_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: PairedGammaDeltaReceptorComposite
+        range: PairedAlphaBetaTCRComplexComposite
         multivalued: true
         inlined: true
-      paired_bcell_receptor_composites:
-        name: paired_bcell_receptor_composites
+      paired_gd_complex_composites:
+        name: paired_gd_complex_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: PairedBCellReceptorComposite
+        range: PairedGammaDeltaTCRComplexComposite
+        multivalued: true
+        inlined: true
+      paired_hk_complex_composites:
+        name: paired_hk_complex_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: PairedHeavyKappaBCRComplexComposite
+        multivalued: true
+        inlined: true
+      paired_hl_complex_composites:
+        name: paired_hl_complex_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: PairedHeavyLambdaBCRComplexComposite
         multivalued: true
         inlined: true
     tree_root: true
@@ -6308,6 +6420,10 @@ classes:
     - type
     - assay_type
     - has_specified_output
+    - ab_tcell_complexes
+    - gd_tcell_complexes
+    - hk_bcell_complexes
+    - hl_bcell_complexes
     class_uri: OBI:0000070
   AIRRSequencingAssay:
     name: AIRRSequencingAssay
@@ -6317,9 +6433,6 @@ classes:
     - SequencingRun
     slots:
     - repertoire_id
-    - tcr_complexes
-    - antibody_complexes
-    - receptor_composites
     - sequence_files
     class_uri: OBI:0600047
   TCellReceptorEpitopeBindingAssay:
@@ -6329,17 +6442,12 @@ classes:
     mixins:
     - TCellReceptorEpitopeSpecificityMeasurement
     slots:
-    - tcr_complexes
     - mhc_evidence
-    - receptor_composites
     class_uri: OBI:1110037
   AntibodyAntigenBindingAssay:
     name: AntibodyAntigenBindingAssay
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Assay
-    slots:
-    - antibody_complexes
-    - receptor_composites
     class_uri: OBI:0003127
   DataItem:
     name: DataItem
@@ -6480,11 +6588,7 @@ classes:
     - species
     - complete_vdj
     - sequence
-    - infer_vdj_sequence
-    - hash_infer_vdj_sequence
     - sequence_aa
-    - infer_vdj_sequence_aa
-    - hash_infer_vdj_sequence_aa
     - locus
     - v_call
     - v_gene
@@ -6497,7 +6601,6 @@ classes:
     - junction_aa
     - cdr1_aa
     - cdr2_aa
-    - cdr3_aa
     slot_usage:
       sequence_aa:
         name: sequence_aa
@@ -6505,34 +6608,113 @@ classes:
       junction_aa:
         name: junction_aa
         pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
+  ChainInferences:
+    name: ChainInferences
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+    slots:
+    - infer_vdj_sequence
+    - hash_infer_vdj_sequence
+    - infer_vdj_sequence_aa
+    - hash_infer_vdj_sequence_aa
+  CanonicalAlphaChain:
+    name: CanonicalAlphaChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
+  CanonicalBetaChain:
+    name: CanonicalBetaChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
+  CanonicalDeltaChain:
+    name: CanonicalDeltaChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
+  CanonicalGammaChain:
+    name: CanonicalGammaChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
+  CanonicalHeavyChain:
+    name: CanonicalHeavyChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
+  CanonicalKappaChain:
+    name: CanonicalKappaChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
+  CanonicalLambdaChain:
+    name: CanonicalLambdaChain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Chain
   AlphaChain:
     name: AlphaChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalAlphaChain
   BetaChain:
     name: BetaChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalBetaChain
   DeltaChain:
     name: DeltaChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalDeltaChain
   GammaChain:
     name: GammaChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalGammaChain
   HeavyChain:
     name: HeavyChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalHeavyChain
   KappaChain:
     name: KappaChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalKappaChain
   LambdaChain:
     name: LambdaChain
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Chain
+    mixins:
+    - ChainInferences
+    slot_usage:
+      hash_infer_vdj_sequence_aa:
+        name: hash_infer_vdj_sequence_aa
+        range: CanonicalLambdaChain
   ImmuneReceptor:
     name: ImmuneReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6567,9 +6749,20 @@ classes:
     name: BCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: ImmuneReceptor
+    abstract: true
+  HeavyKappaBCR:
+    name: HeavyKappaBCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: BCellReceptor
     slots:
     - igh_chain
     - igk_chain
+  HeavyLambdaBCR:
+    name: HeavyLambdaBCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: BCellReceptor
+    slots:
+    - igh_chain
     - igl_chain
   Epitope:
     name: Epitope
@@ -6627,97 +6820,166 @@ classes:
         name: mhc_ref
         range: MHCRestriction
     class_uri: GO:0042611
-  AntibodyAntigenComplex:
-    name: AntibodyAntigenComplex
+  HeavyKappaBCRAntigenComplex:
+    name: HeavyKappaBCRAntigenComplex
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     abstract: true
     slots:
     - species
-    - antibody
+    - hk_bcr
     - antigen
     - epitope
     class_uri: OBI:0003119
-  TCRpMHCComplex:
-    name: TCRpMHCComplex
+  HeavyLambdaBCRAntigenComplex:
+    name: HeavyLambdaBCRAntigenComplex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    abstract: true
+    slots:
+    - species
+    - hl_bcr
+    - antigen
+    - epitope
+    class_uri: OBI:0003119
+  AlphaBetaTCRpMHCComplex:
+    name: AlphaBetaTCRpMHCComplex
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     abstract: true
     slots:
     - species
     - ab_tcr
+    - antigen
+    - epitope
+    - mhc
+    class_uri: OBI:0003119
+  GammaDeltaTCRpMHCComplex:
+    name: GammaDeltaTCRpMHCComplex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    abstract: true
+    slots:
+    - species
     - gd_tcr
     - antigen
     - epitope
     - mhc
     class_uri: OBI:0003119
-  ReceptorComposite:
-    name: ReceptorComposite
+  ChainComposite:
+    name: ChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    abstract: true
+    slots:
+    - species
+  AlphaChainComposite:
+    name: AlphaChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - tra_sequence
+    - tra_junction_aa
+  BetaChainComposite:
+    name: BetaChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - trb_sequence
+    - trb_junction_aa
+  DeltaChainComposite:
+    name: DeltaChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - trd_sequence
+    - trd_junction_aa
+  GammaChainComposite:
+    name: GammaChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - trg_sequence
+    - trg_junction_aa
+  AlphaBetaTCRComplexComposite:
+    name: AlphaBetaTCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     mixins:
-    - AlphaBetaTCR
-    - GammaDeltaTCR
-    - BCellReceptor
+    - AlphaChainComposite
+    - BetaChainComposite
     slots:
-    - species
-    - tcr_complex
-    - antibody_complex
     - antigen
     - epitope
     - mhc
-  AlphaBetaReceptorComposite:
-    name: AlphaBetaReceptorComposite
+  GammaDeltaTCRComplexComposite:
+    name: GammaDeltaTCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     mixins:
-    - AlphaBetaTCR
+    - GammaChainComposite
+    - DeltaChainComposite
     slots:
-    - species
-    - tcr_complex
     - antigen
     - epitope
     - mhc
-  GammaDeltaReceptorComposite:
-    name: GammaDeltaReceptorComposite
+  HeavyChainComposite:
+    name: HeavyChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - igh_sequence
+    - igh_junction_aa
+  KappaChainComposite:
+    name: KappaChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - igk_sequence
+    - igk_junction_aa
+  LambdaChainComposite:
+    name: LambdaChainComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ChainComposite
+    slots:
+    - igl_sequence
+    - igl_junction_aa
+  HeavyKappaBCRComplexComposite:
+    name: HeavyKappaBCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     mixins:
-    - GammaDeltaTCR
+    - HeavyChainComposite
+    - KappaChainComposite
     slots:
-    - species
-    - tcr_complex
     - antigen
     - epitope
-    - mhc
-  BCellReceptorComposite:
-    name: BCellReceptorComposite
+  HeavyLambdaBCRComplexComposite:
+    name: HeavyLambdaBCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     mixins:
-    - BCellReceptor
+    - HeavyChainComposite
+    - LambdaChainComposite
     slots:
-    - species
-    - antibody_complex
     - antigen
     - epitope
-    - mhc
-  PairedReceptorComposite:
-    name: PairedReceptorComposite
+  PairedAlphaBetaTCRComplexComposite:
+    name: PairedAlphaBetaTCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: ReceptorComposite
-  PairedAlphaBetaReceptorComposite:
-    name: PairedAlphaBetaReceptorComposite
+    is_a: AlphaBetaTCRComplexComposite
+  PairedGammaDeltaTCRComplexComposite:
+    name: PairedGammaDeltaTCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: AlphaBetaReceptorComposite
-  PairedGammaDeltaReceptorComposite:
-    name: PairedGammaDeltaReceptorComposite
+    is_a: GammaDeltaTCRComplexComposite
+  PairedHeavyKappaBCRComplexComposite:
+    name: PairedHeavyKappaBCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: GammaDeltaReceptorComposite
-  PairedBCellReceptorComposite:
-    name: PairedBCellReceptorComposite
+    is_a: HeavyKappaBCRComplexComposite
+  PairedHeavyLambdaBCRComplexComposite:
+    name: PairedHeavyLambdaBCRComplexComposite
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: BCellReceptorComposite
+    is_a: HeavyLambdaBCRComplexComposite
   Model:
     name: Model
     from_schema: https://github.com/airr-knowledge/ak-schema
