@@ -205,6 +205,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-bcellreceptor">Class: BCellReceptor</h1>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/BCellReceptor">ak_schema:BCellReceptor</a></p>
 <div class="mermaid"> classDiagram
     class BCellReceptor
@@ -213,19 +216,13 @@
         click ImmuneReceptor href "../ImmuneReceptor"
 
 
-      BCellReceptor &lt;|-- ReceptorComposite
-        click ReceptorComposite href "../ReceptorComposite"
-      BCellReceptor &lt;|-- BCellReceptorComposite
-        click BCellReceptorComposite href "../BCellReceptorComposite"
+      BCellReceptor &lt;|-- HeavyKappaBCR
+        click HeavyKappaBCR href "../HeavyKappaBCR"
+      BCellReceptor &lt;|-- HeavyLambdaBCR
+        click HeavyLambdaBCR href "../HeavyLambdaBCR"
 
 
       BCellReceptor : akc_id
-
-      BCellReceptor : igh_chain
-
-      BCellReceptor : igk_chain
-
-      BCellReceptor : igl_chain
 
       BCellReceptor : paired_chain
 
@@ -244,7 +241,11 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../ImmuneReceptor/">ImmuneReceptor</a><ul>
-<li><strong>BCellReceptor</strong></li>
+<li><strong>BCellReceptor</strong><ul>
+<li><a href="../HeavyKappaBCR/">HeavyKappaBCR</a></li>
+<li><a href="../HeavyLambdaBCR/">HeavyLambdaBCR</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -261,24 +262,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../igh_chain/">igh_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>IG heavy chain</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../igk_chain/">igk_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>IG kappa light chain</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../igl_chain/">igl_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>IG lambda light chain</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../species/">species</a></td>
 <td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
@@ -310,18 +293,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../bcell_receptors/">bcell_receptors</a></td>
-<td>range</td>
-<td><a href="./">BCellReceptor</a></td>
-</tr>
-<tr>
-<td><a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
-<td><a href="../antibody/">antibody</a></td>
-<td>range</td>
-<td><a href="./">BCellReceptor</a></td>
-</tr>
 <tr>
 <td><a href="../QueryIG/">QueryIG</a></td>
 <td><a href="../receptor/">receptor</a></td>
@@ -361,10 +332,7 @@
 <pre><code class="language-yaml">name: BCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: ImmuneReceptor
-slots:
-- igh_chain
-- igk_chain
-- igl_chain
+abstract: true
 
 </code></pre>
 </details>
@@ -373,37 +341,8 @@ slots:
 <pre><code class="language-yaml">name: BCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: ImmuneReceptor
+abstract: true
 attributes:
-  igh_chain:
-    name: igh_chain
-    description: IG heavy chain
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: igh_chain
-    owner: BCellReceptor
-    domain_of:
-    - BCellReceptor
-    range: uriorcurie
-  igk_chain:
-    name: igk_chain
-    description: IG kappa light chain
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: igk_chain
-    owner: BCellReceptor
-    domain_of:
-    - BCellReceptor
-    range: uriorcurie
-  igl_chain:
-    name: igl_chain
-    description: IG lambda light chain
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: igl_chain
-    owner: BCellReceptor
-    domain_of:
-    - BCellReceptor
-    range: uriorcurie
   species:
     name: species
     annotations:
@@ -419,12 +358,11 @@ attributes:
     - Participant
     - Chain
     - ImmuneReceptor
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - ChainComposite
     - AlleleDescription
     - GermlineSet
     - Subject

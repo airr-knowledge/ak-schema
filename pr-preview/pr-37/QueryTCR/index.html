@@ -345,22 +345,23 @@ attributes:
     name: mhc
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - AlphaBetaTCRComplexComposite
+    - GammaDeltaTCRComplexComposite
     - QueryTCR
   epitope:
     name: epitope
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - AlphaBetaTCRComplexComposite
+    - GammaDeltaTCRComplexComposite
+    - HeavyKappaBCRComplexComposite
+    - HeavyLambdaBCRComplexComposite
     - QueryTCR
     range: Epitope
     multivalued: false
@@ -369,12 +370,14 @@ attributes:
     name: antigen
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - AlphaBetaTCRComplexComposite
+    - GammaDeltaTCRComplexComposite
+    - HeavyKappaBCRComplexComposite
+    - HeavyLambdaBCRComplexComposite
     - ReceptorReactivity
     - QueryTCR
     - QueryIG
@@ -405,11 +408,10 @@ attributes:
     alias: mhc
     owner: QueryTCR
     domain_of:
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - AlphaBetaTCRComplexComposite
+    - GammaDeltaTCRComplexComposite
     - QueryTCR
     range: string
   epitope:
@@ -418,12 +420,14 @@ attributes:
     alias: epitope
     owner: QueryTCR
     domain_of:
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - AlphaBetaTCRComplexComposite
+    - GammaDeltaTCRComplexComposite
+    - HeavyKappaBCRComplexComposite
+    - HeavyLambdaBCRComplexComposite
     - QueryTCR
     range: Epitope
     multivalued: false
@@ -434,12 +438,14 @@ attributes:
     alias: antigen
     owner: QueryTCR
     domain_of:
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - AlphaBetaTCRComplexComposite
+    - GammaDeltaTCRComplexComposite
+    - HeavyKappaBCRComplexComposite
+    - HeavyLambdaBCRComplexComposite
     - ReceptorReactivity
     - QueryTCR
     - QueryIG

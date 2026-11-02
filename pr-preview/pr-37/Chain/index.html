@@ -216,6 +216,20 @@
         click AKObject href "../AKObject"
 
 
+      Chain &lt;|-- CanonicalAlphaChain
+        click CanonicalAlphaChain href "../CanonicalAlphaChain"
+      Chain &lt;|-- CanonicalBetaChain
+        click CanonicalBetaChain href "../CanonicalBetaChain"
+      Chain &lt;|-- CanonicalDeltaChain
+        click CanonicalDeltaChain href "../CanonicalDeltaChain"
+      Chain &lt;|-- CanonicalGammaChain
+        click CanonicalGammaChain href "../CanonicalGammaChain"
+      Chain &lt;|-- CanonicalHeavyChain
+        click CanonicalHeavyChain href "../CanonicalHeavyChain"
+      Chain &lt;|-- CanonicalKappaChain
+        click CanonicalKappaChain href "../CanonicalKappaChain"
+      Chain &lt;|-- CanonicalLambdaChain
+        click CanonicalLambdaChain href "../CanonicalLambdaChain"
       Chain &lt;|-- AlphaChain
         click AlphaChain href "../AlphaChain"
       Chain &lt;|-- BetaChain
@@ -240,19 +254,9 @@
 
       Chain : cdr2_aa
 
-      Chain : cdr3_aa
-
       Chain : complete_vdj
 
       Chain : d_call
-
-      Chain : hash_infer_vdj_sequence
-
-      Chain : hash_infer_vdj_sequence_aa
-
-      Chain : infer_vdj_sequence
-
-      Chain : infer_vdj_sequence_aa
 
       Chain : j_call
 
@@ -296,13 +300,20 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><strong>Chain</strong><ul>
-<li><a href="../AlphaChain/">AlphaChain</a></li>
-<li><a href="../BetaChain/">BetaChain</a></li>
-<li><a href="../DeltaChain/">DeltaChain</a></li>
-<li><a href="../GammaChain/">GammaChain</a></li>
-<li><a href="../HeavyChain/">HeavyChain</a></li>
-<li><a href="../KappaChain/">KappaChain</a></li>
-<li><a href="../LambdaChain/">LambdaChain</a></li>
+<li><a href="../CanonicalAlphaChain/">CanonicalAlphaChain</a></li>
+<li><a href="../CanonicalBetaChain/">CanonicalBetaChain</a></li>
+<li><a href="../CanonicalDeltaChain/">CanonicalDeltaChain</a></li>
+<li><a href="../CanonicalGammaChain/">CanonicalGammaChain</a></li>
+<li><a href="../CanonicalHeavyChain/">CanonicalHeavyChain</a></li>
+<li><a href="../CanonicalKappaChain/">CanonicalKappaChain</a></li>
+<li><a href="../CanonicalLambdaChain/">CanonicalLambdaChain</a></li>
+<li><a href="../AlphaChain/">AlphaChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
+<li><a href="../BetaChain/">BetaChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
+<li><a href="../DeltaChain/">DeltaChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
+<li><a href="../GammaChain/">GammaChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
+<li><a href="../HeavyChain/">HeavyChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
+<li><a href="../KappaChain/">KappaChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
+<li><a href="../LambdaChain/">LambdaChain</a> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
 </ul>
 </li>
 </ul>
@@ -338,33 +349,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../infer_vdj_sequence/">infer_vdj_sequence</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Inferred complete VDJ nucleotide sequence</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hash_infer_vdj_sequence/">hash_infer_vdj_sequence</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>Hash of the inferred complete VDJ nucleotide sequence</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../sequence_aa/">sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of the query nucleotide sequence</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../infer_vdj_sequence_aa/">infer_vdj_sequence_aa</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Translation of inferred complete VDJ nucleotide sequence</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hash_infer_vdj_sequence_aa/">hash_infer_vdj_sequence_aa</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>Hash of the translation of inferred complete VDJ nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -437,12 +424,6 @@
 <td><a href="../cdr2_aa/">cdr2_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of the cdr2 field</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr3_aa/">cdr3_aa</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Amino acid translation of the cdr3 field</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -538,11 +519,7 @@ slots:
 - species
 - complete_vdj
 - sequence
-- infer_vdj_sequence
-- hash_infer_vdj_sequence
 - sequence_aa
-- infer_vdj_sequence_aa
-- hash_infer_vdj_sequence_aa
 - locus
 - v_call
 - v_gene
@@ -555,7 +532,6 @@ slots:
 - junction_aa
 - cdr1_aa
 - cdr2_aa
-- cdr3_aa
 slot_usage:
   sequence_aa:
     name: sequence_aa
@@ -595,12 +571,11 @@ attributes:
     - Participant
     - Chain
     - ImmuneReceptor
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - ChainComposite
     - AlleleDescription
     - GermlineSet
     - Subject
@@ -631,26 +606,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-  infer_vdj_sequence:
-    name: infer_vdj_sequence
-    description: Inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: infer_vdj_sequence
-    owner: Chain
-    domain_of:
-    - Chain
-    range: string
-  hash_infer_vdj_sequence:
-    name: hash_infer_vdj_sequence
-    description: Hash of the inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: hash_infer_vdj_sequence
-    owner: Chain
-    domain_of:
-    - Chain
-    range: uriorcurie
   sequence_aa:
     name: sequence_aa
     annotations:
@@ -668,26 +623,6 @@ attributes:
     - Rearrangement
     range: string
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
-  infer_vdj_sequence_aa:
-    name: infer_vdj_sequence_aa
-    description: Translation of inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: infer_vdj_sequence_aa
-    owner: Chain
-    domain_of:
-    - Chain
-    range: string
-  hash_infer_vdj_sequence_aa:
-    name: hash_infer_vdj_sequence_aa
-    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: hash_infer_vdj_sequence_aa
-    owner: Chain
-    domain_of:
-    - Chain
-    range: uriorcurie
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -846,21 +781,6 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr2_aa
-    owner: Chain
-    domain_of:
-    - Chain
-    - Rearrangement
-    range: string
-  cdr3_aa:
-    name: cdr3_aa
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Amino acid translation of the cdr3 field.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr3_aa
     owner: Chain
     domain_of:
     - Chain

@@ -209,6 +209,15 @@
       Assay &lt;|-- TCellReceptorEpitopeBindingAssay
         click Assay href "../Assay"
 
+      TCellReceptorEpitopeBindingAssay : ab_tcell_complexes
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" AlphaBetaTCRpMHCComplex : ab_tcell_complexes
+    click AlphaBetaTCRpMHCComplex href "../AlphaBetaTCRpMHCComplex"
+
+
       TCellReceptorEpitopeBindingAssay : akc_id
 
       TCellReceptorEpitopeBindingAssay : assay_type
@@ -222,6 +231,15 @@
 
       TCellReceptorEpitopeBindingAssay : description
 
+      TCellReceptorEpitopeBindingAssay : gd_tcell_complexes
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" GammaDeltaTCRpMHCComplex : gd_tcell_complexes
+    click GammaDeltaTCRpMHCComplex href "../GammaDeltaTCRpMHCComplex"
+
+
       TCellReceptorEpitopeBindingAssay : has_specified_output
 
 
@@ -229,6 +247,24 @@
 
     TCellReceptorEpitopeBindingAssay --&gt; "0..1" AKDataItem : has_specified_output
     click AKDataItem href "../AKDataItem"
+
+
+      TCellReceptorEpitopeBindingAssay : hk_bcell_complexes
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" HeavyKappaBCRAntigenComplex : hk_bcell_complexes
+    click HeavyKappaBCRAntigenComplex href "../HeavyKappaBCRAntigenComplex"
+
+
+      TCellReceptorEpitopeBindingAssay : hl_bcell_complexes
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" HeavyLambdaBCRAntigenComplex : hl_bcell_complexes
+    click HeavyLambdaBCRAntigenComplex href "../HeavyLambdaBCRAntigenComplex"
 
 
       TCellReceptorEpitopeBindingAssay : measurement_category
@@ -243,15 +279,6 @@
       TCellReceptorEpitopeBindingAssay : mhc_evidence
 
       TCellReceptorEpitopeBindingAssay : name
-
-      TCellReceptorEpitopeBindingAssay : receptor_composites
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "*" ReceptorComposite : receptor_composites
-    click ReceptorComposite href "../ReceptorComposite"
-
 
       TCellReceptorEpitopeBindingAssay : specimen
 
@@ -269,15 +296,6 @@
 
     TCellReceptorEpitopeBindingAssay --&gt; "*" SpecimenProcessing : specimen_processing
     click SpecimenProcessing href "../SpecimenProcessing"
-
-
-      TCellReceptorEpitopeBindingAssay : tcr_complexes
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "*" TCRpMHCComplex : tcr_complexes
-    click TCRpMHCComplex href "../TCRpMHCComplex"
 
 
       TCellReceptorEpitopeBindingAssay : type
@@ -312,21 +330,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../tcr_complexes/">tcr_complexes</a></td>
-<td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
-<td>The T cell receptor/epitope/mhc complex being measured</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../mhc_evidence/">mhc_evidence</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Evidence code for MHC restriction</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../receptor_composites/">receptor_composites</a></td>
-<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
-<td>Composite object for database optimization</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -357,6 +363,30 @@
 <td><a href="../has_specified_output/">has_specified_output</a></td>
 <td>0..1 <br/> <a href="../AKDataItem/">AKDataItem</a></td>
 <td>output data item</td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../ab_tcell_complexes/">ab_tcell_complexes</a></td>
+<td>* <br/> <a href="../AlphaBetaTCRpMHCComplex/">AlphaBetaTCRpMHCComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../gd_tcell_complexes/">gd_tcell_complexes</a></td>
+<td>* <br/> <a href="../GammaDeltaTCRpMHCComplex/">GammaDeltaTCRpMHCComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../hk_bcell_complexes/">hk_bcell_complexes</a></td>
+<td>* <br/> <a href="../HeavyKappaBCRAntigenComplex/">HeavyKappaBCRAntigenComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../hl_bcell_complexes/">hl_bcell_complexes</a></td>
+<td>* <br/> <a href="../HeavyLambdaBCRAntigenComplex/">HeavyLambdaBCRAntigenComplex</a></td>
+<td></td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
@@ -419,9 +449,7 @@ is_a: Assay
 mixins:
 - TCellReceptorEpitopeSpecificityMeasurement
 slots:
-- tcr_complexes
 - mhc_evidence
-- receptor_composites
 class_uri: OBI:1110037
 
 </code></pre>
@@ -434,19 +462,6 @@ is_a: Assay
 mixins:
 - TCellReceptorEpitopeSpecificityMeasurement
 attributes:
-  tcr_complexes:
-    name: tcr_complexes
-    description: The T cell receptor/epitope/mhc complex being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: tcr_complexes
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - AIRRKnowledgeCommons
-    - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
-    range: TCRpMHCComplex
-    multivalued: true
   mhc_evidence:
     name: mhc_evidence
     description: Evidence code for MHC restriction
@@ -457,20 +472,6 @@ attributes:
     domain_of:
     - TCellReceptorEpitopeBindingAssay
     range: uriorcurie
-  receptor_composites:
-    name: receptor_composites
-    description: Composite object for database optimization
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: receptor_composites
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - AIRRKnowledgeCommons
-    - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
-    - AntibodyAntigenBindingAssay
-    range: ReceptorComposite
-    multivalued: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay
@@ -532,6 +533,50 @@ attributes:
     - Assay
     - InputOutputDataMap
     range: AKDataItem
+  ab_tcell_complexes:
+    name: ab_tcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: ab_tcell_complexes
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: AlphaBetaTCRpMHCComplex
+    multivalued: true
+  gd_tcell_complexes:
+    name: gd_tcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gd_tcell_complexes
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: GammaDeltaTCRpMHCComplex
+    multivalued: true
+  hk_bcell_complexes:
+    name: hk_bcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hk_bcell_complexes
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: HeavyKappaBCRAntigenComplex
+    multivalued: true
+  hl_bcell_complexes:
+    name: hl_bcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hl_bcell_complexes
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: HeavyLambdaBCRAntigenComplex
+    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing

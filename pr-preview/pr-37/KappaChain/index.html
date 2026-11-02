@@ -209,6 +209,8 @@
 <div class="mermaid"> classDiagram
     class KappaChain
     click KappaChain href "../KappaChain"
+      ChainInferences &lt;|-- KappaChain
+        click ChainInferences href "../ChainInferences"
       Chain &lt;|-- KappaChain
         click Chain href "../Chain"
 
@@ -220,8 +222,6 @@
 
       KappaChain : cdr2_aa
 
-      KappaChain : cdr3_aa
-
       KappaChain : complete_vdj
 
       KappaChain : d_call
@@ -229,6 +229,13 @@
       KappaChain : hash_infer_vdj_sequence
 
       KappaChain : hash_infer_vdj_sequence_aa
+
+
+
+
+    KappaChain --&gt; "0..1" CanonicalKappaChain : hash_infer_vdj_sequence_aa
+    click CanonicalKappaChain href "../CanonicalKappaChain"
+
 
       KappaChain : infer_vdj_sequence
 
@@ -276,7 +283,7 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../Chain/">Chain</a><ul>
-<li><strong>KappaChain</strong></li>
+<li><strong>KappaChain</strong> [ <a href="../ChainInferences/">ChainInferences</a>]</li>
 </ul>
 </li>
 </ul>
@@ -293,6 +300,30 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../infer_vdj_sequence/">infer_vdj_sequence</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Inferred complete VDJ nucleotide sequence</td>
+<td><a href="../ChainInferences/">ChainInferences</a></td>
+</tr>
+<tr>
+<td><a href="../hash_infer_vdj_sequence/">hash_infer_vdj_sequence</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Hash of the inferred complete VDJ nucleotide sequence</td>
+<td><a href="../ChainInferences/">ChainInferences</a></td>
+</tr>
+<tr>
+<td><a href="../infer_vdj_sequence_aa/">infer_vdj_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Translation of inferred complete VDJ nucleotide sequence</td>
+<td><a href="../ChainInferences/">ChainInferences</a></td>
+</tr>
+<tr>
+<td><a href="../hash_infer_vdj_sequence_aa/">hash_infer_vdj_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../CanonicalKappaChain/">CanonicalKappaChain</a></td>
+<td>Hash of the translation of inferred complete VDJ nucleotide sequence</td>
+<td><a href="../ChainInferences/">ChainInferences</a></td>
+</tr>
 <tr>
 <td><a href="../species/">species</a></td>
 <td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
@@ -312,33 +343,9 @@
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
-<td><a href="../infer_vdj_sequence/">infer_vdj_sequence</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Inferred complete VDJ nucleotide sequence</td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../hash_infer_vdj_sequence/">hash_infer_vdj_sequence</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>Hash of the inferred complete VDJ nucleotide sequence</td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
 <td><a href="../sequence_aa/">sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of the query nucleotide sequence</td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../infer_vdj_sequence_aa/">infer_vdj_sequence_aa</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Translation of inferred complete VDJ nucleotide sequence</td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../hash_infer_vdj_sequence_aa/">hash_infer_vdj_sequence_aa</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>Hash of the translation of inferred complete VDJ nucleotide sequence</td>
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
@@ -414,12 +421,6 @@
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
-<td><a href="../cdr3_aa/">cdr3_aa</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Amino acid translation of the cdr3 field</td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
 <td><a href="../akc_id/">akc_id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
@@ -477,6 +478,12 @@
 <pre><code class="language-yaml">name: KappaChain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Chain
+mixins:
+- ChainInferences
+slot_usage:
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    range: CanonicalKappaChain
 
 </code></pre>
 </details>
@@ -485,7 +492,53 @@ is_a: Chain
 <pre><code class="language-yaml">name: KappaChain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Chain
+mixins:
+- ChainInferences
+slot_usage:
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    range: CanonicalKappaChain
 attributes:
+  infer_vdj_sequence:
+    name: infer_vdj_sequence
+    description: Inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: infer_vdj_sequence
+    owner: KappaChain
+    domain_of:
+    - ChainInferences
+    range: string
+  hash_infer_vdj_sequence:
+    name: hash_infer_vdj_sequence
+    description: Hash of the inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hash_infer_vdj_sequence
+    owner: KappaChain
+    domain_of:
+    - ChainInferences
+    range: uriorcurie
+  infer_vdj_sequence_aa:
+    name: infer_vdj_sequence_aa
+    description: Translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: infer_vdj_sequence_aa
+    owner: KappaChain
+    domain_of:
+    - ChainInferences
+    range: string
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hash_infer_vdj_sequence_aa
+    owner: KappaChain
+    domain_of:
+    - ChainInferences
+    range: CanonicalKappaChain
   species:
     name: species
     annotations:
@@ -501,12 +554,11 @@ attributes:
     - Participant
     - Chain
     - ImmuneReceptor
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - ChainComposite
     - AlleleDescription
     - GermlineSet
     - Subject
@@ -537,26 +589,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-  infer_vdj_sequence:
-    name: infer_vdj_sequence
-    description: Inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: infer_vdj_sequence
-    owner: KappaChain
-    domain_of:
-    - Chain
-    range: string
-  hash_infer_vdj_sequence:
-    name: hash_infer_vdj_sequence
-    description: Hash of the inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: hash_infer_vdj_sequence
-    owner: KappaChain
-    domain_of:
-    - Chain
-    range: uriorcurie
   sequence_aa:
     name: sequence_aa
     annotations:
@@ -574,26 +606,6 @@ attributes:
     - Rearrangement
     range: string
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
-  infer_vdj_sequence_aa:
-    name: infer_vdj_sequence_aa
-    description: Translation of inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: infer_vdj_sequence_aa
-    owner: KappaChain
-    domain_of:
-    - Chain
-    range: string
-  hash_infer_vdj_sequence_aa:
-    name: hash_infer_vdj_sequence_aa
-    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: hash_infer_vdj_sequence_aa
-    owner: KappaChain
-    domain_of:
-    - Chain
-    range: uriorcurie
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -752,21 +764,6 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr2_aa
-    owner: KappaChain
-    domain_of:
-    - Chain
-    - Rearrangement
-    range: string
-  cdr3_aa:
-    name: cdr3_aa
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Amino acid translation of the cdr3 field.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr3_aa
     owner: KappaChain
     domain_of:
     - Chain

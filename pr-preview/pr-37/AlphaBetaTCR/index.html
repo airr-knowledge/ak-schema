@@ -212,13 +212,6 @@
       TCellReceptor &lt;|-- AlphaBetaTCR
         click TCellReceptor href "../TCellReceptor"
 
-
-      AlphaBetaTCR &lt;|-- ReceptorComposite
-        click ReceptorComposite href "../ReceptorComposite"
-      AlphaBetaTCR &lt;|-- AlphaBetaReceptorComposite
-        click AlphaBetaReceptorComposite href "../AlphaBetaReceptorComposite"
-
-
       AlphaBetaTCR : akc_id
 
       AlphaBetaTCR : paired_chain
@@ -234,7 +227,21 @@
 
       AlphaBetaTCR : tra_chain
 
+
+
+
+    AlphaBetaTCR --&gt; "0..1" CanonicalAlphaChain : tra_chain
+    click CanonicalAlphaChain href "../CanonicalAlphaChain"
+
+
       AlphaBetaTCR : trb_chain
+
+
+
+
+    AlphaBetaTCR --&gt; "0..1" CanonicalBetaChain : trb_chain
+    click CanonicalBetaChain href "../CanonicalBetaChain"
+
 
 
 </div>
@@ -264,13 +271,13 @@
 <tbody>
 <tr>
 <td><a href="../tra_chain/">tra_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../CanonicalAlphaChain/">CanonicalAlphaChain</a></td>
 <td>T cell receptor alpha chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../trb_chain/">trb_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../CanonicalBetaChain/">CanonicalBetaChain</a></td>
 <td>T cell receptor beta chain</td>
 <td>direct</td>
 </tr>
@@ -312,7 +319,7 @@
 <td><a href="./">AlphaBetaTCR</a></td>
 </tr>
 <tr>
-<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../AlphaBetaTCRpMHCComplex/">AlphaBetaTCRpMHCComplex</a></td>
 <td><a href="../ab_tcr/">ab_tcr</a></td>
 <td>range</td>
 <td><a href="./">AlphaBetaTCR</a></td>
@@ -373,7 +380,7 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     - QueryAlphaBetaTCR
-    range: uriorcurie
+    range: CanonicalAlphaChain
   trb_chain:
     name: trb_chain
     description: T cell receptor beta chain
@@ -384,7 +391,7 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     - QueryAlphaBetaTCR
-    range: uriorcurie
+    range: CanonicalBetaChain
   species:
     name: species
     annotations:
@@ -400,12 +407,11 @@ attributes:
     - Participant
     - Chain
     - ImmuneReceptor
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - ChainComposite
     - AlleleDescription
     - GermlineSet
     - Subject

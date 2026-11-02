@@ -212,13 +212,6 @@
       TCellReceptor &lt;|-- GammaDeltaTCR
         click TCellReceptor href "../TCellReceptor"
 
-
-      GammaDeltaTCR &lt;|-- ReceptorComposite
-        click ReceptorComposite href "../ReceptorComposite"
-      GammaDeltaTCR &lt;|-- GammaDeltaReceptorComposite
-        click GammaDeltaReceptorComposite href "../GammaDeltaReceptorComposite"
-
-
       GammaDeltaTCR : akc_id
 
       GammaDeltaTCR : paired_chain
@@ -234,7 +227,21 @@
 
       GammaDeltaTCR : trd_chain
 
+
+
+
+    GammaDeltaTCR --&gt; "0..1" CanonicalDeltaChain : trd_chain
+    click CanonicalDeltaChain href "../CanonicalDeltaChain"
+
+
       GammaDeltaTCR : trg_chain
+
+
+
+
+    GammaDeltaTCR --&gt; "0..1" CanonicalGammaChain : trg_chain
+    click CanonicalGammaChain href "../CanonicalGammaChain"
+
 
 
 </div>
@@ -264,13 +271,13 @@
 <tbody>
 <tr>
 <td><a href="../trg_chain/">trg_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../CanonicalGammaChain/">CanonicalGammaChain</a></td>
 <td>T cell receptor gamma chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../trd_chain/">trd_chain</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>0..1 <br/> <a href="../CanonicalDeltaChain/">CanonicalDeltaChain</a></td>
 <td>T cell receptor delta chain</td>
 <td>direct</td>
 </tr>
@@ -312,7 +319,7 @@
 <td><a href="./">GammaDeltaTCR</a></td>
 </tr>
 <tr>
-<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../GammaDeltaTCRpMHCComplex/">GammaDeltaTCRpMHCComplex</a></td>
 <td><a href="../gd_tcr/">gd_tcr</a></td>
 <td>range</td>
 <td><a href="./">GammaDeltaTCR</a></td>
@@ -372,7 +379,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: uriorcurie
+    range: CanonicalGammaChain
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
@@ -382,7 +389,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: uriorcurie
+    range: CanonicalDeltaChain
   species:
     name: species
     annotations:
@@ -398,12 +405,11 @@ attributes:
     - Participant
     - Chain
     - ImmuneReceptor
-    - AntibodyAntigenComplex
-    - TCRpMHCComplex
-    - ReceptorComposite
-    - AlphaBetaReceptorComposite
-    - GammaDeltaReceptorComposite
-    - BCellReceptorComposite
+    - HeavyKappaBCRAntigenComplex
+    - HeavyLambdaBCRAntigenComplex
+    - AlphaBetaTCRpMHCComplex
+    - GammaDeltaTCRpMHCComplex
+    - ChainComposite
     - AlleleDescription
     - GermlineSet
     - Subject

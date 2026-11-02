@@ -209,16 +209,16 @@
       Assay &lt;|-- AIRRSequencingAssay
         click Assay href "../Assay"
 
+      AIRRSequencingAssay : ab_tcell_complexes
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" AlphaBetaTCRpMHCComplex : ab_tcell_complexes
+    click AlphaBetaTCRpMHCComplex href "../AlphaBetaTCRpMHCComplex"
+
+
       AIRRSequencingAssay : akc_id
-
-      AIRRSequencingAssay : antibody_complexes
-
-
-
-
-    AIRRSequencingAssay --&gt; "*" AntibodyAntigenComplex : antibody_complexes
-    click AntibodyAntigenComplex href "../AntibodyAntigenComplex"
-
 
       AIRRSequencingAssay : assay_type
 
@@ -231,6 +231,15 @@
 
       AIRRSequencingAssay : description
 
+      AIRRSequencingAssay : gd_tcell_complexes
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" GammaDeltaTCRpMHCComplex : gd_tcell_complexes
+    click GammaDeltaTCRpMHCComplex href "../GammaDeltaTCRpMHCComplex"
+
+
       AIRRSequencingAssay : has_specified_output
 
 
@@ -240,16 +249,25 @@
     click AKDataItem href "../AKDataItem"
 
 
+      AIRRSequencingAssay : hk_bcell_complexes
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" HeavyKappaBCRAntigenComplex : hk_bcell_complexes
+    click HeavyKappaBCRAntigenComplex href "../HeavyKappaBCRAntigenComplex"
+
+
+      AIRRSequencingAssay : hl_bcell_complexes
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" HeavyLambdaBCRAntigenComplex : hl_bcell_complexes
+    click HeavyLambdaBCRAntigenComplex href "../HeavyLambdaBCRAntigenComplex"
+
+
       AIRRSequencingAssay : name
-
-      AIRRSequencingAssay : receptor_composites
-
-
-
-
-    AIRRSequencingAssay --&gt; "*" ReceptorComposite : receptor_composites
-    click ReceptorComposite href "../ReceptorComposite"
-
 
       AIRRSequencingAssay : repertoire_id
 
@@ -299,15 +317,6 @@
     click SpecimenProcessing href "../SpecimenProcessing"
 
 
-      AIRRSequencingAssay : tcr_complexes
-
-
-
-
-    AIRRSequencingAssay --&gt; "*" TCRpMHCComplex : tcr_complexes
-    click TCRpMHCComplex href "../TCRpMHCComplex"
-
-
       AIRRSequencingAssay : total_reads_passing_qc_filter
 
       AIRRSequencingAssay : type
@@ -345,24 +354,6 @@
 <td><a href="../repertoire_id/">repertoire_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../tcr_complexes/">tcr_complexes</a></td>
-<td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
-<td>The T cell receptor/epitope/mhc complex being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../antibody_complexes/">antibody_complexes</a></td>
-<td>* <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
-<td>The antibody-antigen complex being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../receptor_composites/">receptor_composites</a></td>
-<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
-<td>Composite object for database optimization</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -444,6 +435,30 @@
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
+<td><a href="../ab_tcell_complexes/">ab_tcell_complexes</a></td>
+<td>* <br/> <a href="../AlphaBetaTCRpMHCComplex/">AlphaBetaTCRpMHCComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../gd_tcell_complexes/">gd_tcell_complexes</a></td>
+<td>* <br/> <a href="../GammaDeltaTCRpMHCComplex/">GammaDeltaTCRpMHCComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../hk_bcell_complexes/">hk_bcell_complexes</a></td>
+<td>* <br/> <a href="../HeavyKappaBCRAntigenComplex/">HeavyKappaBCRAntigenComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../hl_bcell_complexes/">hl_bcell_complexes</a></td>
+<td>* <br/> <a href="../HeavyLambdaBCRAntigenComplex/">HeavyLambdaBCRAntigenComplex</a></td>
+<td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
@@ -498,9 +513,6 @@ mixins:
 - SequencingRun
 slots:
 - repertoire_id
-- tcr_complexes
-- antibody_complexes
-- receptor_composites
 - sequence_files
 class_uri: OBI:0600047
 
@@ -529,46 +541,6 @@ attributes:
     - Cell
     - CellExpression
     range: string
-  tcr_complexes:
-    name: tcr_complexes
-    description: The T cell receptor/epitope/mhc complex being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: tcr_complexes
-    owner: AIRRSequencingAssay
-    domain_of:
-    - AIRRKnowledgeCommons
-    - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
-    range: TCRpMHCComplex
-    multivalued: true
-  antibody_complexes:
-    name: antibody_complexes
-    description: The antibody-antigen complex being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: antibody_complexes
-    owner: AIRRSequencingAssay
-    domain_of:
-    - AIRRKnowledgeCommons
-    - AIRRSequencingAssay
-    - AntibodyAntigenBindingAssay
-    range: AntibodyAntigenComplex
-    multivalued: true
-  receptor_composites:
-    name: receptor_composites
-    description: Composite object for database optimization
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: receptor_composites
-    owner: AIRRSequencingAssay
-    domain_of:
-    - AIRRKnowledgeCommons
-    - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
-    - AntibodyAntigenBindingAssay
-    range: ReceptorComposite
-    multivalued: true
   sequence_files:
     name: sequence_files
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -745,6 +717,50 @@ attributes:
     - Assay
     - InputOutputDataMap
     range: AKDataItem
+  ab_tcell_complexes:
+    name: ab_tcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: ab_tcell_complexes
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: AlphaBetaTCRpMHCComplex
+    multivalued: true
+  gd_tcell_complexes:
+    name: gd_tcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gd_tcell_complexes
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: GammaDeltaTCRpMHCComplex
+    multivalued: true
+  hk_bcell_complexes:
+    name: hk_bcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hk_bcell_complexes
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: HeavyKappaBCRAntigenComplex
+    multivalued: true
+  hl_bcell_complexes:
+    name: hl_bcell_complexes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hl_bcell_complexes
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Assay
+    range: HeavyLambdaBCRAntigenComplex
+    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing
