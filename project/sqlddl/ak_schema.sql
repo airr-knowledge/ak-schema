@@ -3721,38 +3721,38 @@ CREATE TABLE "Investigation_assays" (
 	FOREIGN KEY(assays_akc_id) REFERENCES "Assay" (akc_id)
 );
 CREATE TABLE "Assay_specimen_processing" (
-	"Assay_akc_id" TEXT, 
+	assay_akc_id TEXT, 
 	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", specimen_processing_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	PRIMARY KEY (assay_akc_id, specimen_processing_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );
 CREATE TABLE "Assay_ab_tcell_complexes" (
-	"Assay_akc_id" TEXT, 
+	assay_akc_id TEXT, 
 	ab_tcell_complexes_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", ab_tcell_complexes_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	PRIMARY KEY (assay_akc_id, ab_tcell_complexes_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(ab_tcell_complexes_akc_id) REFERENCES "AlphaBetaTCRpMHCComplex" (akc_id)
 );
 CREATE TABLE "Assay_gd_tcell_complexes" (
-	"Assay_akc_id" TEXT, 
+	assay_akc_id TEXT, 
 	gd_tcell_complexes_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", gd_tcell_complexes_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	PRIMARY KEY (assay_akc_id, gd_tcell_complexes_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(gd_tcell_complexes_akc_id) REFERENCES "GammaDeltaTCRpMHCComplex" (akc_id)
 );
 CREATE TABLE "Assay_hk_bcell_complexes" (
-	"Assay_akc_id" TEXT, 
+	assay_akc_id TEXT, 
 	hk_bcell_complexes_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", hk_bcell_complexes_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	PRIMARY KEY (assay_akc_id, hk_bcell_complexes_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(hk_bcell_complexes_akc_id) REFERENCES "HeavyKappaBCRAntigenComplex" (akc_id)
 );
 CREATE TABLE "Assay_hl_bcell_complexes" (
-	"Assay_akc_id" TEXT, 
+	assay_akc_id TEXT, 
 	hl_bcell_complexes_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", hl_bcell_complexes_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	PRIMARY KEY (assay_akc_id, hl_bcell_complexes_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(hl_bcell_complexes_akc_id) REFERENCES "HeavyLambdaBCRAntigenComplex" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (

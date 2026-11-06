@@ -17838,9 +17838,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-10-28T19:11:36",
+  "source_file_date": "2026-11-06T00:07:44",
   "source_file_size": 235749,
-  "generation_date": "2026-10-28T19:11:38",
+  "generation_date": "2026-11-06T00:07:46",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
