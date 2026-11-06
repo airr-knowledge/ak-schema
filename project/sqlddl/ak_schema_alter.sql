@@ -38,6 +38,7 @@ ADD COLUMN sequencing_facility TEXT,
 ADD COLUMN sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 ADD COLUMN sequencing_kit TEXT, 
 ADD COLUMN sequence_files TEXT REFERENCES "SequenceData" (akc_id), 
+ADD COLUMN sequencing_files TEXT, -- should not be used
 -- TCellReceptorEpitopeBindingAssay
 ADD COLUMN mhc_evidence TEXT,
 ADD COLUMN measurement_category VARCHAR(21);
