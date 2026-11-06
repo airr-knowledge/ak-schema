@@ -195,11 +195,7 @@ CREATE TABLE "Chain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -212,19 +208,22 @@ CREATE TABLE "Chain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "Chain" IS 'None';COMMENT ON COLUMN "Chain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Chain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "Chain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "Chain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "Chain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "Chain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "Chain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "Chain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "Chain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "Chain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "Chain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "Chain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "Chain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "Chain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "AlphaChain" (
+);COMMENT ON TABLE "Chain" IS 'None';COMMENT ON COLUMN "Chain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Chain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "Chain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "Chain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "Chain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "Chain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "Chain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "Chain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "Chain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "Chain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "Chain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "Chain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "Chain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "ChainInferences" (
+	id SERIAL NOT NULL, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	PRIMARY KEY (id)
+);COMMENT ON TABLE "ChainInferences" IS 'None';COMMENT ON COLUMN "ChainInferences".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "ChainInferences".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "ChainInferences".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "ChainInferences".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';
+CREATE TABLE "CanonicalAlphaChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -237,19 +236,14 @@ CREATE TABLE "AlphaChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "AlphaChain" IS 'None';COMMENT ON COLUMN "AlphaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "AlphaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "AlphaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "AlphaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "AlphaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "AlphaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "AlphaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "AlphaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "AlphaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "AlphaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "AlphaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "BetaChain" (
+);COMMENT ON TABLE "CanonicalAlphaChain" IS 'None';COMMENT ON COLUMN "CanonicalAlphaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalAlphaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalAlphaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalAlphaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalAlphaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalAlphaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalAlphaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalAlphaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalAlphaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalAlphaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalAlphaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalAlphaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalAlphaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "CanonicalBetaChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -262,19 +256,14 @@ CREATE TABLE "BetaChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "BetaChain" IS 'None';COMMENT ON COLUMN "BetaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BetaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "BetaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "BetaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "BetaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "BetaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "BetaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "BetaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "BetaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "BetaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "BetaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "BetaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "BetaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "BetaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "DeltaChain" (
+);COMMENT ON TABLE "CanonicalBetaChain" IS 'None';COMMENT ON COLUMN "CanonicalBetaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalBetaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalBetaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalBetaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalBetaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalBetaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalBetaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalBetaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalBetaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalBetaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalBetaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalBetaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalBetaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "CanonicalDeltaChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -287,19 +276,14 @@ CREATE TABLE "DeltaChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "DeltaChain" IS 'None';COMMENT ON COLUMN "DeltaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "DeltaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "DeltaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "DeltaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "DeltaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "DeltaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "DeltaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "DeltaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "DeltaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "DeltaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "DeltaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "DeltaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "GammaChain" (
+);COMMENT ON TABLE "CanonicalDeltaChain" IS 'None';COMMENT ON COLUMN "CanonicalDeltaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalDeltaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalDeltaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalDeltaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalDeltaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalDeltaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalDeltaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalDeltaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalDeltaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalDeltaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalDeltaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalDeltaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalDeltaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "CanonicalGammaChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -312,19 +296,14 @@ CREATE TABLE "GammaChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "GammaChain" IS 'None';COMMENT ON COLUMN "GammaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "GammaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "GammaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "GammaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "GammaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "GammaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "GammaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "GammaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "GammaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "GammaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "GammaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "GammaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "GammaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "HeavyChain" (
+);COMMENT ON TABLE "CanonicalGammaChain" IS 'None';COMMENT ON COLUMN "CanonicalGammaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalGammaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalGammaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalGammaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalGammaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalGammaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalGammaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalGammaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalGammaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalGammaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalGammaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalGammaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalGammaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "CanonicalHeavyChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -337,19 +316,14 @@ CREATE TABLE "HeavyChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "HeavyChain" IS 'None';COMMENT ON COLUMN "HeavyChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "HeavyChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "HeavyChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "HeavyChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "HeavyChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "HeavyChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "HeavyChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "HeavyChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "HeavyChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "HeavyChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "HeavyChain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "KappaChain" (
+);COMMENT ON TABLE "CanonicalHeavyChain" IS 'None';COMMENT ON COLUMN "CanonicalHeavyChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalHeavyChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalHeavyChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalHeavyChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalHeavyChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalHeavyChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalHeavyChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalHeavyChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalHeavyChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalHeavyChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalHeavyChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalHeavyChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalHeavyChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "CanonicalKappaChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -362,19 +336,14 @@ CREATE TABLE "KappaChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "KappaChain" IS 'None';COMMENT ON COLUMN "KappaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "KappaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "KappaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "KappaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "KappaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "KappaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "KappaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "KappaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "KappaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "KappaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "KappaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "KappaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "KappaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "KappaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "LambdaChain" (
+);COMMENT ON TABLE "CanonicalKappaChain" IS 'None';COMMENT ON COLUMN "CanonicalKappaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalKappaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalKappaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalKappaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalKappaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalKappaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalKappaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalKappaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalKappaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalKappaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalKappaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalKappaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalKappaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "CanonicalLambdaChain" (
 	species "SpeciesOntology", 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
-	infer_vdj_sequence TEXT, 
-	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
-	infer_vdj_sequence_aa TEXT, 
-	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	v_gene TEXT, 
@@ -387,10 +356,9 @@ CREATE TABLE "LambdaChain" (
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "LambdaChain" IS 'None';COMMENT ON COLUMN "LambdaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "LambdaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "LambdaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "LambdaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "LambdaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "LambdaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "LambdaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "LambdaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "LambdaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "LambdaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "LambdaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "LambdaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "CanonicalLambdaChain" IS 'None';COMMENT ON COLUMN "CanonicalLambdaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "CanonicalLambdaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "CanonicalLambdaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "CanonicalLambdaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "CanonicalLambdaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "CanonicalLambdaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalLambdaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "CanonicalLambdaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "CanonicalLambdaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "CanonicalLambdaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "CanonicalLambdaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "CanonicalLambdaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "CanonicalLambdaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "ImmuneReceptor" (
 	species "SpeciesOntology", 
 	paired_chain BOOLEAN, 
@@ -403,31 +371,12 @@ CREATE TABLE "TCellReceptor" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "TCellReceptor" IS 'None';COMMENT ON COLUMN "TCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCellReceptor".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "TCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "AlphaBetaTCR" (
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	species "SpeciesOntology", 
-	paired_chain BOOLEAN, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "AlphaBetaTCR" IS 'None';COMMENT ON COLUMN "AlphaBetaTCR".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaTCR".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaTCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "AlphaBetaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "GammaDeltaTCR" (
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	species "SpeciesOntology", 
-	paired_chain BOOLEAN, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "GammaDeltaTCR" IS 'None';COMMENT ON COLUMN "GammaDeltaTCR".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaTCR".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaTCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "GammaDeltaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "BCellReceptor" (
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
 	species "SpeciesOntology", 
 	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptor".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptor".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Epitope" (
 	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -452,6 +401,60 @@ CREATE TABLE "NonPeptidicEpitope" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "NonPeptidicEpitope" IS 'None';COMMENT ON COLUMN "NonPeptidicEpitope".epitope_name IS 'Name of the non-peptidic epitope';COMMENT ON COLUMN "NonPeptidicEpitope".epitope_ref IS 'CURIE identifiers for external epitope records';COMMENT ON COLUMN "NonPeptidicEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "ChainComposite" (
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "ChainComposite" IS 'None';COMMENT ON COLUMN "ChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "ChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AlphaChainComposite" (
+	tra_sequence TEXT, 
+	tra_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AlphaChainComposite" IS 'None';COMMENT ON COLUMN "AlphaChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "BetaChainComposite" (
+	trb_sequence TEXT, 
+	trb_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "BetaChainComposite" IS 'None';COMMENT ON COLUMN "BetaChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BetaChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "DeltaChainComposite" (
+	trd_sequence TEXT, 
+	trd_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "DeltaChainComposite" IS 'None';COMMENT ON COLUMN "DeltaChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "DeltaChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "GammaChainComposite" (
+	trg_sequence TEXT, 
+	trg_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "GammaChainComposite" IS 'None';COMMENT ON COLUMN "GammaChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "HeavyChainComposite" (
+	igh_sequence TEXT, 
+	igh_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "HeavyChainComposite" IS 'None';COMMENT ON COLUMN "HeavyChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "KappaChainComposite" (
+	igk_sequence TEXT, 
+	igk_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "KappaChainComposite" IS 'None';COMMENT ON COLUMN "KappaChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "KappaChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "LambdaChainComposite" (
+	igl_sequence TEXT, 
+	igl_junction_aa TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "LambdaChainComposite" IS 'None';COMMENT ON COLUMN "LambdaChainComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "LambdaChainComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Model" (
 	name TEXT, 
 	description TEXT, 
@@ -855,6 +858,221 @@ CREATE TABLE "InputOutputDataMap" (
 	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );COMMENT ON TABLE "InputOutputDataMap" IS 'None';COMMENT ON COLUMN "InputOutputDataMap".data_transformation IS 'a process that transforms input data into output data';COMMENT ON COLUMN "InputOutputDataMap".has_specified_input IS 'input data item';COMMENT ON COLUMN "InputOutputDataMap".has_specified_output IS 'output data item';
+CREATE TABLE "AlphaChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalAlphaChain" (akc_id)
+);COMMENT ON TABLE "AlphaChain" IS 'None';COMMENT ON COLUMN "AlphaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "AlphaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "AlphaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "AlphaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "AlphaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "AlphaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "AlphaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "AlphaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "AlphaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "AlphaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "BetaChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalBetaChain" (akc_id)
+);COMMENT ON TABLE "BetaChain" IS 'None';COMMENT ON COLUMN "BetaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BetaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "BetaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "BetaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "BetaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "BetaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "BetaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "BetaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "BetaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "BetaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "BetaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "BetaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "BetaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "DeltaChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalDeltaChain" (akc_id)
+);COMMENT ON TABLE "DeltaChain" IS 'None';COMMENT ON COLUMN "DeltaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "DeltaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "DeltaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "DeltaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "DeltaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "DeltaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "DeltaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "DeltaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "DeltaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "DeltaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "DeltaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "GammaChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalGammaChain" (akc_id)
+);COMMENT ON TABLE "GammaChain" IS 'None';COMMENT ON COLUMN "GammaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "GammaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "GammaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "GammaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "GammaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "GammaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "GammaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "GammaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "GammaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "GammaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "GammaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "GammaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "HeavyChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalHeavyChain" (akc_id)
+);COMMENT ON TABLE "HeavyChain" IS 'None';COMMENT ON COLUMN "HeavyChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "HeavyChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "HeavyChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "HeavyChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "HeavyChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "HeavyChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "HeavyChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "HeavyChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "HeavyChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "HeavyChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "KappaChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalKappaChain" (akc_id)
+);COMMENT ON TABLE "KappaChain" IS 'None';COMMENT ON COLUMN "KappaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "KappaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "KappaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "KappaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "KappaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "KappaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "KappaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "KappaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "KappaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "KappaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "KappaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "KappaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "KappaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "LambdaChain" (
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	species "SpeciesOntology", 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	locus "LocusEnum", 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hash_infer_vdj_sequence_aa) REFERENCES "CanonicalLambdaChain" (akc_id)
+);COMMENT ON TABLE "LambdaChain" IS 'None';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "LambdaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "LambdaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".v_gene IS 'V gene designation for the chain';COMMENT ON COLUMN "LambdaChain".v_subgroup IS 'V gene subgroup/family designation for the chain';COMMENT ON COLUMN "LambdaChain".j_gene IS 'J gene designation for the chain';COMMENT ON COLUMN "LambdaChain".j_subgroup IS 'J gene subgroup/family designation for the chain';COMMENT ON COLUMN "LambdaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "LambdaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "LambdaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "LambdaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "LambdaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AlphaBetaTCR" (
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	species "SpeciesOntology", 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tra_chain) REFERENCES "CanonicalAlphaChain" (akc_id), 
+	FOREIGN KEY(trb_chain) REFERENCES "CanonicalBetaChain" (akc_id)
+);COMMENT ON TABLE "AlphaBetaTCR" IS 'None';COMMENT ON COLUMN "AlphaBetaTCR".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaTCR".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaTCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "AlphaBetaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "GammaDeltaTCR" (
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	species "SpeciesOntology", 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(trg_chain) REFERENCES "CanonicalGammaChain" (akc_id), 
+	FOREIGN KEY(trd_chain) REFERENCES "CanonicalDeltaChain" (akc_id)
+);COMMENT ON TABLE "GammaDeltaTCR" IS 'None';COMMENT ON COLUMN "GammaDeltaTCR".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaTCR".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaTCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "GammaDeltaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "HeavyKappaBCR" (
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	species "SpeciesOntology", 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(igh_chain) REFERENCES "CanonicalHeavyChain" (akc_id), 
+	FOREIGN KEY(igk_chain) REFERENCES "CanonicalKappaChain" (akc_id)
+);COMMENT ON TABLE "HeavyKappaBCR" IS 'None';COMMENT ON COLUMN "HeavyKappaBCR".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "HeavyKappaBCR".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "HeavyKappaBCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyKappaBCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "HeavyKappaBCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "HeavyLambdaBCR" (
+	igh_chain TEXT, 
+	igl_chain TEXT, 
+	species "SpeciesOntology", 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(igh_chain) REFERENCES "CanonicalHeavyChain" (akc_id), 
+	FOREIGN KEY(igl_chain) REFERENCES "CanonicalLambdaChain" (akc_id)
+);COMMENT ON TABLE "HeavyLambdaBCR" IS 'None';COMMENT ON COLUMN "HeavyLambdaBCR".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "HeavyLambdaBCR".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "HeavyLambdaBCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyLambdaBCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "HeavyLambdaBCR".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
 	source_species TEXT, 
@@ -970,10 +1188,10 @@ CREATE TABLE "SequencingRun" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "SequencingData" (sequencing_data_id)
-);COMMENT ON TABLE "SequencingRun" IS 'None';COMMENT ON COLUMN "SequencingRun".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "SequencingRun".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "SequencingRun".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "SequencingRun".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "SequencingRun".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "SequencingRun".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "SequencingRun".sequencing_files IS 'Set of sequencing files produced by the sequencing run';
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
+);COMMENT ON TABLE "SequencingRun" IS 'None';COMMENT ON COLUMN "SequencingRun".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "SequencingRun".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "SequencingRun".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "SequencingRun".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "SequencingRun".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "SequencingRun".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "SequencingRun".sequencing_files_sequencing_data_id IS 'Set of sequencing files produced by the sequencing run';
 CREATE TABLE "RepertoireFilter" (
 	id SERIAL NOT NULL, 
 	repertoire_id TEXT, 
@@ -1183,32 +1401,166 @@ CREATE TABLE "StudyArm" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );COMMENT ON TABLE "StudyArm" IS 'A population of participants of an investigation.';COMMENT ON COLUMN "StudyArm".investigation IS 'An investigation in which the study arm participates';COMMENT ON COLUMN "StudyArm".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "StudyArm".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "StudyArm".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "AntibodyAntigenComplex" (
+CREATE TABLE "HeavyKappaBCRAntigenComplex" (
 	species "SpeciesOntology", 
-	antibody TEXT, 
+	hk_bcr TEXT, 
 	antigen TEXT, 
 	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
+	FOREIGN KEY(hk_bcr) REFERENCES "HeavyKappaBCR" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
-);COMMENT ON TABLE "AntibodyAntigenComplex" IS 'None';COMMENT ON COLUMN "AntibodyAntigenComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AntibodyAntigenComplex".antibody IS 'B cell receptor, immunoglobulin antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AntibodyAntigenComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "TCRpMHCComplex" (
+);COMMENT ON TABLE "HeavyKappaBCRAntigenComplex" IS 'None';COMMENT ON COLUMN "HeavyKappaBCRAntigenComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyKappaBCRAntigenComplex".hk_bcr IS 'heavy/kappa B cell receptor';COMMENT ON COLUMN "HeavyKappaBCRAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "HeavyKappaBCRAntigenComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "HeavyKappaBCRAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "HeavyLambdaBCRAntigenComplex" (
+	species "SpeciesOntology", 
+	hl_bcr TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(hl_bcr) REFERENCES "HeavyLambdaBCR" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);COMMENT ON TABLE "HeavyLambdaBCRAntigenComplex" IS 'None';COMMENT ON COLUMN "HeavyLambdaBCRAntigenComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyLambdaBCRAntigenComplex".hl_bcr IS 'heavy/lambda B cell receptor';COMMENT ON COLUMN "HeavyLambdaBCRAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "HeavyLambdaBCRAntigenComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "HeavyLambdaBCRAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AlphaBetaTCRpMHCComplex" (
 	species "SpeciesOntology", 
 	ab_tcr TEXT, 
-	gd_tcr TEXT, 
 	antigen TEXT, 
 	epitope TEXT, 
 	mhc TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(ab_tcr) REFERENCES "AlphaBetaTCR" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "AlphaBetaTCRpMHCComplex" IS 'None';COMMENT ON COLUMN "AlphaBetaTCRpMHCComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaTCRpMHCComplex".ab_tcr IS 'alpha/beta T cell receptor';COMMENT ON COLUMN "AlphaBetaTCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AlphaBetaTCRpMHCComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "AlphaBetaTCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "AlphaBetaTCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "GammaDeltaTCRpMHCComplex" (
+	species "SpeciesOntology", 
+	gd_tcr TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(gd_tcr) REFERENCES "GammaDeltaTCR" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCRpMHCComplex".ab_tcr IS 'alpha/beta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".gd_tcr IS 'gamma/delta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "TCRpMHCComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "TCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "GammaDeltaTCRpMHCComplex" IS 'None';COMMENT ON COLUMN "GammaDeltaTCRpMHCComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaTCRpMHCComplex".gd_tcr IS 'gamma/delta T cell receptor';COMMENT ON COLUMN "GammaDeltaTCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "GammaDeltaTCRpMHCComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "GammaDeltaTCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "GammaDeltaTCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AlphaBetaTCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_sequence TEXT, 
+	tra_junction_aa TEXT, 
+	trb_sequence TEXT, 
+	trb_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "AlphaBetaTCRComplexComposite" IS 'None';COMMENT ON COLUMN "AlphaBetaTCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AlphaBetaTCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "AlphaBetaTCRComplexComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "AlphaBetaTCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "AlphaBetaTCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "GammaDeltaTCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	trg_sequence TEXT, 
+	trg_junction_aa TEXT, 
+	trd_sequence TEXT, 
+	trd_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "GammaDeltaTCRComplexComposite" IS 'None';COMMENT ON COLUMN "GammaDeltaTCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "GammaDeltaTCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "GammaDeltaTCRComplexComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "GammaDeltaTCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "GammaDeltaTCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "HeavyKappaBCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	igh_sequence TEXT, 
+	igh_junction_aa TEXT, 
+	igk_sequence TEXT, 
+	igk_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);COMMENT ON TABLE "HeavyKappaBCRComplexComposite" IS 'None';COMMENT ON COLUMN "HeavyKappaBCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "HeavyKappaBCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "HeavyKappaBCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "HeavyKappaBCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "HeavyLambdaBCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	igh_sequence TEXT, 
+	igh_junction_aa TEXT, 
+	igl_sequence TEXT, 
+	igl_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);COMMENT ON TABLE "HeavyLambdaBCRComplexComposite" IS 'None';COMMENT ON COLUMN "HeavyLambdaBCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "HeavyLambdaBCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "HeavyLambdaBCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "HeavyLambdaBCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "PairedAlphaBetaTCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_sequence TEXT, 
+	tra_junction_aa TEXT, 
+	trb_sequence TEXT, 
+	trb_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "PairedAlphaBetaTCRComplexComposite" IS 'None';COMMENT ON COLUMN "PairedAlphaBetaTCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedAlphaBetaTCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedAlphaBetaTCRComplexComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedAlphaBetaTCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedAlphaBetaTCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "PairedGammaDeltaTCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	trg_sequence TEXT, 
+	trg_junction_aa TEXT, 
+	trd_sequence TEXT, 
+	trd_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "PairedGammaDeltaTCRComplexComposite" IS 'None';COMMENT ON COLUMN "PairedGammaDeltaTCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedGammaDeltaTCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedGammaDeltaTCRComplexComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedGammaDeltaTCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedGammaDeltaTCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "PairedHeavyKappaBCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	igh_sequence TEXT, 
+	igh_junction_aa TEXT, 
+	igk_sequence TEXT, 
+	igk_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);COMMENT ON TABLE "PairedHeavyKappaBCRComplexComposite" IS 'None';COMMENT ON COLUMN "PairedHeavyKappaBCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedHeavyKappaBCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedHeavyKappaBCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedHeavyKappaBCRComplexComposite".species IS 'Binomial designation of subject''s species';
+CREATE TABLE "PairedHeavyLambdaBCRComplexComposite" (
+	antigen TEXT, 
+	epitope TEXT, 
+	igh_sequence TEXT, 
+	igh_junction_aa TEXT, 
+	igl_sequence TEXT, 
+	igl_junction_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	species "SpeciesOntology", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);COMMENT ON TABLE "PairedHeavyLambdaBCRComplexComposite" IS 'None';COMMENT ON COLUMN "PairedHeavyLambdaBCRComplexComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedHeavyLambdaBCRComplexComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedHeavyLambdaBCRComplexComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedHeavyLambdaBCRComplexComposite".species IS 'Binomial designation of subject''s species';
 CREATE TABLE "Acknowledgement" (
 	acknowledgement_id TEXT NOT NULL, 
 	individual_full_name TEXT, 
@@ -1437,150 +1789,6 @@ CREATE TABLE "Participant" (
 	FOREIGN KEY(age_unit) REFERENCES "Units" (term_id), 
 	FOREIGN KEY(genotype_set) REFERENCES "AIRRGenotypeData" (akc_id)
 );COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".sex IS 'Biological sex of subject';COMMENT ON COLUMN "Participant".age_min IS 'Specific age or lower boundary of age range.';COMMENT ON COLUMN "Participant".age_max IS 'Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".genotype_set IS 'Adaptive Immune loci genotype set';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "ReceptorComposite" (
-	species "SpeciesOntology", 
-	tcr_complex TEXT, 
-	antibody_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
-	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "ReceptorComposite" IS 'None';COMMENT ON COLUMN "ReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "ReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "ReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "ReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "ReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "ReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "ReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "ReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "ReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "ReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "ReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "ReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "ReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "ReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "ReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "AlphaBetaReceptorComposite" (
-	species "SpeciesOntology", 
-	tcr_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "AlphaBetaReceptorComposite" IS 'None';COMMENT ON COLUMN "AlphaBetaReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "AlphaBetaReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AlphaBetaReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "AlphaBetaReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "AlphaBetaReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "AlphaBetaReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "GammaDeltaReceptorComposite" (
-	species "SpeciesOntology", 
-	tcr_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "GammaDeltaReceptorComposite" IS 'None';COMMENT ON COLUMN "GammaDeltaReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "GammaDeltaReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "GammaDeltaReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "GammaDeltaReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "GammaDeltaReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "GammaDeltaReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "BCellReceptorComposite" (
-	species "SpeciesOntology", 
-	antibody_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "BCellReceptorComposite" IS 'None';COMMENT ON COLUMN "BCellReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "BCellReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "BCellReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "BCellReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "BCellReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "BCellReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "PairedReceptorComposite" (
-	species "SpeciesOntology", 
-	tcr_complex TEXT, 
-	antibody_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
-	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "PairedReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "PairedReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "PairedReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "PairedReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "PairedReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "PairedReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "PairedReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "PairedReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "PairedReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "PairedReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "PairedAlphaBetaReceptorComposite" (
-	species "SpeciesOntology", 
-	tcr_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "PairedAlphaBetaReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "PairedGammaDeltaReceptorComposite" (
-	species "SpeciesOntology", 
-	tcr_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "PairedGammaDeltaReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
-CREATE TABLE "PairedBCellReceptorComposite" (
-	species "SpeciesOntology", 
-	antibody_complex TEXT, 
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	paired_chain BOOLEAN, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "PairedBCellReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedBCellReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedBCellReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "PairedBCellReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedBCellReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedBCellReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedBCellReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "PairedBCellReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "PairedBCellReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "PairedBCellReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedBCellReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
 CREATE TABLE "Diagnosis" (
 	id SERIAL NOT NULL, 
 	study_group_description TEXT, 
@@ -1689,12 +1897,12 @@ CREATE TABLE "SampleProcessing" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
 	"Repertoire_repertoire_id" TEXT, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (sample_processing_id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "SequencingData" (sequencing_data_id), 
-	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id)
-);COMMENT ON TABLE "SampleProcessing" IS 'None';COMMENT ON COLUMN "SampleProcessing".sample_id IS 'Sample ID assigned by submitter, unique within study. If possible, a persistent sample ID linked to INSDC or similar repository study should be used.';COMMENT ON COLUMN "SampleProcessing".sample_type IS 'The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture';COMMENT ON COLUMN "SampleProcessing".tissue IS 'The actual tissue sampled, e.g. lymph node, liver, peripheral blood';COMMENT ON COLUMN "SampleProcessing".anatomic_site IS 'The anatomic location of the tissue, e.g. Inguinal, femur';COMMENT ON COLUMN "SampleProcessing".disease_state_sample IS 'Histopathologic evaluation of the sample';COMMENT ON COLUMN "SampleProcessing".collection_time_point_relative IS 'Time point at which sample was taken, relative to `Collection time event`';COMMENT ON COLUMN "SampleProcessing".collection_time_point_relative_unit IS 'Unit of Sample collection time';COMMENT ON COLUMN "SampleProcessing".collection_time_point_reference IS 'Event in the study schedule to which `Sample collection time` relates to';COMMENT ON COLUMN "SampleProcessing".biomaterial_provider IS 'Name and address of the entity providing the sample';COMMENT ON COLUMN "SampleProcessing".tissue_processing IS 'Enzymatic digestion and/or physical methods used to isolate cells from sample';COMMENT ON COLUMN "SampleProcessing".cell_subset IS 'Commonly-used designation of isolated cell population';COMMENT ON COLUMN "SampleProcessing".cell_phenotype IS 'List of cellular markers and their expression levels used to isolate the cell population';COMMENT ON COLUMN "SampleProcessing".cell_species IS 'Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.';COMMENT ON COLUMN "SampleProcessing".single_cell IS 'TRUE if single cells were isolated into separate compartments';COMMENT ON COLUMN "SampleProcessing".cell_number IS 'Total number of cells that went into the experiment';COMMENT ON COLUMN "SampleProcessing".cells_per_reaction IS 'Number of cells for each biological replicate';COMMENT ON COLUMN "SampleProcessing".cell_storage IS 'TRUE if cells were cryo-preserved between isolation and further processing';COMMENT ON COLUMN "SampleProcessing".cell_quality IS 'Relative amount of viable cells after preparation and (if applicable) thawing';COMMENT ON COLUMN "SampleProcessing".cell_isolation IS 'Description of the procedure used for marker-based isolation or enrich cells';COMMENT ON COLUMN "SampleProcessing".cell_processing_protocol IS 'Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.';COMMENT ON COLUMN "SampleProcessing".template_class IS 'The class of nucleic acid that was used as primary starting material for the following procedures';COMMENT ON COLUMN "SampleProcessing".template_quality IS 'Description and results of the quality control performed on the template material';COMMENT ON COLUMN "SampleProcessing".template_amount IS 'Amount of template that went into the process';COMMENT ON COLUMN "SampleProcessing".template_amount_unit IS 'Unit of template amount';COMMENT ON COLUMN "SampleProcessing".library_generation_method IS 'Generic type of library generation';COMMENT ON COLUMN "SampleProcessing".library_generation_protocol IS 'Description of processes applied to substrate to obtain a library that is ready for sequencing';COMMENT ON COLUMN "SampleProcessing".library_generation_kit_version IS 'When using a library generation protocol from a commercial provider, provide the protocol version number';COMMENT ON COLUMN "SampleProcessing".complete_sequences IS 'To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5'' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.';COMMENT ON COLUMN "SampleProcessing".physical_linkage IS 'In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5'' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3'' end of one transcript to the 5'' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).';COMMENT ON COLUMN "SampleProcessing".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "SampleProcessing".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "SampleProcessing".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "SampleProcessing".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "SampleProcessing".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "SampleProcessing".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "SampleProcessing".sequencing_files IS 'Set of sequencing files produced by the sequencing run';COMMENT ON COLUMN "SampleProcessing"."Repertoire_repertoire_id" IS 'Autocreated FK slot';
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
+);COMMENT ON TABLE "SampleProcessing" IS 'None';COMMENT ON COLUMN "SampleProcessing".sample_id IS 'Sample ID assigned by submitter, unique within study. If possible, a persistent sample ID linked to INSDC or similar repository study should be used.';COMMENT ON COLUMN "SampleProcessing".sample_type IS 'The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture';COMMENT ON COLUMN "SampleProcessing".tissue IS 'The actual tissue sampled, e.g. lymph node, liver, peripheral blood';COMMENT ON COLUMN "SampleProcessing".anatomic_site IS 'The anatomic location of the tissue, e.g. Inguinal, femur';COMMENT ON COLUMN "SampleProcessing".disease_state_sample IS 'Histopathologic evaluation of the sample';COMMENT ON COLUMN "SampleProcessing".collection_time_point_relative IS 'Time point at which sample was taken, relative to `Collection time event`';COMMENT ON COLUMN "SampleProcessing".collection_time_point_relative_unit IS 'Unit of Sample collection time';COMMENT ON COLUMN "SampleProcessing".collection_time_point_reference IS 'Event in the study schedule to which `Sample collection time` relates to';COMMENT ON COLUMN "SampleProcessing".biomaterial_provider IS 'Name and address of the entity providing the sample';COMMENT ON COLUMN "SampleProcessing".tissue_processing IS 'Enzymatic digestion and/or physical methods used to isolate cells from sample';COMMENT ON COLUMN "SampleProcessing".cell_subset IS 'Commonly-used designation of isolated cell population';COMMENT ON COLUMN "SampleProcessing".cell_phenotype IS 'List of cellular markers and their expression levels used to isolate the cell population';COMMENT ON COLUMN "SampleProcessing".cell_species IS 'Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.';COMMENT ON COLUMN "SampleProcessing".single_cell IS 'TRUE if single cells were isolated into separate compartments';COMMENT ON COLUMN "SampleProcessing".cell_number IS 'Total number of cells that went into the experiment';COMMENT ON COLUMN "SampleProcessing".cells_per_reaction IS 'Number of cells for each biological replicate';COMMENT ON COLUMN "SampleProcessing".cell_storage IS 'TRUE if cells were cryo-preserved between isolation and further processing';COMMENT ON COLUMN "SampleProcessing".cell_quality IS 'Relative amount of viable cells after preparation and (if applicable) thawing';COMMENT ON COLUMN "SampleProcessing".cell_isolation IS 'Description of the procedure used for marker-based isolation or enrich cells';COMMENT ON COLUMN "SampleProcessing".cell_processing_protocol IS 'Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.';COMMENT ON COLUMN "SampleProcessing".template_class IS 'The class of nucleic acid that was used as primary starting material for the following procedures';COMMENT ON COLUMN "SampleProcessing".template_quality IS 'Description and results of the quality control performed on the template material';COMMENT ON COLUMN "SampleProcessing".template_amount IS 'Amount of template that went into the process';COMMENT ON COLUMN "SampleProcessing".template_amount_unit IS 'Unit of template amount';COMMENT ON COLUMN "SampleProcessing".library_generation_method IS 'Generic type of library generation';COMMENT ON COLUMN "SampleProcessing".library_generation_protocol IS 'Description of processes applied to substrate to obtain a library that is ready for sequencing';COMMENT ON COLUMN "SampleProcessing".library_generation_kit_version IS 'When using a library generation protocol from a commercial provider, provide the protocol version number';COMMENT ON COLUMN "SampleProcessing".complete_sequences IS 'To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5'' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.';COMMENT ON COLUMN "SampleProcessing".physical_linkage IS 'In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5'' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3'' end of one transcript to the 5'' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).';COMMENT ON COLUMN "SampleProcessing".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "SampleProcessing".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "SampleProcessing".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "SampleProcessing".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "SampleProcessing".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "SampleProcessing".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "SampleProcessing"."Repertoire_repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SampleProcessing".sequencing_files_sequencing_data_id IS 'Set of sequencing files produced by the sequencing run';
 CREATE TABLE "Investigation_participants" (
 	"Investigation_akc_id" TEXT, 
 	participants_akc_id TEXT, 
@@ -1779,6 +1987,7 @@ CREATE TABLE "DataProcessing_data_processing_files" (
 	FOREIGN KEY("DataProcessing_data_processing_id") REFERENCES "DataProcessing" (data_processing_id)
 );COMMENT ON TABLE "DataProcessing_data_processing_files" IS 'None';COMMENT ON COLUMN "DataProcessing_data_processing_files"."DataProcessing_data_processing_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "DataProcessing_data_processing_files".data_processing_files IS 'Array of file names for data produced by this data processing.';
 CREATE TABLE "SpecimenProcessing" (
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -1798,6 +2007,7 @@ CREATE TABLE "CellIsolationProcessing" (
 	cell_quality TEXT, 
 	cell_isolation TEXT, 
 	cell_processing_protocol TEXT, 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -1817,6 +2027,7 @@ CREATE TABLE "LibraryPreparationProcessing" (
 	library_generation_kit_version TEXT, 
 	complete_sequences "CompleteSequencesEnum", 
 	physical_linkage "PhysicalLinkageEnum", 
+	type TEXT, 
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -1838,13 +2049,13 @@ CREATE TABLE "Assay" (
 );COMMENT ON TABLE "Assay" IS 'None';COMMENT ON COLUMN "Assay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "Assay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "Assay".has_specified_output IS 'output data item';COMMENT ON COLUMN "Assay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Assay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Assay".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "AIRRSequencingAssay" (
 	repertoire_id TEXT, 
+	sequence_files TEXT, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type "AssayTypeOntology", 
@@ -1852,11 +2063,13 @@ CREATE TABLE "AIRRSequencingAssay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
+	sequencing_files_sequencing_data_id TEXT, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(sequencing_files) REFERENCES "AIRRSequencingData" (akc_id), 
+	FOREIGN KEY(sequence_files) REFERENCES "AIRRSequencingData" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_files IS 'Set of sequencing files produced by the sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AIRRSequencingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AIRRSequencingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AIRRSequencingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
+	FOREIGN KEY(sequencing_files_sequencing_data_id) REFERENCES "SequencingData" (sequencing_data_id)
+);COMMENT ON TABLE "AIRRSequencingAssay" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "AIRRSequencingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AIRRSequencingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AIRRSequencingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AIRRSequencingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_files_sequencing_data_id IS 'Set of sequencing files produced by the sequencing run';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	mhc_evidence TEXT, 
 	specimen TEXT, 
@@ -1910,27 +2123,34 @@ CREATE TABLE "Assay_specimen_processing" (
 	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "Assay_specimen_processing" IS 'None';COMMENT ON COLUMN "Assay_specimen_processing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Assay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
-CREATE TABLE "AIRRSequencingAssay_tcr_complexes" (
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	tcr_complexes_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcr_complexes_akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay_tcr_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcr_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcr_complexes".tcr_complexes_akc_id IS 'The T cell receptor/epitope/mhc complex being measured';
-CREATE TABLE "AIRRSequencingAssay_antibody_complexes" (
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	antibody_complexes_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", antibody_complexes_akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay_antibody_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_antibody_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_antibody_complexes".antibody_complexes_akc_id IS 'The antibody-antigen complex being measured';
-CREATE TABLE "AIRRSequencingAssay_receptor_composites" (
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	receptor_composites_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", receptor_composites_akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay_receptor_composites" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_receptor_composites"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_receptor_composites".receptor_composites_akc_id IS 'Composite object for database optimization';
+CREATE TABLE "Assay_ab_tcell_complexes" (
+	"Assay_akc_id" TEXT, 
+	ab_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("Assay_akc_id", ab_tcell_complexes_akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(ab_tcell_complexes_akc_id) REFERENCES "AlphaBetaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "Assay_ab_tcell_complexes" IS 'None';COMMENT ON COLUMN "Assay_ab_tcell_complexes"."Assay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "Assay_gd_tcell_complexes" (
+	"Assay_akc_id" TEXT, 
+	gd_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("Assay_akc_id", gd_tcell_complexes_akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(gd_tcell_complexes_akc_id) REFERENCES "GammaDeltaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "Assay_gd_tcell_complexes" IS 'None';COMMENT ON COLUMN "Assay_gd_tcell_complexes"."Assay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "Assay_hk_bcell_complexes" (
+	"Assay_akc_id" TEXT, 
+	hk_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("Assay_akc_id", hk_bcell_complexes_akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(hk_bcell_complexes_akc_id) REFERENCES "HeavyKappaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "Assay_hk_bcell_complexes" IS 'None';COMMENT ON COLUMN "Assay_hk_bcell_complexes"."Assay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "Assay_hl_bcell_complexes" (
+	"Assay_akc_id" TEXT, 
+	hl_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("Assay_akc_id", hl_bcell_complexes_akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(hl_bcell_complexes_akc_id) REFERENCES "HeavyLambdaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "Assay_hl_bcell_complexes" IS 'None';COMMENT ON COLUMN "Assay_hl_bcell_complexes"."Assay_akc_id" IS 'Autocreated FK slot';
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -1938,20 +2158,34 @@ CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	tcr_complexes_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcr_complexes_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
-);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcr_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcr_complexes".tcr_complexes_akc_id IS 'The T cell receptor/epitope/mhc complex being measured';
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_receptor_composites" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	receptor_composites_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", receptor_composites_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
-);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_receptor_composites" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_receptor_composites"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_receptor_composites".receptor_composites_akc_id IS 'Composite object for database optimization';
+CREATE TABLE "AIRRSequencingAssay_ab_tcell_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	ab_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", ab_tcell_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(ab_tcell_complexes_akc_id) REFERENCES "AlphaBetaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_ab_tcell_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_ab_tcell_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "AIRRSequencingAssay_gd_tcell_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	gd_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", gd_tcell_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(gd_tcell_complexes_akc_id) REFERENCES "GammaDeltaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_gd_tcell_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_gd_tcell_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "AIRRSequencingAssay_hk_bcell_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	hk_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", hk_bcell_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(hk_bcell_complexes_akc_id) REFERENCES "HeavyKappaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_hk_bcell_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_hk_bcell_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "AIRRSequencingAssay_hl_bcell_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	hl_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", hl_bcell_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(hl_bcell_complexes_akc_id) REFERENCES "HeavyLambdaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_hl_bcell_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_hl_bcell_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -1959,20 +2193,34 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_specimen_processing"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
-CREATE TABLE "AntibodyAntigenBindingAssay_antibody_complexes" (
-	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
-	antibody_complexes_akc_id TEXT, 
-	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", antibody_complexes_akc_id), 
-	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
-	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
-);COMMENT ON TABLE "AntibodyAntigenBindingAssay_antibody_complexes" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_antibody_complexes"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_antibody_complexes".antibody_complexes_akc_id IS 'The antibody-antigen complex being measured';
-CREATE TABLE "AntibodyAntigenBindingAssay_receptor_composites" (
-	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
-	receptor_composites_akc_id TEXT, 
-	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", receptor_composites_akc_id), 
-	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
-	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
-);COMMENT ON TABLE "AntibodyAntigenBindingAssay_receptor_composites" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_receptor_composites"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_receptor_composites".receptor_composites_akc_id IS 'Composite object for database optimization';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_ab_tcell_complexes" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	ab_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", ab_tcell_complexes_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(ab_tcell_complexes_akc_id) REFERENCES "AlphaBetaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_ab_tcell_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_ab_tcell_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_gd_tcell_complexes" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	gd_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", gd_tcell_complexes_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(gd_tcell_complexes_akc_id) REFERENCES "GammaDeltaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_gd_tcell_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_gd_tcell_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_hk_bcell_complexes" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	hk_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", hk_bcell_complexes_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(hk_bcell_complexes_akc_id) REFERENCES "HeavyKappaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_hk_bcell_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_hk_bcell_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_hl_bcell_complexes" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	hl_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", hl_bcell_complexes_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(hl_bcell_complexes_akc_id) REFERENCES "HeavyLambdaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_hl_bcell_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_hl_bcell_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';
 CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
 	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -1980,3 +2228,31 @@ CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
 	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "AntibodyAntigenBindingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_specimen_processing"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
+CREATE TABLE "AntibodyAntigenBindingAssay_ab_tcell_complexes" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	ab_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", ab_tcell_complexes_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(ab_tcell_complexes_akc_id) REFERENCES "AlphaBetaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay_ab_tcell_complexes" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_ab_tcell_complexes"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "AntibodyAntigenBindingAssay_gd_tcell_complexes" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	gd_tcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", gd_tcell_complexes_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(gd_tcell_complexes_akc_id) REFERENCES "GammaDeltaTCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay_gd_tcell_complexes" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_gd_tcell_complexes"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "AntibodyAntigenBindingAssay_hk_bcell_complexes" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	hk_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", hk_bcell_complexes_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(hk_bcell_complexes_akc_id) REFERENCES "HeavyKappaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay_hk_bcell_complexes" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_hk_bcell_complexes"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';
+CREATE TABLE "AntibodyAntigenBindingAssay_hl_bcell_complexes" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	hl_bcell_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", hl_bcell_complexes_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(hl_bcell_complexes_akc_id) REFERENCES "HeavyLambdaBCRAntigenComplex" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay_hl_bcell_complexes" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_hl_bcell_complexes"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';

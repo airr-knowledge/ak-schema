@@ -37,20 +37,12 @@ ADD COLUMN sequencing_platform TEXT,
 ADD COLUMN sequencing_facility TEXT, 
 ADD COLUMN sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 ADD COLUMN sequencing_kit TEXT, 
-ADD COLUMN sequencing_files TEXT REFERENCES "SequenceData" (akc_id), 
+ADD COLUMN sequence_files TEXT REFERENCES "SequenceData" (akc_id), 
+ADD COLUMN sequencing_files TEXT, -- should not be used
 -- TCellReceptorEpitopeBindingAssay
 ADD COLUMN mhc_evidence TEXT,
 ADD COLUMN measurement_category VARCHAR(21);
 -- AntibodyAntigenBindingAssay
-
--- custom mapping table
-CREATE TABLE "Assay_receptor_composites" (
-	assay_akc_id TEXT, 
-	receptor_composites_akc_id TEXT, 
-	PRIMARY KEY (assay_akc_id, receptor_composites_akc_id), 
-	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
-);
 
 -- tables to support the query API
 CREATE TABLE "QueryAssay" (
@@ -59,14 +51,3 @@ CREATE TABLE "QueryAssay" (
        PRIMARY KEY (akc_id)
 );
 CREATE INDEX idx_query_assay_fts ON "QueryAssay" USING GIN (to_tsvector('english', assay_object));
-
--- some useful indexes
-CREATE INDEX chain_hash_infer_vdj_sequence ON "Chain" ("hash_infer_vdj_sequence");
-CREATE INDEX chain_hash_infer_vdj_sequence_aa ON "Chain" ("hash_infer_vdj_sequence_aa");
-CREATE INDEX chain_junction_aa ON "Chain" ("junction_aa");
-CREATE INDEX chain_v_call ON "Chain" ("v_call");
-CREATE INDEX chain_v_gene ON "Chain" ("v_gene");
-CREATE INDEX chain_v_subgroup ON "Chain" ("v_subgroup");
-CREATE INDEX chain_j_call ON "Chain" ("j_call");
-CREATE INDEX chain_j_gene ON "Chain" ("j_gene");
-CREATE INDEX chain_j_subgroup ON "Chain" ("j_subgroup");
