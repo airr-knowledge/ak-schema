@@ -223,14 +223,33 @@
     click Epitope href "../Epitope"
 
 
+      Antigen : parent_molecule
+
+      Antigen : parent_molecule_iri
+
       Antigen : source_molecule
+
+      Antigen : source_molecule_iri
+
+      Antigen : source_organism
+
+      Antigen : source_organism_iri
+
+
+
+
+    Antigen --&gt; "0..1" TaxonomicSpecies : source_organism_iri
+    click TaxonomicSpecies href "../TaxonomicSpecies"
+
 
       Antigen : source_species
 
+      Antigen : source_species_iri
 
 
 
-    Antigen --&gt; "0..1" TaxonomicSpecies : source_species
+
+    Antigen --&gt; "0..1" TaxonomicSpecies : source_species_iri
     click TaxonomicSpecies href "../TaxonomicSpecies"
 
 
@@ -257,13 +276,49 @@
 <tr>
 <td><a href="../source_molecule/">source_molecule</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The protein or other molecule that this antigen represents</td>
+<td>The exact protein or other molecule that this antigen represents (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_molecule_iri/">source_molecule_iri</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The IRI for the source_molecule</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../parent_molecule/">parent_molecule</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The parent group of the protein or other molecule that this antigen represent...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../parent_molecule_iri/">parent_molecule_iri</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The IRI for the parent_molecule</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../source_species/">source_species</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The name of the species that the source molecule comes from</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_species_iri/">source_species_iri</a></td>
 <td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
-<td>The species that the source molecule comes from</td>
+<td>The IRI for the source_species</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_organism/">source_organism</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The name of the organism that the source molecule comes from (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_organism_iri/">source_organism_iri</a></td>
+<td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
+<td>The IRI for the source_organism</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -410,7 +465,13 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 slots:
 - source_molecule
+- source_molecule_iri
+- parent_molecule
+- parent_molecule_iri
 - source_species
+- source_species_iri
+- source_organism
+- source_organism_iri
 - epitopes
 class_uri: OBI:1110034
 
@@ -424,7 +485,8 @@ is_a: AKObject
 attributes:
   source_molecule:
     name: source_molecule
-    description: The protein or other molecule that this antigen represents
+    description: The exact protein or other molecule that this antigen represents
+      (e.g., the exact mutated protein)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: source_molecule
@@ -432,12 +494,74 @@ attributes:
     domain_of:
     - Antigen
     range: string
+  source_molecule_iri:
+    name: source_molecule_iri
+    description: The IRI for the source_molecule
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: source_molecule_iri
+    owner: Antigen
+    domain_of:
+    - Antigen
+    range: string
+  parent_molecule:
+    name: parent_molecule
+    description: The parent group of the protein or other molecule that this antigen
+      represents, that the source_molecule was derived from
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: parent_molecule
+    owner: Antigen
+    domain_of:
+    - Antigen
+    range: string
+  parent_molecule_iri:
+    name: parent_molecule_iri
+    description: The IRI for the parent_molecule
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: parent_molecule_iri
+    owner: Antigen
+    domain_of:
+    - Antigen
+    range: string
   source_species:
     name: source_species
-    description: The species that the source molecule comes from
+    description: The name of the species that the source molecule comes from
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: source_species
+    owner: Antigen
+    domain_of:
+    - Antigen
+    range: string
+  source_species_iri:
+    name: source_species_iri
+    description: The IRI for the source_species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: source_species_iri
+    owner: Antigen
+    domain_of:
+    - Antigen
+    range: TaxonomicSpecies
+  source_organism:
+    name: source_organism
+    description: The name of the organism that the source molecule comes from (e.g.,
+      a specific strain)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: source_organism
+    owner: Antigen
+    domain_of:
+    - Antigen
+    range: string
+  source_organism_iri:
+    name: source_organism_iri
+    description: The IRI for the source_organism
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: source_organism_iri
     owner: Antigen
     domain_of:
     - Antigen
