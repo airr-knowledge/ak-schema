@@ -51,3 +51,15 @@ CREATE TABLE "QueryAssay" (
        PRIMARY KEY (akc_id)
 );
 CREATE INDEX idx_query_assay_fts ON "QueryAssay" USING GIN (to_tsvector('english', assay_object));
+
+CREATE TABLE "QueryRecord" (
+       id BIGSERIAL PRIMARY KEY,
+       endpoint TEXT,
+       ip TEXT,
+       status TEXT,
+       message TEXT,
+       record_count BIGINT,
+       start_time TIMESTAMPTZ,
+       elapsed_time DECIMAL,
+       query JSONB
+);
