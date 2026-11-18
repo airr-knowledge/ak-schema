@@ -1075,11 +1075,18 @@ CREATE TABLE "HeavyLambdaBCR" (
 );COMMENT ON TABLE "HeavyLambdaBCR" IS 'None';COMMENT ON COLUMN "HeavyLambdaBCR".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "HeavyLambdaBCR".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "HeavyLambdaBCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyLambdaBCR".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "HeavyLambdaBCR".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
+	source_molecule_iri TEXT, 
+	parent_molecule TEXT, 
+	parent_molecule_iri TEXT, 
 	source_species TEXT, 
+	source_species_iri TEXT, 
+	source_organism TEXT, 
+	source_organism_iri TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id)
-);COMMENT ON TABLE "Antigen" IS 'None';COMMENT ON COLUMN "Antigen".source_molecule IS 'The protein or other molecule that this antigen represents';COMMENT ON COLUMN "Antigen".source_species IS 'The species that the source molecule comes from';COMMENT ON COLUMN "Antigen".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(source_species_iri) REFERENCES "TaxonomicSpecies" (term_id), 
+	FOREIGN KEY(source_organism_iri) REFERENCES "TaxonomicSpecies" (term_id)
+);COMMENT ON TABLE "Antigen" IS 'None';COMMENT ON COLUMN "Antigen".source_molecule IS 'The exact protein or other molecule that this antigen represents (e.g., the exact mutated protein)';COMMENT ON COLUMN "Antigen".source_molecule_iri IS 'The IRI for the source_molecule';COMMENT ON COLUMN "Antigen".parent_molecule IS 'The parent group of the protein or other molecule that this antigen represents, that the source_molecule was derived from';COMMENT ON COLUMN "Antigen".parent_molecule_iri IS 'The IRI for the parent_molecule';COMMENT ON COLUMN "Antigen".source_species IS 'The name of the species that the source molecule comes from';COMMENT ON COLUMN "Antigen".source_species_iri IS 'The IRI for the source_species';COMMENT ON COLUMN "Antigen".source_organism IS 'The name of the organism that the source molecule comes from (e.g., a specific strain)';COMMENT ON COLUMN "Antigen".source_organism_iri IS 'The IRI for the source_organism';COMMENT ON COLUMN "Antigen".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "MajorHistocompatibilityComplex" (
 	mhc_ref TEXT, 
 	mhc_class "MhcClassEnum", 

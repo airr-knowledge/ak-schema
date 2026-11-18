@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-06T00:07:50
+# Generation date: 2026-11-18T00:04:21
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -3248,7 +3248,13 @@ class Antigen(AKObject):
 
     akc_id: Union[str, AntigenAkcId] = None
     source_molecule: Optional[str] = None
-    source_species: Optional[Union[str, TaxonomicSpeciesTermId]] = None
+    source_molecule_iri: Optional[str] = None
+    parent_molecule: Optional[str] = None
+    parent_molecule_iri: Optional[str] = None
+    source_species: Optional[str] = None
+    source_species_iri: Optional[Union[str, TaxonomicSpeciesTermId]] = None
+    source_organism: Optional[str] = None
+    source_organism_iri: Optional[Union[str, TaxonomicSpeciesTermId]] = None
     epitopes: Optional[Union[Union[str, EpitopeAkcId], List[Union[str, EpitopeAkcId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3260,8 +3266,26 @@ class Antigen(AKObject):
         if self.source_molecule is not None and not isinstance(self.source_molecule, str):
             self.source_molecule = str(self.source_molecule)
 
-        if self.source_species is not None and not isinstance(self.source_species, TaxonomicSpeciesTermId):
-            self.source_species = TaxonomicSpeciesTermId(self.source_species)
+        if self.source_molecule_iri is not None and not isinstance(self.source_molecule_iri, str):
+            self.source_molecule_iri = str(self.source_molecule_iri)
+
+        if self.parent_molecule is not None and not isinstance(self.parent_molecule, str):
+            self.parent_molecule = str(self.parent_molecule)
+
+        if self.parent_molecule_iri is not None and not isinstance(self.parent_molecule_iri, str):
+            self.parent_molecule_iri = str(self.parent_molecule_iri)
+
+        if self.source_species is not None and not isinstance(self.source_species, str):
+            self.source_species = str(self.source_species)
+
+        if self.source_species_iri is not None and not isinstance(self.source_species_iri, TaxonomicSpeciesTermId):
+            self.source_species_iri = TaxonomicSpeciesTermId(self.source_species_iri)
+
+        if self.source_organism is not None and not isinstance(self.source_organism, str):
+            self.source_organism = str(self.source_organism)
+
+        if self.source_organism_iri is not None and not isinstance(self.source_organism_iri, TaxonomicSpeciesTermId):
+            self.source_organism_iri = TaxonomicSpeciesTermId(self.source_organism_iri)
 
         if not isinstance(self.epitopes, list):
             self.epitopes = [self.epitopes] if self.epitopes is not None else []
@@ -8098,8 +8122,26 @@ slots.hl_bcr = Slot(uri=AK_SCHEMA.hl_bcr, name="hl_bcr", curie=AK_SCHEMA.curie('
 slots.source_molecule = Slot(uri=AK_SCHEMA.source_molecule, name="source_molecule", curie=AK_SCHEMA.curie('source_molecule'),
                    model_uri=AK_SCHEMA.source_molecule, domain=None, range=Optional[str])
 
+slots.source_molecule_iri = Slot(uri=AK_SCHEMA.source_molecule_iri, name="source_molecule_iri", curie=AK_SCHEMA.curie('source_molecule_iri'),
+                   model_uri=AK_SCHEMA.source_molecule_iri, domain=None, range=Optional[str])
+
+slots.parent_molecule = Slot(uri=AK_SCHEMA.parent_molecule, name="parent_molecule", curie=AK_SCHEMA.curie('parent_molecule'),
+                   model_uri=AK_SCHEMA.parent_molecule, domain=None, range=Optional[str])
+
+slots.parent_molecule_iri = Slot(uri=AK_SCHEMA.parent_molecule_iri, name="parent_molecule_iri", curie=AK_SCHEMA.curie('parent_molecule_iri'),
+                   model_uri=AK_SCHEMA.parent_molecule_iri, domain=None, range=Optional[str])
+
+slots.source_organism = Slot(uri=AK_SCHEMA.source_organism, name="source_organism", curie=AK_SCHEMA.curie('source_organism'),
+                   model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[str])
+
+slots.source_organism_iri = Slot(uri=AK_SCHEMA.source_organism_iri, name="source_organism_iri", curie=AK_SCHEMA.curie('source_organism_iri'),
+                   model_uri=AK_SCHEMA.source_organism_iri, domain=None, range=Optional[Union[str, TaxonomicSpeciesTermId]])
+
 slots.source_species = Slot(uri=AK_SCHEMA.source_species, name="source_species", curie=AK_SCHEMA.curie('source_species'),
-                   model_uri=AK_SCHEMA.source_species, domain=None, range=Optional[Union[str, TaxonomicSpeciesTermId]])
+                   model_uri=AK_SCHEMA.source_species, domain=None, range=Optional[str])
+
+slots.source_species_iri = Slot(uri=AK_SCHEMA.source_species_iri, name="source_species_iri", curie=AK_SCHEMA.curie('source_species_iri'),
+                   model_uri=AK_SCHEMA.source_species_iri, domain=None, range=Optional[Union[str, TaxonomicSpeciesTermId]])
 
 slots.antibody = Slot(uri=AK_SCHEMA.antibody, name="antibody", curie=AK_SCHEMA.curie('antibody'),
                    model_uri=AK_SCHEMA.antibody, domain=None, range=Optional[Union[str, BCellReceptorAkcId]])

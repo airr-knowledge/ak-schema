@@ -653,8 +653,14 @@
 --     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Antigen" Description: ""
---     * Slot: source_molecule Description: The protein or other molecule that this antigen represents
---     * Slot: source_species Description: The species that the source molecule comes from
+--     * Slot: source_molecule Description: The exact protein or other molecule that this antigen represents (e.g., the exact mutated protein)
+--     * Slot: source_molecule_iri Description: The IRI for the source_molecule
+--     * Slot: parent_molecule Description: The parent group of the protein or other molecule that this antigen represents, that the source_molecule was derived from
+--     * Slot: parent_molecule_iri Description: The IRI for the parent_molecule
+--     * Slot: source_species Description: The name of the species that the source molecule comes from
+--     * Slot: source_species_iri Description: The IRI for the source_species
+--     * Slot: source_organism Description: The name of the organism that the source molecule comes from (e.g., a specific strain)
+--     * Slot: source_organism_iri Description: The IRI for the source_organism
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "MajorHistocompatibilityComplex" Description: ""
 --     * Slot: mhc_ref Description: MHC Restriction Ontology term id
@@ -2679,10 +2685,17 @@ CREATE TABLE "HeavyLambdaBCR" (
 );
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
+	source_molecule_iri TEXT, 
+	parent_molecule TEXT, 
+	parent_molecule_iri TEXT, 
 	source_species TEXT, 
+	source_species_iri TEXT, 
+	source_organism TEXT, 
+	source_organism_iri TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id)
+	FOREIGN KEY(source_species_iri) REFERENCES "TaxonomicSpecies" (term_id), 
+	FOREIGN KEY(source_organism_iri) REFERENCES "TaxonomicSpecies" (term_id)
 );
 CREATE TABLE "MajorHistocompatibilityComplex" (
 	mhc_ref TEXT, 

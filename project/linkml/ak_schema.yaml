@@ -1817,11 +1817,39 @@ slots:
     range: HeavyLambdaBCR
   source_molecule:
     name: source_molecule
-    description: The protein or other molecule that this antigen represents
+    description: The exact protein or other molecule that this antigen represents
+      (e.g., the exact mutated protein)
     from_schema: https://github.com/airr-knowledge/ak-schema
+  source_molecule_iri:
+    name: source_molecule_iri
+    description: The IRI for the source_molecule
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  parent_molecule:
+    name: parent_molecule
+    description: The parent group of the protein or other molecule that this antigen
+      represents, that the source_molecule was derived from
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  parent_molecule_iri:
+    name: parent_molecule_iri
+    description: The IRI for the parent_molecule
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  source_organism:
+    name: source_organism
+    description: The name of the organism that the source molecule comes from (e.g.,
+      a specific strain)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  source_organism_iri:
+    name: source_organism_iri
+    description: The IRI for the source_organism
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TaxonomicSpecies
   source_species:
     name: source_species
-    description: The species that the source molecule comes from
+    description: The name of the species that the source molecule comes from
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  source_species_iri:
+    name: source_species_iri
+    description: The IRI for the source_species
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TaxonomicSpecies
   antibody:
@@ -6804,7 +6832,13 @@ classes:
     is_a: AKObject
     slots:
     - source_molecule
+    - source_molecule_iri
+    - parent_molecule
+    - parent_molecule_iri
     - source_species
+    - source_species_iri
+    - source_organism
+    - source_organism_iri
     - epitopes
     class_uri: OBI:1110034
   MajorHistocompatibilityComplex:
