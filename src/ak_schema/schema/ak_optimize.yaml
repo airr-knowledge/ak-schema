@@ -5,53 +5,106 @@ name: ak-schema
 # classes for database optimization
 classes:
 
+  ChainComposite:
+    abstract: true
+    is_a: AKObject
+    slots:
+      - species
+
+  AlphaChainComposite:
+    is_a: ChainComposite
+    slots:
+      - tra_sequence
+      - tra_junction_aa
+
+  BetaChainComposite:
+    is_a: ChainComposite
+    slots:
+      - trb_sequence
+      - trb_junction_aa
+
+  DeltaChainComposite:
+    is_a: ChainComposite
+    slots:
+      - trd_sequence
+      - trd_junction_aa
+
+  GammaChainComposite:
+    is_a: ChainComposite
+    slots:
+      - trg_sequence
+      - trg_junction_aa
+
   # everything together
-  ReceptorComposite:
+  # ReceptorComposite:
+  #   is_a: AKObject
+  #   mixins:
+  #     - AlphaBetaTCR
+  #     - GammaDeltaTCR
+  #     - BCellReceptor
+  #   slots:
+  #     - species
+  #     - tcr_complex
+  #     - antibody_complex
+  #     - antigen
+  #     - epitope
+  #     - mhc
+
+  AlphaBetaTCRComplexComposite:
     is_a: AKObject
     mixins:
-      - AlphaBetaTCR
-      - GammaDeltaTCR
-      - BCellReceptor
+      - AlphaChainComposite
+      - BetaChainComposite
     slots:
-      - species
-      - tcr_complex
-      - antibody_complex
       - antigen
       - epitope
       - mhc
 
-  AlphaBetaReceptorComposite:
+  GammaDeltaTCRComplexComposite:
     is_a: AKObject
     mixins:
-      - AlphaBetaTCR
+      - GammaChainComposite
+      - DeltaChainComposite
     slots:
-      - species
-      - tcr_complex
       - antigen
       - epitope
       - mhc
 
-  GammaDeltaReceptorComposite:
-    is_a: AKObject
-    mixins:
-      - GammaDeltaTCR
+  HeavyChainComposite:
+    is_a: ChainComposite
     slots:
-      - species
-      - tcr_complex
-      - antigen
-      - epitope
-      - mhc
+      - igh_sequence
+      - igh_junction_aa
 
-  BCellReceptorComposite:
+  KappaChainComposite:
+    is_a: ChainComposite
+    slots:
+      - igk_sequence
+      - igk_junction_aa
+
+  LambdaChainComposite:
+    is_a: ChainComposite
+    slots:
+      - igl_sequence
+      - igl_junction_aa
+
+  HeavyKappaBCRComplexComposite:
     is_a: AKObject
     mixins:
-      - BCellReceptor
+      - HeavyChainComposite
+      - KappaChainComposite
     slots:
-      - species
-      - antibody_complex
       - antigen
       - epitope
-      - mhc
+
+  HeavyLambdaBCRComplexComposite:
+    is_a: AKObject
+    mixins:
+      - HeavyChainComposite
+      - LambdaChainComposite
+    slots:
+      - antigen
+      - epitope
 
 # The V2 database has issues with efficiently querying just
 # paired chain data amongst the large single chain data.
@@ -59,14 +112,50 @@ classes:
 # but we will also separate the paired chain so we can test
 # different optimization strategies.
 
-  PairedReceptorComposite:
-    is_a: ReceptorComposite
+  PairedAlphaBetaTCRComplexComposite:
+    is_a: AlphaBetaTCRComplexComposite
 
-  PairedAlphaBetaReceptorComposite:
-    is_a: AlphaBetaReceptorComposite
+  PairedGammaDeltaTCRComplexComposite:
+    is_a: GammaDeltaTCRComplexComposite
 
-  PairedGammaDeltaReceptorComposite:
-    is_a: GammaDeltaReceptorComposite
+  PairedHeavyKappaBCRComplexComposite:
+    is_a: HeavyKappaBCRComplexComposite
 
-  PairedBCellReceptorComposite:
-    is_a: BCellReceptorComposite
+  PairedHeavyLambdaBCRComplexComposite:
+    is_a: HeavyLambdaBCRComplexComposite
+
+slots:
+  tra_sequence:
+    is_a: sequence
+  tra_junction_aa:
+    is_a: junction_aa
+
+  trb_sequence:
+    is_a: sequence
+  trb_junction_aa:
+    is_a: junction_aa
+
+  trd_sequence:
+    is_a: sequence
+  trd_junction_aa:
+    is_a: junction_aa
+
+  trg_sequence:
+    is_a: sequence
+  trg_junction_aa:
+    is_a: junction_aa
+
+  igh_sequence:
+    is_a: sequence
+  igh_junction_aa:
+    is_a: junction_aa
+
+  igk_sequence:
+    is_a: sequence
+  igk_junction_aa:
+    is_a: junction_aa
+
+  igl_sequence:
+    is_a: sequence
+  igl_junction_aa:
+    is_a: junction_aa

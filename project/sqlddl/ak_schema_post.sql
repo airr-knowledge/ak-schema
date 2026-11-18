@@ -74,6 +74,7 @@ CREATE INDEX lambda_chain_j_subgroup ON "LambdaChain" ("j_subgroup");
 
 -- Epitope
 CREATE INDEX epitope_sequence_aa ON "Epitope" ("sequence_aa");
+CREATE INDEX antigen_species ON "Antigen" ("source_species");
 
 -- Receptor composites
 CREATE INDEX assay_receptor_composites_index ON "Assay_receptor_composites" ("receptor_composites_akc_id");

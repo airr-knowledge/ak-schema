@@ -81,8 +81,16 @@ classes:
         range: AlphaChain
         multivalued: true
         inlined: true
+      canonical_alpha_chains:
+        range: CanonicalAlphaChain
+        multivalued: true
+        inlined: true
       beta_chains:
         range: BetaChain
+        multivalued: true
+        inlined: true
+      canonical_beta_chains:
+        range: CanonicalBetaChain
         multivalued: true
         inlined: true
       ab_tcell_receptors:
@@ -93,8 +101,16 @@ classes:
         range: GammaChain
         multivalued: true
         inlined: true
+      canonical_gamma_chains:
+        range: CanonicalGammaChain
+        multivalued: true
+        inlined: true
       delta_chains:
         range: DeltaChain
+        multivalued: true
+        inlined: true
+      canonical_delta_chains:
+        range: CanonicalDeltaChain
         multivalued: true
         inlined: true
       gd_tcell_receptors:
@@ -105,16 +121,32 @@ classes:
         range: HeavyChain
         multivalued: true
         inlined: true
+      canonical_heavy_chains:
+        range: CanonicalHeavyChain
+        multivalued: true
+        inlined: true
       kappa_chains:
         range: KappaChain
+        multivalued: true
+        inlined: true
+      canonical_kappa_chains:
+        range: CanonicalKappaChain
         multivalued: true
         inlined: true
       lambda_chains:
         range: LambdaChain
         multivalued: true
         inlined: true
-      bcell_receptors:
-        range: BCellReceptor
+      canonical_lambda_chains:
+        range: CanonicalLambdaChain
+        multivalued: true
+        inlined: true
+      hk_bcell_receptors:
+        range: HeavyKappaBCR
+        multivalued: true
+        inlined: true
+      hl_bcell_receptors:
+        range: HeavyLambdaBCR
         multivalued: true
         inlined: true
       antigens:
@@ -129,48 +161,56 @@ classes:
         range: MajorHistocompatibilityComplex
         multivalued: true
         inlined: true
-      tcr_complexes:
-        range: TCRpMHCComplex
+      ab_tcell_complexes:
+        range: AlphaBetaTCRpMHCComplex
         multivalued: true
         inlined: true
-      antibody_complexes:
-        range: AntibodyAntigenComplex
+      gd_tcell_complexes:
+        range: GammaDeltaTCRpMHCComplex
+        multivalued: true
+        inlined: true
+      hk_bcell_complexes:
+        range: HeavyKappaBCRAntigenComplex
+        multivalued: true
+        inlined: true
+      hl_bcell_complexes:
+        range: HeavyLambdaBCRAntigenComplex
         multivalued: true
         inlined: true
 
       # collections for database query optimization
-      receptor_composites:
-        range: ReceptorComposite
+      ab_complex_composites:
+        range: AlphaBetaTCRComplexComposite
         multivalued: true
         inlined: true
-      ab_receptor_composites:
-        range: AlphaBetaReceptorComposite
+      gd_complex_composites:
+        range: GammaDeltaTCRComplexComposite
         multivalued: true
         inlined: true
-      gd_receptor_composites:
-        range: GammaDeltaReceptorComposite
+      hk_complex_composites:
+        range: HeavyKappaBCRComplexComposite
         multivalued: true
         inlined: true
-      bcell_receptor_composites:
-        range: BCellReceptorComposite
+      hl_complex_composites:
+        range: HeavyLambdaBCRComplexComposite
         multivalued: true
         inlined: true
 
       # separate out paired chain data
       # range has to be different
-      paired_receptor_composites:
-        range: PairedReceptorComposite
+      paired_ab_complex_composites:
+        range: PairedAlphaBetaTCRComplexComposite
         multivalued: true
         inlined: true
-      paired_ab_receptor_composites:
-        range: PairedAlphaBetaReceptorComposite
+      paired_gd_complex_composites:
+        range: PairedGammaDeltaTCRComplexComposite
         multivalued: true
         inlined: true
-      paired_gd_receptor_composites:
-        range: PairedGammaDeltaReceptorComposite
+      paired_hk_complex_composites:
+        range: PairedHeavyKappaBCRComplexComposite
         multivalued: true
         inlined: true
-      paired_bcell_receptor_composites:
-        range: PairedBCellReceptorComposite
+      paired_hl_complex_composites:
+        range: PairedHeavyLambdaBCRComplexComposite
         multivalued: true
         inlined: true
